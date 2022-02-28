@@ -2,6 +2,9 @@ import SocialMedia from "./SocialMedia";
 import Calendar from "@ericz1803/react-google-calendar";
 import Events from "../img/WicsEvent.png";
 import TwoUpContent from "./TwoUpContent";
+import Button from "./Button.js";
+import Emoji from "./Emoji.js";
+import Footer from "./Footer";
 
 const API_KEY = "AIzaSyAQl9vulZ_MczguBaOCxOxn6TB8U1R0w7c";
 let calendars = [
@@ -18,31 +21,42 @@ let styles = {
 
 export default function Example() {
   return (
-    <div>
+    <main>
       <TwoUpContent
         title="Events"
         body={
           <div className="flex flex-col">
             <p className="pb-2 body">
-              Want to stay up to date? Follow us on social!
+              Want to stay up to date? Follow us on social!&nbsp;&nbsp;
+              <Emoji symbol="🎉" label="search" />
             </p>
             <div className="flex flex-row items center justify center">
-              <SocialMedia url="https://www.linkedin.com/company/ubcwics/mycompany/"></SocialMedia>
-              <SocialMedia url="https://www.instagram.com/ubcwics/"></SocialMedia>
-              <SocialMedia url="https://www.facebook.com/ubcwics/"></SocialMedia>
+              <SocialMedia
+                url="https://www.linkedin.com/company/ubcwics/mycompany/"
+                width="35px"
+                height="35px"
+              ></SocialMedia>
+              <SocialMedia
+                url="https://www.instagram.com/ubcwics/"
+                width="35px"
+                height="35px"
+              ></SocialMedia>
+              <SocialMedia
+                url="https://www.facebook.com/ubcwics/"
+                width="35px"
+                height="35px"
+              ></SocialMedia>
             </div>
             <p className="pb-4 pt-6 body">
-              Or sign up for one of our events here:
+              Or sign up for one of our events here&nbsp;&nbsp;
+              <Emoji symbol="📅" label="search" />
             </p>
-            <div className="rounded-md shadow w-2/5">
-              <a
-                href="https://linktr.ee/UBCWiCS"
-                target="_blank"
-                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
-              >
-                Sign Up!
-              </a>
-            </div>
+            <Button
+              link="https://linktr.ee/UBCWiCS"
+              text="Sign Up!"
+              type="external"
+              width="w-2/4"
+            ></Button>
           </div>
         }
         imageSrc={Events}
@@ -57,6 +71,7 @@ export default function Example() {
           showFooter={false}
         />
       </div>
-    </div>
+      <Footer></Footer>
+    </main>
   );
 }

@@ -6,7 +6,7 @@ export default function ProfileCard(props) {
     <article>
       <Link to={"/" + props.path + "/" + props.slug} key={props.slug}>
         <span
-          className="block h-80 relative rounded shadow leading-snug bg-indigo-50"
+          className="block h-80 relative rounded shadow leading-snug bg-indigo-50 hover:bg-indigo-100"
           key={props.index}
         >
           <img

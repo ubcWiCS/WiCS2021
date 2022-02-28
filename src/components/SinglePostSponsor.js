@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
-import SocialMedia from "./SocialMedia.js";
 import LoadingSpinner from "./LoadingSpinner.js";
+import Button from "./Button.js";
+import Footer from "./Footer";
 
 export default function SinglePostSponsor() {
   const [singlePost, setSinglePost] = useState(null);
@@ -16,9 +17,8 @@ export default function SinglePostSponsor() {
       title,
       name,
       role,
-      linkedin,
-      email,
       id,
+      sponsorLevel,
       slug,
       mainImage{
         asset->{
@@ -35,20 +35,8 @@ export default function SinglePostSponsor() {
 
   if (!singlePost) return <LoadingSpinner></LoadingSpinner>;
 
-  const linkedIn = singlePost.linkedin ? (
-    <SocialMedia url={singlePost.linkedin} />
-  ) : (
-    ""
-  );
-
-  const myEmail = singlePost.email ? (
-    <SocialMedia email="true" url={singlePost.email} />
-  ) : (
-    ""
-  );
-
   return (
-    <main className="bg-white flex justify-center items-center">
+    <main className="bg-white flex flex-col justify-center items-center">
       <section className="container rounded-lg mx-auto p-10 md:p-20 transform duration-500">
         <article className="flex rounded-lg flex-wrap shadow-lg mx-auto">
           <img
@@ -61,7 +49,7 @@ export default function SinglePostSponsor() {
               {singlePost.name}
             </div>
             <div className="text-gray-600 text-sm font-semibold pt-2">
-              {"Sponsor level: " + singlePost.role}
+              {"Sponsor level: " + singlePost.sponsorLevel}
             </div>
             <p className="mt-2 text-slate-500">
               <BlockContent
@@ -73,6 +61,10 @@ export default function SinglePostSponsor() {
           </div>
         </article>
       </section>
+      <div className="mb-10">
+        <Button type="local" link="/sponsors" text="Back to Sponsors"></Button>
+      </div>
+      <Footer></Footer>
     </main>
   );
 }

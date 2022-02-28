@@ -1,27 +1,11 @@
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {
-      animation: {
-        fadeIn: "fadeIn 2s ease-in forwards",
-      },
-      keyframes: {
-        fadeIn: {
-          "0%": { opacity: 0 },
-          "100%": { opacity: 1 },
-        },
-      },
-    },
-    colors: {
-      beige: {
-        light: "#FDF6EC",
-      },
-    },
+    extend: {},
   },
   variants: {
     extend: {},
-    animation: ["motion-safe"],
   },
   plugins: [],
 };

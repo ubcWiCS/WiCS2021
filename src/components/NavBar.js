@@ -14,7 +14,9 @@ function NavBar() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <img className="h-10 w-10" src={WicsLogo} alt="Workflow" />
+                <NavLink to="/" exact>
+                  <img className="h-10 w-10" src={WicsLogo} alt="Workflow" />
+                </NavLink>
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">

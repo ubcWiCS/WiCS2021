@@ -1,6 +1,6 @@
 export default {
-  name: "profile",
-  title: "Profile",
+  name: "sponsor",
+  title: "Sponsor",
   type: "document",
   fields: [
     {
@@ -14,21 +14,6 @@ export default {
       type: "string",
     },
     {
-      name: "role",
-      title: "Role",
-      type: "string",
-    },
-    {
-      name: "email",
-      title: "Email",
-      type: "string",
-    },
-    {
-      name: "linkedin",
-      title: "LinkedIn",
-      type: "string",
-    },
-    {
       name: "slug",
       title: "Slug",
       type: "slug",
@@ -36,12 +21,6 @@ export default {
         source: "title",
         maxLength: 96,
       },
-    },
-    {
-      name: "author",
-      title: "Author",
-      type: "reference",
-      to: { type: "author" },
     },
     {
       name: "mainImage",
@@ -62,16 +41,15 @@ export default {
       type: "number",
     },
     {
-      name: "profileType",
-      title: "Profile type",
+      name: "sponsorLevel",
+      title: "Sponsor Level",
       type: "string",
       options: {
         list: [
-          { value: "executive", title: "Executive Team" },
-          { value: "sponsor", title: "Sponsor" },
-          { value: "faculty", title: "Faculty Advisor" },
+          { value: "Platinum", title: "Platinum" },
+          { value: "Gold", title: "Gold" },
+          { value: "Silver", title: "Silver" },
         ],
-        hotspot: true,
       },
     },
   ],

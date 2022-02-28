@@ -3,7 +3,7 @@ import React from "react";
 export default function TwoUpContent(props) {
   return (
     <div>
-      {props.direction == "textLeft" ? (
+      {props.direction === "textLeft" ? (
         <div className="container py-16 px-6 mx-auto flex flex-wrap md:flex-row items-center bg-white">
           <div className="py-6 px-6 flex flex-col w-full md:w-1/2">
             <h1 className="text-5xl cursive text-gray-700 title">

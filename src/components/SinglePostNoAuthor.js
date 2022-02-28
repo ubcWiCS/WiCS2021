@@ -4,6 +4,8 @@ import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 import SocialMedia from "./SocialMedia.js";
 import LoadingSpinner from "./LoadingSpinner.js";
+import Button from "./Button.js";
+import Footer from "./Footer";
 
 export default function SinglePostNoAuthor() {
   const [singlePost, setSinglePost] = useState(null);
@@ -18,6 +20,7 @@ export default function SinglePostNoAuthor() {
       role,
       linkedin,
       email,
+      profileType,
       id,
       slug,
       mainImage{
@@ -36,19 +39,24 @@ export default function SinglePostNoAuthor() {
   if (!singlePost) return <LoadingSpinner></LoadingSpinner>;
 
   const linkedIn = singlePost.linkedin ? (
-    <SocialMedia url={singlePost.linkedin} />
+    <SocialMedia url={singlePost.linkedin} width="35px" height="35px" />
   ) : (
     ""
   );
 
   const myEmail = singlePost.email ? (
-    <SocialMedia email="true" url={singlePost.email} />
+    <SocialMedia
+      email="true"
+      url={singlePost.email}
+      width="35px"
+      height="35px"
+    />
   ) : (
     ""
   );
 
   return (
-    <main className="bg-white flex justify-center items-center">
+    <main className="bg-white flex flex-col justify-center items-center">
       <section className="container rounded-lg mx-auto p-10 md:p-20 transform duration-500">
         <article className="flex rounded-lg flex-wrap md:flex-nowrap shadow-lg mx-auto">
           <img
@@ -73,6 +81,18 @@ export default function SinglePostNoAuthor() {
           </div>
         </article>
       </section>
+      <div className="mb-10">
+        {singlePost.profileType === "executive" ? (
+          <Button type="local" link="/team" text="Back To Team"></Button>
+        ) : (
+          <Button
+            type="local"
+            link="/advisors"
+            text="Back To Faculty Advisors"
+          ></Button>
+        )}
+      </div>
+      <Footer></Footer>
     </main>
   );
 }

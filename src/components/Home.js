@@ -3,6 +3,7 @@ import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 import Logo from "../img/WiCSLogo.png";
 import TwoUpContent from "./TwoUpContent";
+import Footer from "./Footer";
 
 export default function Home() {
   const [postData, setPost] = useState(null);
@@ -59,6 +60,7 @@ export default function Home() {
             ></TwoUpContent>
           </section>
         ))}
+      <Footer></Footer>
     </main>
   );
 }

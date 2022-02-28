@@ -7,11 +7,9 @@ import SinglePostNoAuthor from "./components/SinglePostNoAuthor";
 import Team from "./components/Team";
 import Advisors from "./components/Advisors";
 import Sponsors from "./components/Sponsors";
-import SponsorsTest from "./components/SponsorTest";
 import Events from "./components/Events";
 import NavBar from "./components/NavBar";
 import SinglePostSponsor from "./components/SinglePostSponsor";
-import TeamTest from "./components/TeamTest";
 
 function App() {
   return (
@@ -23,7 +21,7 @@ function App() {
         <Route component={SinglePost} path="/post/:slug" />
         <Route component={SinglePostNoAuthor} path="/profile/:slug" />
         <Route component={Post} path="/post" />
-        <Route component={TeamTest} path="/team" />
+        <Route component={Team} path="/team" />
         <Route component={Advisors} path="/advisors" />
         <Route component={Sponsors} path="/sponsors" />
         <Route component={SinglePostSponsor} path="/sponsor/:slug" />
