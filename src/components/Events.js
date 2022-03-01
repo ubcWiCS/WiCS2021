@@ -5,8 +5,11 @@ import TwoUpContent from "./TwoUpContent";
 import Button from "./Button.js";
 import Emoji from "./Emoji.js";
 import Footer from "./Footer";
+import "dotenv/config";
 
-const API_KEY = "AIzaSyAQl9vulZ_MczguBaOCxOxn6TB8U1R0w7c";
+console.log(process.env);
+const GOOGLE_API_KEY = process.env.REACT_APP_GOOGLE_CALENDAR_API;
+
 let calendars = [
   { calendarId: "18qb8b2du4h0brqc9i7tv4v8ok@group.calendar.google.com" },
 ];
@@ -65,7 +68,7 @@ export default function Example() {
       ></TwoUpContent>
       <div className="md:px-28 px-16 pb-10">
         <Calendar
-          apiKey={API_KEY}
+          apiKey={GOOGLE_API_KEY}
           calendars={calendars}
           styles={styles}
           showFooter={false}

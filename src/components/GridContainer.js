@@ -6,13 +6,15 @@ import ProfileCard from "./ProfileCard.js";
 import SponsorCard from "./SponsorCard.js";
 
 export default function GridContainer(props) {
+  const queryString = props.queryString;
   //Get profile data from Sanity Studio
   const [postData, setPost] = useState(null);
   useEffect(() => {
     sanityClient
-      .fetch(props.queryString)
+      .fetch(queryString)
       .then((data) => setPost(data))
       .catch(console.error);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!postData) return <LoadingSpinner></LoadingSpinner>;
