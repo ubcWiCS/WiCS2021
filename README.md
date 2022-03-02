@@ -13,4 +13,4 @@ This website was built with @create-react-app, styled using @tailwindcss with co
 
 Want to learn more? You can get in touch by contacting ubcwics@gmail.com
 
-![Connect](https://user-images.githubusercontent.com/74979194/156456278-408e2960-1de2-4d94-89bf-79338bc13474.png)
+![Connect1x](https://user-images.githubusercontent.com/74979194/156458039-78507d12-ca37-427a-bb00-b628cb43dac2.png)
