@@ -3,7 +3,7 @@
 
 # UBC Women In Computer Science Website!
 
-##About Us
+## About Us
 
 UBC WiCS is a student led club at the University of British Columbia. We aim to build a strong community of women in Computer Science at UBC. We seek to empower women* by providing opportunities to build lasting connections with other women in tech, and supporting each other as we progress through our time at UBC!
 
