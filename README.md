@@ -17,6 +17,10 @@ This website was built by Emily Andrews to promote the UBCWiCS organization.
 
 This website was built with @create-react-app, styled using @tailwindcss with content managament by @sanity-studio. 
 
+This website is deployed using Vercel 
+
+![powered-by-vercel](https://user-images.githubusercontent.com/74979194/156459254-0d09e573-b892-437e-bdfd-acc6d59a5330.svg)
+
 ## Contact Us
 
 Want to learn more? You can get in touch by contacting ubcwics@gmail.com
