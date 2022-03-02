@@ -2,6 +2,7 @@ import React from "react";
 import SocialMedia from "./SocialMedia";
 import Emoji from "./Emoji";
 import Button from "./Button";
+import VercelLogo from "../img/powered-by-vercel.svg";
 
 export default function Footer() {
   var date = new Date().getFullYear();
@@ -67,6 +68,11 @@ export default function Footer() {
                 height="25px"
               ></SocialMedia>
             </div>
+          </div>
+          <div className="flex justify-start pl-6">
+            <a href="https://vercel.com/?utm_source=[ubc-wics-2021]&utm_campaign=oss">
+              <img src={VercelLogo} alt="powered by vercel"></img>
+            </a>
           </div>
         </div>
       </div>
