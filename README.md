@@ -1,4 +1,5 @@
-![small-logo](https://user-images.githubusercontent.com/74979194/156082209-ee9b6e8f-7487-4a2f-ac6e-0f8db2b7f3eb.png)
+
+![smalllogoframed1x](https://user-images.githubusercontent.com/74979194/156458179-67e5620a-036f-4b90-870b-67f763e83339.png)
 
 
 # UBC Women In Computer Science Website!
