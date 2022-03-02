@@ -70,7 +70,11 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex justify-start pl-6">
-            <a href="https://vercel.com/?utm_source=[ubc-wics-2021]&utm_campaign=oss">
+            <a
+              href="https://vercel.com/?utm_source=[ubc-wics-2021-sage]&utm_campaign=oss"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={VercelLogo} alt="powered by vercel"></img>
             </a>
           </div>
