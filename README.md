@@ -4,7 +4,7 @@
 
 # UBC Women In Computer Science Website!
 
-# Check out the website here: https://ubc-wics-2021-sage.vercel.app/
+### Check out the website here: https://ubc-wics-2021-sage.vercel.app/
 
 ## About Us
 
