@@ -7,7 +7,6 @@ import Emoji from "./Emoji.js";
 import Footer from "./Footer";
 import "dotenv/config";
 
-console.log(process.env);
 const GOOGLE_API_KEY = process.env.REACT_APP_GOOGLE_CALENDAR_API;
 
 let calendars = [

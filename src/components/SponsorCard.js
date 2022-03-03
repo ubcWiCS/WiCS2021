@@ -17,7 +17,6 @@ export default function SponsorCard(props) {
       default:
         color = "bg-indigo-200 hover:bg-indigo-300";
     }
-    console.log(color);
     return color;
   }
 

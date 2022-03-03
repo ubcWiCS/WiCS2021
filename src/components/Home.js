@@ -44,7 +44,6 @@ export default function Home() {
       {postData &&
         postData.map((twoUp) => (
           <section>
-            {console.log(twoUp.direction)}
             <TwoUpContent
               title={twoUp.title}
               body={
