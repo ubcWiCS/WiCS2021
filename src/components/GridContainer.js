@@ -4,6 +4,12 @@ import Emoji from "./Emoji.js";
 import LoadingSpinner from "./LoadingSpinner.js";
 import ProfileCard from "./ProfileCard.js";
 import SponsorCard from "./SponsorCard.js";
+import imageUrlBuilder from "@sanity/image-url";
+
+const builder = imageUrlBuilder(sanityClient);
+function urlFor(source) {
+  return builder.image(source);
+}
 
 export default function GridContainer(props) {
   const queryString = props.queryString;
@@ -42,7 +48,7 @@ export default function GridContainer(props) {
               props.type === "profile" ? (
                 <ProfileCard
                   slug={object.slug.current}
-                  imageUrl={object.mainImage.asset.url}
+                  imageUrl={urlFor(object.mainImage).url()}
                   imageAlt={object.mainImage.alt}
                   name={object.name}
                   role={object.role}
@@ -52,7 +58,7 @@ export default function GridContainer(props) {
               ) : (
                 <SponsorCard
                   slug={object.slug.current}
-                  imageUrl={object.mainImage.asset.url}
+                  imageUrl={urlFor(object.mainImage.asset).url()}
                   imageAlt={object.mainImage.alt}
                   index={index}
                   sponsorLevel={object.sponsorLevel}
