@@ -11,6 +11,7 @@ export default function Advisors() {
       role,
       slug,
       mainImage{
+        ...,
         asset->{
           _id,
           url

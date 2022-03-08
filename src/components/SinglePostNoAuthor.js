@@ -24,6 +24,7 @@ export default function SinglePostNoAuthor() {
       id,
       slug,
       mainImage{
+        ...,
         asset->{
           _id,
           url
