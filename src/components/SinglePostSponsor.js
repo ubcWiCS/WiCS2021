@@ -36,8 +36,8 @@ export default function SinglePostSponsor() {
   if (!singlePost) return <LoadingSpinner></LoadingSpinner>;
 
   return (
-    <main className="bg-white flex flex-col justify-center items-center">
-      <section className="container rounded-lg mx-auto p-10 md:p-20 transform duration-500">
+    <main className="bg-white flex flex-col justify-start items-center h-screen pt-20">
+      <section className="container rounded-lg mx-auto p-10 md:p-20 transform duration-500 h-screen">
         <article className="flex rounded-lg flex-wrap shadow-lg mx-auto">
           <img
             className="w-full md:w-52 p-6 h-auto object-cover md:rounded-l-lg"
@@ -60,10 +60,14 @@ export default function SinglePostSponsor() {
             </p>
           </div>
         </article>
+        <div className="m-10 flex justify-center items-center">
+          <Button
+            type="local"
+            link="/sponsors"
+            text="Back to Sponsors"
+          ></Button>
+        </div>
       </section>
-      <div className="mb-10">
-        <Button type="local" link="/sponsors" text="Back to Sponsors"></Button>
-      </div>
       <Footer></Footer>
     </main>
   );

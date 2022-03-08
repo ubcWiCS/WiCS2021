@@ -14,9 +14,10 @@ export default function Team() {
       role,
       slug,
       mainImage{
+        ...,
         asset->{
           _id,
-          url
+          url,
         },
         alt
       }

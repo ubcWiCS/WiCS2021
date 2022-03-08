@@ -65,13 +65,15 @@ export default function Example() {
         imageAlt="Image of women chatting"
         direction="textLeft"
       ></TwoUpContent>
-      <div className="md:px-28 px-16 pb-10">
-        <Calendar
-          apiKey={GOOGLE_API_KEY}
-          calendars={calendars}
-          styles={styles}
-          showFooter={false}
-        />
+      <div className="w-full">
+        <div className="md:px-28 px-16 pb-10 max-w-7xl block ml-auto mr-auto">
+          <Calendar
+            apiKey={GOOGLE_API_KEY}
+            calendars={calendars}
+            styles={styles}
+            showFooter={false}
+          />
+        </div>
       </div>
       <Footer></Footer>
     </main>

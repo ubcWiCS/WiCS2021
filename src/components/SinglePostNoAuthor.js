@@ -56,8 +56,8 @@ export default function SinglePostNoAuthor() {
   );
 
   return (
-    <main className="bg-white flex flex-col justify-center items-center">
-      <section className="container rounded-lg mx-auto p-10 md:p-20 transform duration-500">
+    <main className="bg-white flex flex-col justify-start items-center h-screen pt-20">
+      <section className="container rounded-lg mx-auto p-10 md:p-20 transform duration-500 h-screen">
         <article className="flex rounded-lg flex-wrap md:flex-nowrap shadow-lg mx-auto">
           <img
             className="w-full md:w-52 h-auto object-cover md:rounded-l-lg"
@@ -80,18 +80,19 @@ export default function SinglePostNoAuthor() {
             </div>
           </div>
         </article>
+        <div className="m-10 flex justify-center items-center">
+          {singlePost.profileType === "executive" ? (
+            <Button type="local" link="/team" text="Back To Team"></Button>
+          ) : (
+            <Button
+              type="local"
+              link="/advisors"
+              text="Back To Faculty Advisors"
+            ></Button>
+          )}
+        </div>
       </section>
-      <div className="mb-10">
-        {singlePost.profileType === "executive" ? (
-          <Button type="local" link="/team" text="Back To Team"></Button>
-        ) : (
-          <Button
-            type="local"
-            link="/advisors"
-            text="Back To Faculty Advisors"
-          ></Button>
-        )}
-      </div>
+
       <Footer></Footer>
     </main>
   );
