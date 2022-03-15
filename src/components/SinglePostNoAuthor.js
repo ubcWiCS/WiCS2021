@@ -57,8 +57,8 @@ export default function SinglePostNoAuthor() {
   );
 
   return (
-    <main className="bg-white flex flex-col justify-start items-center h-screen pt-20">
-      <section className="container rounded-lg mx-auto p-10 md:p-20 transform duration-500 h-screen">
+    <main className="bg-white flex flex-col justify-start items-center min-h-screen pt-20">
+      <section className="container rounded-lg mx-auto p-10 md:p-20 transform duration-500 min-h-screen">
         <article className="flex rounded-lg flex-wrap md:flex-nowrap shadow-lg mx-auto">
           <img
             className="w-full md:w-52 h-auto object-cover md:rounded-l-lg"
