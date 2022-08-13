@@ -12,22 +12,6 @@ export default function Footer() {
         <div className="w-full">
           <div className="m-auto flex justify-start md:flex-row md:items-center flex-col">
             <div className="flex flex-col p-5 mr-6 flex-grow">
-              <div className="text-sm subtitle font-medium pb-2">
-                Mailing List
-              </div>
-              <div className="text-sm body font-sm">
-                Sign up for our mailing list and stay up to date!
-              </div>
-              <div className="pt-4">
-                <Button
-                  link="https://forms.gle/Z1ysCLnxGL1zZ7o39"
-                  text="Sign Up!"
-                  type="external"
-                  width="w-1/4"
-                ></Button>
-              </div>
-            </div>
-            <div className="flex flex-col p-5 mr-6 flex-grow">
               <div className="text-sm subtitle uppercase font-medium pb-2">
                 Contact us
               </div>
