@@ -4,6 +4,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import Logo from "../img/WiCSLogo.png";
 import TwoUpContent from "./TwoUpContent";
 import Footer from "./Footer";
+import Calendar from "./CalendarComponent";
 
 export default function Home() {
   const [postData, setPost] = useState(null);
@@ -59,6 +60,7 @@ export default function Home() {
             ></TwoUpContent>
           </section>
         ))}
+      <Calendar></Calendar>
       <Footer></Footer>
     </main>
   );

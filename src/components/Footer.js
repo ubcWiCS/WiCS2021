@@ -1,7 +1,6 @@
 import React from "react";
 import SocialMedia from "./SocialMedia";
 import Emoji from "./Emoji";
-import Button from "./Button";
 import VercelLogo from "../img/powered-by-vercel.svg";
 
 export default function Footer() {
