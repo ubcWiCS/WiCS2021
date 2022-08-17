@@ -7,7 +7,6 @@ import SinglePostNoAuthor from "./components/SinglePostNoAuthor";
 import Team from "./components/Team";
 import Advisors from "./components/Advisors";
 import Sponsors from "./components/Sponsors";
-import Events from "./components/Events";
 import NavBar from "./components/NavBar";
 import SinglePostSponsor from "./components/SinglePostSponsor";
 
@@ -25,7 +24,6 @@ function App() {
         <Route component={Advisors} path="/advisors" />
         <Route component={Sponsors} path="/sponsors" />
         <Route component={SinglePostSponsor} path="/sponsor/:slug" />
-        <Route component={Events} path="/events" />
       </Switch>
     </BrowserRouter>
   );

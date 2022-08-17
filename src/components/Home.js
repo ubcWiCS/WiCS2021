@@ -5,6 +5,7 @@ import Logo from "../img/WiCSLogo.png";
 import TwoUpContent from "./TwoUpContent";
 import Footer from "./Footer";
 import Calendar from "./CalendarComponent";
+import downArrow from "../img/downarrow.png";
 
 export default function Home() {
   const [postData, setPost] = useState(null);
@@ -33,15 +34,22 @@ export default function Home() {
 
   return (
     <main className="flex flex-col w-full">
-      <div className="flex justify-center items-center w-screen h-screen bg-gradient-to-br from-pink-200 via-indigo-100 to-indigo-400">
-        <div className="justify-center items-center h-500 w-200 px-12">
+      <div className="flex flex-col justify-center items-center w-screen h-screen bg-gradient-to-br from-pink-200 via-indigo-100 to-indigo-400">
+        <div className="justify-center items-center h-500 w-200 px-12 py-20">
           <img
             className="flex max-h-60 max-w-80 object-fill box-border"
             src={Logo}
             alt="WiCS logo"
           />
         </div>
+        <div className="flex max-h-60 max-w-80 flex-col justify-end items-center">
+          <img
+            className="flex justify-end bg-color-white max-h-6 max-w-6 object-fill box-border"
+            src={downArrow}
+          ></img>
+        </div>
       </div>
+      <Calendar></Calendar>
       {postData &&
         postData.map((twoUp) => (
           <section>
@@ -60,7 +68,6 @@ export default function Home() {
             ></TwoUpContent>
           </section>
         ))}
-      <Calendar></Calendar>
       <Footer></Footer>
     </main>
   );

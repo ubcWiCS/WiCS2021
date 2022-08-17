@@ -28,7 +28,6 @@ function NavBar() {
                     WiCS
                   </NavLink>
                   <NavBarItem text="Team" path="/team"></NavBarItem>
-                  <NavBarItem text="Events" path="/events"></NavBarItem>
                   <NavBarItem text="Faculty" path="/advisors"></NavBarItem>
                   <NavBarItem text="Sponsors" path="/sponsors"></NavBarItem>
                 </div>
