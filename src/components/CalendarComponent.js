@@ -1,6 +1,6 @@
 import SocialMedia from "./SocialMedia";
 import Calendar from "@ericz1803/react-google-calendar";
-import Events from "../img/WicsEvent.png";
+import Events from "../img/WicsEventBlob.png";
 import TwoUpContent from "./TwoUpContent";
 import Button from "./Button.js";
 import Emoji from "./Emoji.js";
