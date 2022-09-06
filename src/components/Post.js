@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import sanityClient from "../client.js";
 import { Link } from "react-router-dom";
+import Emoji from "./Emoji.js";
 
 export default function Post() {
   //Get blog post data from Sanity Studio
@@ -12,6 +13,7 @@ export default function Post() {
       title,
       slug,
       mainImage{
+        ...,
         asset->{
           _id,
           url
@@ -28,17 +30,18 @@ export default function Post() {
   return (
     <main className="bg-white min-h-screen p-12">
       <section className="container mx-auto">
-        <h1 className="text-5xl flex justify-center cursive text-gray-700">
-          Past Events
+        <h1 className="text-5xl pb-4 flex justify-center cursive text-gray-700 title">
+          Blog
         </h1>
-        <h2 className="text-lg text-gray-700 flex justify-center mb-12">
-          Here are some of our past events!
+        <h2 className="text-lg body flex justify-center mb-12">
+          Check out what we've been up to!&nbsp;&nbsp;
+          <Emoji symbol={"💃💃"} label="women dancing" />
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {postData &&
             postData.map((post, index) => (
               <article>
-                <Link to={"/post/" + post.slug.current} key={post.slug.current}>
+                <Link to={"/blog/" + post.slug.current} key={post.slug.current}>
                   <span
                     className="block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-indigo-200"
                     key={index}

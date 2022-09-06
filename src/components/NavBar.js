@@ -30,6 +30,7 @@ function NavBar() {
                   <NavBarItem text="Team" path="/team"></NavBarItem>
                   <NavBarItem text="Faculty" path="/advisors"></NavBarItem>
                   <NavBarItem text="Sponsors" path="/sponsors"></NavBarItem>
+                  <NavBarItem text="Blog" path="/blog"></NavBarItem>
                 </div>
               </div>
             </div>
@@ -101,10 +102,6 @@ function NavBar() {
                 </NavLink>
                 <NavBarItemMobile text="Team" path="/team"></NavBarItemMobile>
                 <NavBarItemMobile
-                  text="Events"
-                  path="/events"
-                ></NavBarItemMobile>
-                <NavBarItemMobile
                   text="Faculty"
                   path="/advisors"
                 ></NavBarItemMobile>
@@ -112,6 +109,7 @@ function NavBar() {
                   text="Sponsors"
                   path="/sponsors"
                 ></NavBarItemMobile>
+                <NavBarItemMobile text="Blog" path="/blog"></NavBarItemMobile>
               </div>
             </div>
           )}
