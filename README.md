@@ -28,3 +28,5 @@ This website is deployed using Vercel
 Want to learn more? You can get in touch by contacting ubcwics@gmail.com
 
 ![Connect1x](https://user-images.githubusercontent.com/74979194/156458039-78507d12-ca37-427a-bb00-b628cb43dac2.png)
+
+Test! New text
