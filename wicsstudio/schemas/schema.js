@@ -12,6 +12,7 @@ import profile from "./profile";
 import twoUp from "./twoUp";
 import page from "./page";
 import sponsor from "./sponsor";
+import events from "./events";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -28,6 +29,7 @@ export default createSchema({
     twoUp,
     page,
     sponsor,
+    events,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,
