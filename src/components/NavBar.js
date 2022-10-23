@@ -30,7 +30,6 @@ function NavBar() {
                   <NavBarItem text="Team" path="/team"></NavBarItem>
                   <NavBarItem text="Faculty" path="/advisors"></NavBarItem>
                   <NavBarItem text="Sponsors" path="/sponsors"></NavBarItem>
-                  <NavBarItem text="Blog" path="/blog"></NavBarItem>
                   <NavBarItem text="Events" path="/events"></NavBarItem>
                 </div>
               </div>
