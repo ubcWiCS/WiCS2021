@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
+import Events from "./components/EventPage";
 import Post from "./components/Post";
 import SinglePost from "./components/SinglePost";
 import SinglePostNoAuthor from "./components/SinglePostNoAuthor";
@@ -17,6 +18,7 @@ function App() {
       <Switch>
         <Route component={Home} path="/" exact />
         <Route component={About} path="/about" />
+        <Route component={Events} path="/events" />
         <Route component={SinglePost} path="/blog/:slug" />
         <Route component={SinglePostNoAuthor} path="/profile/:slug" />
         <Route component={Post} path="/blog" />
