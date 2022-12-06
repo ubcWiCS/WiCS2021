@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col w-full">
-      <div className="flex flex-col justify-center items-center w-screen h-screen bg-gradient-to-br from-pink-200 via-indigo-100 to-indigo-400">
+      <div className="flex flex-col justify-center items-center w-screen h-screen bg-gradient-to-br from-pink-200 via-indigo-200 to-indigo-400">
         <div className="justify-center items-center h-500 w-200 px-12 py-20">
           <img
             className="flex max-h-60 max-w-80 object-fill box-border"
