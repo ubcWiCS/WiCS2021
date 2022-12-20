@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
-import LoadingSpinner from "./LoadingSpinner.js";
-import Button from "./Button.js";
-import Footer from "./Footer";
+import LoadingSpinner from "../components/LoadingSpinner.js";
+import Button from "../components/Button.js";
+import Footer from "../components/navigation/Footer";
 
 export default function SinglePostSponsor() {
   const [singlePost, setSinglePost] = useState(null);

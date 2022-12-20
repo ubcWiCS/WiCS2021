@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
-import SocialMedia from "./SocialMedia.js";
-import LoadingSpinner from "./LoadingSpinner.js";
-import Button from "./Button.js";
-import Footer from "./Footer";
+import SocialMedia from "../components/SocialMedia.js";
+import LoadingSpinner from "../components/LoadingSpinner.js";
+import Button from "../components/Button.js";
+import Footer from "../components/navigation/Footer";
 
 export default function SinglePostNoAuthor() {
   const [singlePost, setSinglePost] = useState(null);

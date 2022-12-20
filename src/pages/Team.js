@@ -1,6 +1,6 @@
 import React from "react";
-import GridContainer from "./GridContainer.js";
-import Footer from "./Footer.js";
+import GridContainer from "../components/GridContainer.js";
+import Footer from "../components/navigation/Footer.js";
 
 export default function Team() {
   //Get profile data from Sanity Studio
