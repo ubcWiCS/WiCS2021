@@ -109,7 +109,7 @@ function NavBar() {
                   text="Sponsors"
                   path="/sponsors"
                 ></NavBarItemMobile>
-                <NavBarItemMobile text="Blog" path="/blog"></NavBarItemMobile>
+                
                 <NavBarItemMobile text="Events" path="/events"></NavBarItemMobile>
               </div>
             </div>
