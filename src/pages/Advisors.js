@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "./Footer.js";
-import GridContainer from "./GridContainer.js";
+import Footer from "../components/navigation/Footer.js";
+import GridContainer from "../components/GridContainer.js";
 
 export default function Advisors() {
   return (

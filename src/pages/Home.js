@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 import Logo from "../img/WiCSLogo.png";
-import TwoUpContent from "./TwoUpContent";
-import Footer from "./Footer";
-import Calendar from "./CalendarComponent";
+import TwoUpContent from "../components/TwoUpContent";
+import Footer from "../components/navigation/Footer";
+import Calendar from "../components/CalendarComponent";
 import downArrow from "../img/downarrow.png";
 
 export default function Home() {
@@ -46,6 +46,7 @@ export default function Home() {
           <img
             className="flex justify-end bg-color-white max-h-6 max-w-6 object-fill box-border"
             src={downArrow}
+            alt="see below"
           ></img>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
-import WicsLogo from "../img/roundLogo.png";
+import WicsLogo from "../../img/roundLogo.png";
 import { NavLink } from "react-router-dom";
 import NavBarItem from "./NavBarItem";
 import NavBarItemMobile from "./NavBarItemMobile";

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 
-import Footer from "./Footer.js";
-import EventContent from "./EventContent";
+import Footer from "../components/navigation/Footer.js";
+import EventContent from "../components/EventContent";
 
 export default function EventPage() {
     const [postData, setPost] = useState(null);
