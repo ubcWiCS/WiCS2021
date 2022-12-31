@@ -18,12 +18,8 @@ export default function EventPage() {
         pageOrder,
         page,
         orderOnPage,
-        mainImage{
-          asset->{
-            _id,
-            url
-          },
-          alt
+        images[]{
+          asset->{url}
         }
       }`
         )
@@ -49,9 +45,8 @@ export default function EventPage() {
                   />
                 }
                 date={event.date}
-                imageSrc={event.mainImage.asset.url}
-                imageAlt={event.mainImage.alt}
                 direction={event.direction}
+                images={event.images}
              />
             </section>
           ))}
