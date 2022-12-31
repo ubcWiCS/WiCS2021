@@ -35,11 +35,21 @@ export default {
         },
       },
       {
-        name: "mainImage",
-        title: "Main image",
-        type: "image",
+        name: 'images',
+        type: 'array',
+        title: 'Images',
+        of: [
+          {
+            name: 'image',
+            type: 'image',
+            title: 'Image',
+            options: {
+              hotspot: true,
+            },
+          },
+        ],
         options: {
-          hotspot: true,
+          layout: 'grid',
         },
       },
       {
@@ -48,6 +58,8 @@ export default {
         type: "blockContent",
       },
     ],
+    // end of fields
+
     orderings: [
       {
         title: "Order On Page",
@@ -55,6 +67,7 @@ export default {
         by: [{ field: "pageOrder", direction: "asc" }],
       },
     ],
+
     prepare(twoUp, viewOptions = {}) {
       const title =
         viewOptions.ordering && viewOptions.ordering.name === "pageOrder"
@@ -63,5 +76,6 @@ export default {
   
       return { title: title };
     },
+    
   };
   

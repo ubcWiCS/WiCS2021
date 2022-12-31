@@ -48,3 +48,10 @@
   margin: 15px;
   border-radius: 15px;
 }
+
+.carousel-image{
+  max-height: 300px !important;
+  float: none !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}

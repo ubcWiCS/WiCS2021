@@ -1,5 +1,7 @@
 import React from "react";
 
+import Gallery from "../components/Gallery";
+
 export default function EventContent(props) {
   return (
     <div>
@@ -13,21 +15,13 @@ export default function EventContent(props) {
             <div className="py-3 text-lg text-gray-700 body">{props.body}</div>
           </div>
           <div className="py-6 px-6 flex flex-col w-full md:w-1/2">
-            <img
-              className="object-contain h-96"
-              src={props.imageSrc}
-              alt={props.imageAlt}
-            />
+            <Gallery images={props.images} />
           </div>
         </div>
       ) : (
         <div className="container py-16 px-6 mx-auto flex flex-wrap-reverse md:flex-row items-center bg-white">
           <div className="py-6 px-6 flex flex-col w-full md:w-1/2">
-            <img
-              className="object-contain h-96"
-              src={props.imageSrc}
-              alt={props.imageAlt}
-            />
+            <Gallery images={props.images} />
           </div>
           <div className="py-6 px-6 flex flex-col w-full md:w-1/2">
             <h1 className="text-5xl cursive text-gray-700 title">
