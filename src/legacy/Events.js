@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import CalendarComponent from "./CalendarComponent";
+import CalendarComponent from "../components/CalendarComponent";
 import Footer from "./Footer";
 
 export default function Events() {

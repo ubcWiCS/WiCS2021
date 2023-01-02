@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import sanityClient from "../client.js";
 import { Link } from "react-router-dom";
-import Emoji from "./Emoji.js";
+import Emoji from "../components/Emoji.js";
 
 export default function Post() {
   //Get blog post data from Sanity Studio
