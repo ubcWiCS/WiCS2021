@@ -25,7 +25,7 @@ export default function SponsorCard(props) {
   return (
     <article>
       <Link to={"/sponsor/" + props.slug} key={props.slug}>
-        <div classname="flex flex-col rounded hover:bg-indigo-50">
+        <div className="flex flex-col rounded hover:bg-indigo-50">
           <span className="block h-64 relative leading-snug" key={props.index}>
             <img
               src={props.imageUrl}

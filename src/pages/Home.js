@@ -52,9 +52,10 @@ export default function Home() {
       </div>
       <Calendar></Calendar>
       {postData &&
-        postData.map((twoUp) => (
+        postData.map((twoUp, index) => (
           <section>
             <TwoUpContent
+              key={index}
               title={twoUp.title}
               body={
                 <BlockContent

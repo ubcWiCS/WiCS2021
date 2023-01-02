@@ -53,14 +53,14 @@ export default function GridContainer(props) {
                   name={object.name}
                   role={object.role}
                   path={props.path}
-                  index={index}
+                  key={index}
                 ></ProfileCard>
               ) : (
                 <SponsorCard
                   slug={object.slug.current}
                   imageUrl={urlFor(object.mainImage.asset).url()}
                   imageAlt={object.mainImage.alt}
-                  index={index}
+                  key={index}
                   sponsorLevel={object.sponsorLevel}
                   name={object.name}
                 ></SponsorCard>
