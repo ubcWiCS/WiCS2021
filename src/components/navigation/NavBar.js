@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import NavBarItem from "./NavBarItem";
 import NavBarItemMobile from "./NavBarItemMobile";
 
-function NavBar() {
+export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="bg-white sticky top-0 z-10">
@@ -23,14 +23,16 @@ function NavBar() {
                   <NavLink
                     to="/"
                     exact
-                    className=" bg-gradient-to-br hover:from-pink-200 hover:via-indigo-200 hover:to-indigo-400 text-gray-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="bg-gradient-to-br hover:from-pink-200 hover:via-indigo-200 hover:to-indigo-400 text-gray-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     WiCS
                   </NavLink>
-                  <NavBarItem text="Team" path="/team"></NavBarItem>
-                  <NavBarItem text="Faculty" path="/advisors"></NavBarItem>
-                  <NavBarItem text="Sponsors" path="/sponsors"></NavBarItem>
-                  <NavBarItem text="Events" path="/events"></NavBarItem>
+                  <NavBarItem text="About" path="/about" />
+                  <NavBarItem text="Events" path="/events" />
+                  <NavBarItem text="Committee" path="/committee" />
+                  <NavBarItem text="Faculty" path="/advisors" />
+                  <NavBarItem text="Sponsors" path="/sponsors" />
+                  <NavBarItem text="Contact Us" path="/contact" />
                 </div>
               </div>
             </div>
@@ -100,17 +102,12 @@ function NavBar() {
                 >
                   WiCS
                 </NavLink>
-                <NavBarItemMobile text="Team" path="/team"></NavBarItemMobile>
-                <NavBarItemMobile
-                  text="Faculty"
-                  path="/advisors"
-                ></NavBarItemMobile>
-                <NavBarItemMobile
-                  text="Sponsors"
-                  path="/sponsors"
-                ></NavBarItemMobile>
-                
-                <NavBarItemMobile text="Events" path="/events"></NavBarItemMobile>
+                <NavBarItemMobile text="About" path="/about" />
+                <NavBarItemMobile text="Events" path="/events" />
+                <NavBarItemMobile text="Committee" path="/committee" />
+                <NavBarItemMobile text="Faculty" path="/advisors" />
+                <NavBarItemMobile text="Sponsors" path="/sponsors" />
+                <NavBarItemMobile text="Contact Us" path="/contact" />
               </div>
             </div>
           )}
@@ -119,5 +116,3 @@ function NavBar() {
     </div>
   );
 }
-
-export default NavBar;
