@@ -4,6 +4,7 @@ import BlockContent from "@sanity/block-content-to-react";
 
 import Footer from "../components/navigation/Footer.js";
 import EventContent from "../components/EventContent";
+import CardsCarousel from "../components/CardsCarousel";
 
 export default function Events() {
     const [postData, setPost] = useState(null);
@@ -29,6 +30,7 @@ export default function Events() {
 
   return (
     <main>
+      <CardsCarousel />
          <h1 className="text-5xl flex justify-center cursive text-gray-700 title">
          Past Events
         </h1>
