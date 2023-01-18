@@ -3,30 +3,37 @@ import React, { useState } from "react";
 import Card from "./Card";
 
 const cardInfo = [
-    {
-        title: "Stripe event",
-        description: "This is the event body"
-    },
-    {
-        title: "Stripe event",
-        description: "This is the event body"
-    },
-    {
-        title: "Stripe event",
-        description: "This is the event body"
-    },
-    {
-        title: "Stripe event",
-        description: "This is the event body"
-    },
-
-]
+  {
+    title: "Stripe event",
+    description: "This is the event body",
+  },
+  {
+    title: "Google event",
+    description: "This is the event body",
+  },
+  {
+    title: "Orbis event",
+    description: "This is the event body",
+  },
+  {
+    title: "WiCS event",
+    description: "This is the event body",
+  },
+  {
+    title: "Networking event",
+    description: "This is the event body",
+  },
+  {
+    title: "Technical event",
+    description: "This is the event body",
+  },
+];
 
 export default function CardsCarousel(props) {
   const [firstIndex, setFirstIndex] = useState(0);
   const [secondIndex, setSecondIndex] = useState(1);
   const [thirdIndex, setThirdIndex] = useState(2);
-  const length = 10;
+  const length = cardInfo.length;
 
   const handlePrevious = () => {
     const newFirstIndex = firstIndex - 1;
@@ -50,9 +57,9 @@ export default function CardsCarousel(props) {
     <div className="cards-carousel">
       <button onClick={handlePrevious}>Previous</button>
       <div className="cards-carousel">
-        <p>{firstIndex}</p>
-        <p>{secondIndex}</p>
-        <p>{thirdIndex}</p>
+        {cardInfo.slice(firstIndex, thirdIndex).map((card, index) => (
+          <Card key={index} title={card.title} description={card.description} />
+        ))}
       </div>
       <button onClick={handleNext}>Next</button>
     </div>
