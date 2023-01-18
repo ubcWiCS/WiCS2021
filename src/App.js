@@ -12,6 +12,7 @@ import TeamArchive from "./pages/TeamArchive";
 import NavBar from "./components/navigation/NavBar";
 import SinglePostSponsor from "./components/SinglePostSponsor";
 import SinglePostNoAuthor from "./components/SinglePostNoAuthor";
+import SponsorEvents from "./components/SponsorEvents";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route component={Sponsors} path="/sponsors" />
         <Route component={Contact} path="/contact" />
         <Route component={SinglePostSponsor} path="/sponsor/:slug" />
+        <Route component={SponsorEvents} path="/sponsor-events/:slug" />
         <Route component={SinglePostNoAuthor} path="/profile/:slug" />
       </Switch>
     </BrowserRouter>
