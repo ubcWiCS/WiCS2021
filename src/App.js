@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Events from "./pages/Events";
 import Team from "./pages/Team";
-import Advisors from "./pages/Advisors";
 import Sponsors from "./pages/Sponsors";
 import Contact from "./pages/Contact";
 import TeamArchive from "./pages/TeamArchive";
@@ -24,7 +23,6 @@ function App() {
         <Route component={Events} path="/events" />
         <Route component={Team} path="/committee" />
         <Route component={TeamArchive} path="/team-archive" />
-        <Route component={Advisors} path="/advisors" />
         <Route component={Sponsors} path="/sponsors" />
         <Route component={Contact} path="/contact" />
         <Route component={SinglePostSponsor} path="/sponsor/:slug" />
