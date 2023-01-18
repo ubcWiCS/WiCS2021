@@ -15,7 +15,7 @@ export default {
       },
       {
         name: "year",
-        title: "Year",
+        title: "Year (must be just one year, use the starting year)",
         type: "string",
       },
       {
