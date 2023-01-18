@@ -24,7 +24,7 @@ export default function SponsorCard(props) {
 
   return (
     <article>
-      <Link to={"/sponsor/" + props.slug} key={props.slug}>
+
         <div className="flex flex-col rounded hover:bg-indigo-50">
           <span className="block h-64 relative leading-snug" key={props.index}>
             <img
@@ -33,6 +33,7 @@ export default function SponsorCard(props) {
               className="w-full h-full object-contain absolute"
             />
           </span>
+          <Link to={"/sponsor/" + props.slug} key={props.slug}>
           <span className="block relative h-full flex justify-end items-end">
             <h3
               className={
@@ -42,8 +43,21 @@ export default function SponsorCard(props) {
               {props.name + ": " + props.sponsorLevel + " ➜"}
             </h3>
           </span>
+          </Link>
+          <br />
+          <Link to={"/sponsor-events/" + props.slug}>
+          <span className="block relative h-full flex justify-end items-end">
+            <h3
+              className={
+                "title px-3 py-1 bg-opacity-80 text-gray-600 rounded " + bgColor
+              }
+            >
+              {"See previous " + props.name + " events ➜"}
+            </h3>
+          </span>
+          </Link>
         </div>
-      </Link>
+
     </article>
   );
 }

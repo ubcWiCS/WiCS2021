@@ -10,7 +10,7 @@ export default function Events() {
     useEffect(() => {
       sanityClient
         .fetch(
-          `*[_type == "events"] | order(pageOrder desc){
+          `*[_type == "events" ] | order(pageOrder desc){
         title,
         date,
         direction,
@@ -18,6 +18,7 @@ export default function Events() {
         pageOrder,
         page,
         orderOnPage,
+        eventSponsor,
         images[]{
           asset->{url}
         }
@@ -29,9 +30,9 @@ export default function Events() {
 
   return (
     <main>
-         <h1 className="text-5xl flex justify-center cursive text-gray-700 title">
+         <p className="text-5xl flex justify-center cursive text-gray-700 title">
          Past Events
-        </h1>
+        </p>
           {postData &&
           postData.map((event) => (
             <section key={event.pageOrder}>

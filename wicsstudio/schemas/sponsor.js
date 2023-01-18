@@ -15,7 +15,7 @@ export default {
     },
     {
       name: "slug",
-      title: "Slug",
+      title: "Slug (unique sponsor key)",
       type: "slug",
       options: {
         source: "title",
@@ -46,9 +46,9 @@ export default {
       type: "string",
       options: {
         list: [
-          { value: "Platinum", title: "Platinum" },
-          { value: "Gold", title: "Gold" },
-          { value: "Silver", title: "Silver" },
+          { value: "platinum", title: "Platinum" },
+          { value: "gold", title: "Gold" },
+          { value: "silver", title: "Silver" },
         ],
       },
     },
