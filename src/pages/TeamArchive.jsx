@@ -1,6 +1,6 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
+import Button from "../components/Button";
 import TableContainer from "../components/TableContainer";
 import Footer from "../components/navigation/Footer";
 
@@ -44,11 +44,13 @@ export default function TeamArchive() {
     }`}
           path="teamArchive"
         ></TableContainer>
-        <NavLink to="/committee" className="flex justify-center ">
-          <p className="max-w-sm text-2xl px-3 py-2 rounded-md cursive text-gray-700 title bg-gradient-to-br hover:from-pink-200 hover:via-indigo-200 hover:to-indigo-400 text-gray-600">
-          Back to the current team
-          </p>
-        </NavLink>
+        <div className="m-10 flex justify-center items-center">
+          <Button
+            type="local"
+            link="/committee"
+            text="Back to the current team"
+          ></Button>
+        </div>
       </main>
       <Footer></Footer>
     </>

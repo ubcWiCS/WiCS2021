@@ -43,6 +43,7 @@ export default function SponsorEvents() {
 
   return (
     <>
+    <main className="bg-white p-12 md:p-20">
      <h1 className="text-5xl flex justify-center cursive text-gray-700 title">
          Past {capitalizeFirstLetter(slug)} Events
         </h1>
@@ -75,7 +76,7 @@ export default function SponsorEvents() {
             text="Back to Sponsors"
           ></Button>
         </div>
-
+        </main>
       <Footer></Footer>
     </>
   );
