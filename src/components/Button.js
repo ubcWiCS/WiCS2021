@@ -10,7 +10,8 @@ width: relative width of button*/
 
 export default function Button(props) {
   let buttonStyle =
-    "max-w-sm flex items-center justify-center px-4 py-2 button rounded-md bg-indigo-600 hover:bg-indigo-700";
+    "bg-gray-300 bg-gradient-to-br nav hover:from-pink-200 hover:via-indigo-200 hover:to-indigo-400 text-gray-600 hover:text-white px-3 py-2 rounded-md text-sm";
+
   return (
     <div className="rounded-md whitespace-nowrap">
       {props.type === "external" ? (

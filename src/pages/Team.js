@@ -1,8 +1,8 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
-import GridContainer from "../components/GridContainer.js";
-import Footer from "../components/navigation/Footer.js";
+import Button from "../components/Button";
+import GridContainer from "../components/GridContainer";
+import Footer from "../components/navigation/Footer";
 
 export default function Team() {
   return (
@@ -24,9 +24,7 @@ export default function Team() {
     }`}
           path="profile"
           title="Executive Team"
-          subTitle="Meet our executive team!"
           type="profile"
-          symbol="👋"
         ></GridContainer>
         <GridContainer
           queryString={`*[_type == "profile" && profileType == "faculty"]{
@@ -48,11 +46,13 @@ export default function Team() {
           type="profile"
           symbol="🎓"
         ></GridContainer>
-        <NavLink to="/team-archive" className="flex justify-center ">
-          <p className="max-w-sm text-2xl px-3 py-2 rounded-md cursive text-gray-700 title bg-gradient-to-br hover:from-pink-200 hover:via-indigo-200 hover:to-indigo-400 text-gray-600">
-            See our past executive teams
-          </p>
-        </NavLink>
+        <div className="m-10 flex justify-center items-center">
+          <Button
+            type="local"
+            link="/team-archive"
+            text="See our past executive teams"
+          ></Button>
+        </div>
       </main>
       <Footer></Footer>
     </>

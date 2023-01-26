@@ -23,11 +23,11 @@ export default function GridContainer(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!postData) return <LoadingSpinner></LoadingSpinner>;
+  if (!postData) return <LoadingSpinner />;
 
   //Render profile collection
   return (
-    <main className="bg-white min-h-screen p-12">
+    <main className="mb-12">
       <section className="container mx-auto">
         <h1 className="text-5xl pb-4 flex justify-center cursive text-gray-700 title">
           {props.title}

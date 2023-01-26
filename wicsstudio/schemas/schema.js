@@ -6,12 +6,9 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // We import object and document schemas
 import blockContent from "./blockContent";
-import post from "./post";
 import about from "./about";
-import author from "./author";
 import profile from "./profile";
 import twoUp from "./twoUp";
-import page from "./page";
 import sponsor from "./sponsor";
 import events from "./events";
 import teamArchive from "./teamArchive";
@@ -25,12 +22,9 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
-    post,
     about,
-    author,
     profile,
     twoUp,
-    page,
     sponsor,
     events,
     teamArchive,

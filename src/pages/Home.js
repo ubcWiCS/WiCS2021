@@ -36,7 +36,7 @@ export default function Home() {
     <main className="flex flex-col w-full">
       <div className="flex flex-col justify-center items-center w-screen h-screen bg-gradient-to-br from-pink-200 via-indigo-200 to-indigo-400">
         <div className="justify-center items-center h-500 w-200 px-12 py-20">
-          <h1 className="text-4xl flex justify-center cursive text-gray-700 title">
+          <h1 className="text-4xl flex justify-center cursive text-gray-500 font-semibold">
             University of British Columbia
           </h1>
           <br />
@@ -46,7 +46,7 @@ export default function Home() {
             alt="WiCS logo"
           />
           <br />
-          <h1 className="text-4xl flex justify-center cursive text-gray-700 title">
+          <h1 className="text-4xl flex justify-center cursive text-gray-500 font-semibold">
             Women in Computer Science
           </h1>
         </div>
