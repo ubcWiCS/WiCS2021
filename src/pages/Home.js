@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
-import Logo from "../img/WiCSLogo.png";
-import TwoUpContent from "../components/TwoUpContent";
-import Footer from "../components/navigation/Footer";
-import Calendar from "../components/CalendarComponent";
+
 import downArrow from "../img/downarrow.png";
+import Events from "../img/WicsEventBlob.png";
+import Logo from "../img/WiCSLogo.png";
+
+import Button from "../components/Button.js";
+import Calendar from "../components/CalendarComponent";
+import Emoji from "../components/Emoji.js";
+import Footer from "../components/navigation/Footer";
+import SocialMedia from "../components/SocialMedia";
+import TwoUpContent from "../components/TwoUpContent";
 
 export default function Home() {
   const [postData, setPost] = useState(null);
@@ -58,12 +64,53 @@ export default function Home() {
           ></img>
         </div>
       </div>
-      <Calendar></Calendar>
+      <TwoUpContent
+        title="Events"
+        body={
+          <div className="flex flex-col">
+            <p className="pb-2 body">
+              Want to stay up to date? Follow us on social!&nbsp;&nbsp;
+              <Emoji symbol="🎉" label="search" />
+            </p>
+            <div className="flex flex-row items center justify center">
+              <SocialMedia
+                url="https://www.linkedin.com/company/ubcwics/"
+                width="35px"
+                height="35px"
+              ></SocialMedia>
+              <SocialMedia
+                url="https://www.instagram.com/ubcwics/"
+                width="35px"
+                height="35px"
+              ></SocialMedia>
+              <SocialMedia
+                url="https://www.facebook.com/ubcwics/"
+                width="35px"
+                height="35px"
+              ></SocialMedia>
+            </div>
+            <p className="pb-4 pt-6 body">
+              Or sign up for one of our events here: &nbsp;&nbsp;
+            </p>
+            <div className="flex items-center">
+              <Button
+                link="https://linktr.ee/UBCWiCS"
+                text="Sign Up!"
+                type="external"
+                width="w-2/4"
+              ></Button>
+            </div>
+          </div>
+        }
+        imageSrc={Events}
+        imageAlt="Image of women chatting"
+        direction="textLeft"
+      ></TwoUpContent>
+      <Calendar />
       {postData &&
         postData.map((twoUp, index) => (
-          <section>
+          <section key={index}>
             <TwoUpContent
-              key={index}
               title={twoUp.title}
               body={
                 <BlockContent
@@ -78,7 +125,7 @@ export default function Home() {
             ></TwoUpContent>
           </section>
         ))}
-      <Footer></Footer>
+      <Footer />
     </main>
   );
 }

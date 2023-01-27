@@ -54,7 +54,7 @@ export default function Team() {
           ></Button>
         </div>
       </main>
-      <Footer></Footer>
+      <Footer />
     </>
   );
 }
