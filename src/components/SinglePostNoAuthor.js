@@ -5,7 +5,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import SocialMedia from "./SocialMedia.js";
 import LoadingSpinner from "./LoadingSpinner.js";
 import Button from "./Button.js";
-import Footer from "./Footer";
+import Footer from "./navigation/Footer";
 
 export default function SinglePostNoAuthor() {
   const [singlePost, setSinglePost] = useState(null);
@@ -68,13 +68,13 @@ export default function SinglePostNoAuthor() {
           <div className="p-10 my-auto">
             <div className="subtitle text-sm">{singlePost.name}</div>
             <div className="title text-sm pt-2">{singlePost.role}</div>
-            <p className="mt-2 body">
+            <div className="mt-2 body">
               <BlockContent
                 blocks={singlePost.body}
                 projectId="xvhe4elt"
                 dataset="production"
               />
-            </p>
+            </div>
             <div className=" flex flex-row">
               <div>{linkedIn}</div>
               <div>{myEmail}</div>

@@ -1,5 +1,5 @@
 import React from "react";
-import Emoji from "./Emoji";
+import Emoji from "../components/Emoji";
 
 export default function Footer() {
   var date = new Date().getFullYear();

@@ -4,7 +4,7 @@ import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 import LoadingSpinner from "./LoadingSpinner.js";
 import Button from "./Button.js";
-import Footer from "./Footer";
+import Footer from "./navigation/Footer";
 
 export default function SinglePostSponsor() {
   const [singlePost, setSinglePost] = useState(null);
@@ -51,13 +51,13 @@ export default function SinglePostSponsor() {
             <div className="text-gray-600 text-sm font-semibold pt-2">
               {"Sponsor level: " + singlePost.sponsorLevel}
             </div>
-            <p className="mt-2 text-slate-500">
+            <div className="mt-2 text-slate-500">
               <BlockContent
                 blocks={singlePost.body}
                 projectId="xvhe4elt"
                 dataset="production"
               />
-            </p>
+            </div>
           </div>
         </article>
         <div className="m-10 flex justify-center items-center">

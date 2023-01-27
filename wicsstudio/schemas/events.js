@@ -35,11 +35,21 @@ export default {
         },
       },
       {
-        name: "mainImage",
-        title: "Main image",
-        type: "image",
+        name: 'images',
+        type: 'array',
+        title: 'Images',
+        of: [
+          {
+            name: 'image',
+            type: 'image',
+            title: 'Image',
+            options: {
+              hotspot: true,
+            },
+          },
+        ],
         options: {
-          hotspot: true,
+          layout: 'grid',
         },
       },
       {
@@ -47,7 +57,26 @@ export default {
         title: "Body",
         type: "blockContent",
       },
+      {
+        name: "eventSponsor",
+        title: "Event Sponsor (must match one of the slugs in our sponsors",
+        type: "string",
+        options: {
+          list: [
+            { value: "center-for-digital-media", title: "center-for-digital-media" },
+            { value: "stripe", title: "stripe" },
+            { value: "sap", title: "sap" },
+            { value: "teck", title: "teck" },
+            { value: "orbis", title: "orbis" },
+            { value: "google", title: "google" },
+            { value: "none", title: "No Sponsor" },
+          ],
+          hotspot: true,
+        },
+      },
     ],
+    // end of fields
+
     orderings: [
       {
         title: "Order On Page",
@@ -63,5 +92,6 @@ export default {
   
       return { title: title };
     },
+    
   };
   

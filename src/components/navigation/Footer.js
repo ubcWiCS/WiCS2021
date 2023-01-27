@@ -1,7 +1,7 @@
 import React from "react";
-import SocialMedia from "./SocialMedia";
-import Emoji from "./Emoji";
-import VercelLogo from "../img/powered-by-vercel.svg";
+import SocialMedia from "../SocialMedia";
+import Emoji from "../Emoji";
+import VercelLogo from "../../img/powered-by-vercel.svg";
 
 export default function Footer() {
   var date = new Date().getFullYear();
