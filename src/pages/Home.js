@@ -55,24 +55,7 @@ export default function Home() {
           <h1 className="text-4xl flex justify-center cursive text-gray-500 font-semibold">
             Women in Computer Science
           </h1>
-        </div>
-        <div className="flex max-h-60 max-w-80 flex-col justify-end items-center">
-          <img
-            className="flex justify-end bg-color-white max-h-6 max-w-6 object-fill box-border"
-            src={downArrow}
-            alt="see below"
-          ></img>
-        </div>
-      </div>
-      <TwoUpContent
-        title="Events"
-        body={
-          <div className="flex flex-col">
-            <p className="pb-2 body">
-              Want to stay up to date? Follow us on social!&nbsp;&nbsp;
-              <Emoji symbol="🎉" label="search" />
-            </p>
-            <div className="flex flex-row items center justify center">
+          <div className="flex flex-row items center justify-center">
               <SocialMedia
                 url="https://www.linkedin.com/company/ubcwics/"
                 width="35px"
@@ -89,6 +72,24 @@ export default function Home() {
                 height="35px"
               ></SocialMedia>
             </div>
+        </div>
+        <div className="flex max-h-60 max-w-80 flex-col justify-end items-center">
+          <img
+            className="flex justify-end bg-color-white max-h-6 max-w-6 object-fill box-border"
+            src={downArrow}
+            alt="see below"
+          ></img>
+        </div>
+      </div>
+      <TwoUpContent
+        title="Events"
+        body={
+          <div className="flex flex-col">
+            <p className="pb-2 body">
+              Want to stay up to date? Follow us on socials above!&nbsp;&nbsp;
+              <Emoji symbol="🎉" label="search" />
+            </p>
+            
             <p className="pb-4 pt-6 body">
               Or sign up for one of our events here: &nbsp;&nbsp;
             </p>
