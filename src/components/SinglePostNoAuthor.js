@@ -83,11 +83,11 @@ export default function SinglePostNoAuthor() {
         </article>
         <div className="m-10 flex justify-center items-center">
           {singlePost.profileType === "executive" ? (
-            <Button type="local" link="/team" text="Back To Team"></Button>
+            <Button type="local" link="/committee" text="Back To Team"></Button>
           ) : (
             <Button
               type="local"
-              link="/advisors"
+              link="/committee"
               text="Back To Faculty Advisors"
             ></Button>
           )}
