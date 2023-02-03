@@ -9,6 +9,9 @@ export default function Sponsors() {
   return (
     <>
       <main className="bg-white p-12 md:p-20">
+      <h1 className="text-4xl flex justify-center cursive text-gray-500 font-semibold">
+            Platinum Sponsors
+          </h1>
         <GridContainer
           queryString={`*[_type == "sponsor" && sponsorLevel == "Platinum"] | order(pageOrder asc){
       name,
@@ -25,23 +28,11 @@ export default function Sponsors() {
           title="Sponsors"
           type="sponsor"
         ></GridContainer>
+             <h1 className="text-4xl flex justify-center cursive text-gray-500 font-semibold">
+             Gold Sponsors
+          </h1>
         <GridContainer
           queryString={`*[_type == "sponsor" && sponsorLevel == "Gold"] | order(pageOrder asc){
-      name,
-      slug,
-      sponsorLevel,
-      mainImage{
-        asset->{
-          _id,
-          url
-        },
-        alt
-      }
-    }`}
-          type="sponsor"
-        ></GridContainer>
-        <GridContainer
-          queryString={`*[_type == "sponsor" && sponsorLevel == "Silver"] | order(pageOrder asc){
       name,
       slug,
       sponsorLevel,
