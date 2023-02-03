@@ -6,11 +6,11 @@ import Footer from "../components/navigation/Footer.js";
 import EventContent from "../components/EventContent";
 
 export default function Events() {
-    const [postData, setPost] = useState(null);
-    useEffect(() => {
-      sanityClient
-        .fetch(
-          `*[_type == "events"] | order(pageOrder desc){
+  const [postData, setPost] = useState(null);
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == "events" ] | order(pageOrder desc){
         title,
         date,
         direction,
@@ -18,21 +18,23 @@ export default function Events() {
         pageOrder,
         page,
         orderOnPage,
+        eventSponsor,
         images[]{
           asset->{url}
         }
       }`
-        )
-        .then((data) => setPost(data))
-        .catch(console.error);
-    }, []);
+      )
+      .then((data) => setPost(data))
+      .catch(console.error);
+  }, []);
 
   return (
-    <main>
-         <h1 className="text-5xl flex justify-center cursive text-gray-700 title">
-         Past Events
-        </h1>
-          {postData &&
+    <>
+      <main className="bg-white p-12 md:p-20">
+        <p className="text-5xl flex justify-center cursive text-gray-700 title">
+          Past Events
+        </p>
+        {postData &&
           postData.map((event) => (
             <section key={event.pageOrder}>
               <EventContent
@@ -47,11 +49,11 @@ export default function Events() {
                 date={event.date}
                 direction={event.direction}
                 images={event.images}
-             />
+              />
             </section>
           ))}
-        <Footer></Footer>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }
-

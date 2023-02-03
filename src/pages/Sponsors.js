@@ -7,9 +7,13 @@ export default function Sponsors() {
 
   //Render profile collection
   return (
-    <main>
-      <GridContainer
-        queryString={`*[_type == "sponsor" && sponsorLevel == "Platinum"] | order(pageOrder asc){
+    <>
+      <main className="bg-white p-12 md:p-20">
+      <h1 className="text-4xl flex justify-center cursive text-gray-500 font-semibold">
+            Platinum Sponsors
+          </h1>
+        <GridContainer
+          queryString={`*[_type == "sponsor" && sponsorLevel == "Platinum"] | order(pageOrder asc){
       name,
       slug,
       sponsorLevel,
@@ -21,13 +25,14 @@ export default function Sponsors() {
         alt
       }
     }`}
-        title="Sponsors"
-        subTitle="Say hello to our sponsors!"
-        type="sponsor"
-        symbol="🥰"
-      ></GridContainer>
-      <GridContainer
-        queryString={`*[_type == "sponsor" && sponsorLevel == "Gold"] | order(pageOrder asc){
+          title="Sponsors"
+          type="sponsor"
+        ></GridContainer>
+             <h1 className="text-4xl flex justify-center cursive text-gray-500 font-semibold">
+             Gold Sponsors
+          </h1>
+        <GridContainer
+          queryString={`*[_type == "sponsor" && sponsorLevel == "Gold"] | order(pageOrder asc){
       name,
       slug,
       sponsorLevel,
@@ -39,24 +44,10 @@ export default function Sponsors() {
         alt
       }
     }`}
-        type="sponsor"
-      ></GridContainer>
-      <GridContainer
-        queryString={`*[_type == "sponsor" && sponsorLevel == "Silver"] | order(pageOrder asc){
-      name,
-      slug,
-      sponsorLevel,
-      mainImage{
-        asset->{
-          _id,
-          url
-        },
-        alt
-      }
-    }`}
-        type="sponsor"
-      ></GridContainer>
-      <Footer></Footer>
-    </main>
+          type="sponsor"
+        ></GridContainer>
+      </main>
+      <Footer />
+    </>
   );
 }

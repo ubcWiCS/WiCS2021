@@ -38,12 +38,6 @@ export default {
       },
     },
     {
-      name: "author",
-      title: "Author",
-      type: "reference",
-      to: { type: "author" },
-    },
-    {
       name: "mainImage",
       title: "Main image",
       type: "image",
@@ -68,7 +62,6 @@ export default {
       options: {
         list: [
           { value: "executive", title: "Executive Team" },
-          { value: "sponsor", title: "Sponsor" },
           { value: "faculty", title: "Faculty Advisor" },
         ],
         hotspot: true,

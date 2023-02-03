@@ -57,6 +57,23 @@ export default {
         title: "Body",
         type: "blockContent",
       },
+      {
+        name: "eventSponsor",
+        title: "Event Sponsor (must match one of the slugs in our sponsors",
+        type: "string",
+        options: {
+          list: [
+            { value: "center-for-digital-media", title: "center-for-digital-media" },
+            { value: "stripe", title: "stripe" },
+            { value: "sap", title: "sap" },
+            { value: "teck", title: "teck" },
+            { value: "orbis", title: "orbis" },
+            { value: "google", title: "google" },
+            { value: "none", title: "No Sponsor" },
+          ],
+          hotspot: true,
+        },
+      },
     ],
     // end of fields
 

@@ -1,15 +1,15 @@
 import React from "react";
-import GridContainer from "../components/GridContainer.js";
-import Footer from "../components/navigation/Footer.js";
+
+import Button from "../components/Button";
+import GridContainer from "../components/GridContainer";
+import Footer from "../components/navigation/Footer";
 
 export default function Team() {
-  //Get profile data from Sanity Studio
-
-  //Render profile collection
   return (
-    <main>
-      <GridContainer
-        queryString={`*[_type == "profile" && profileType == "executive"] | order(pageOrder asc){
+    <>
+      <main className="bg-white p-12 md:p-20">
+        <GridContainer
+          queryString={`*[_type == "profile" && profileType == "executive"] | order(pageOrder asc){
       name,
       role,
       slug,
@@ -22,13 +22,39 @@ export default function Team() {
         alt
       }
     }`}
-        path="profile"
-        title="Executive Team"
-        subTitle="Meet our executive team!"
-        type="profile"
-        symbol="👋"
-      ></GridContainer>
-      <Footer></Footer>
-    </main>
+          path="profile"
+          title="Executive Team"
+          type="profile"
+        ></GridContainer>
+        <GridContainer
+          queryString={`*[_type == "profile" && profileType == "faculty"]{
+      name,
+      role,
+      slug,
+      mainImage{
+        ...,
+        asset->{
+          _id,
+          url
+        },
+        alt
+      }
+    }`}
+          title="Faculty Advisors"
+          subTitle="Meet our Faculty Advisors!"
+          path="profile"
+          type="profile"
+          symbol="🎓"
+        ></GridContainer>
+        <div className="m-10 flex justify-center items-center">
+          <Button
+            type="local"
+            link="/team-archive"
+            text="See our past executive teams"
+          ></Button>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }
