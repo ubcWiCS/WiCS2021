@@ -111,6 +111,7 @@ export default function Home() {
         postData.map((twoUp, index) => (
           <section key={index}>
             <TwoUpContent
+              key={index}
               title={twoUp.title}
               body={
                 <BlockContent
