@@ -84,7 +84,6 @@ export default {
         by: [{ field: "pageOrder", direction: "asc" }],
       },
     ],
-
     prepare(twoUp, viewOptions = {}) {
       const title =
         viewOptions.ordering && viewOptions.ordering.name === "pageOrder"
