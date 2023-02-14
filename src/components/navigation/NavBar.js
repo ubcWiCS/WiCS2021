@@ -31,6 +31,7 @@ export default function NavBar() {
                   <NavBarItem text="Events" path="/events" />
                   <NavBarItem text="Committee" path="/committee" />
                   <NavBarItem text="Sponsors" path="/sponsors" />
+                  <NavBarItem text="Contact Us" path="/contact" />
                 </div>
               </div>
             </div>
@@ -104,6 +105,7 @@ export default function NavBar() {
                 <NavBarItemMobile text="Events" path="/events" />
                 <NavBarItemMobile text="Committee" path="/committee" />
                 <NavBarItemMobile text="Sponsors" path="/sponsors" />
+                <NavBarItemMobile text="Contact Us" path="/contact" />
               </div>
             </div>
           )}
