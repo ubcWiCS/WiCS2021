@@ -71,6 +71,11 @@ export default function Home() {
                 width="35px"
                 height="35px"
               ></SocialMedia>
+              <SocialMedia
+                url="https://discord.gg/UBURmZgF"
+                width="35px"
+                height="35px"
+              ></SocialMedia>
             </div>
         </div>
         <div className="flex max-h-60 max-w-80 flex-col justify-end items-center">
