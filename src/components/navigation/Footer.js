@@ -52,6 +52,11 @@ export default function Footer() {
                 width="25px"
                 height="25px"
               ></SocialMedia>
+              <SocialMedia
+                url="https://discord.gg/UBURmZgF"
+                width="25px"
+                height="25px"
+              ></SocialMedia>
             </div>
           </div>
           <div className="flex justify-start pl-6">
