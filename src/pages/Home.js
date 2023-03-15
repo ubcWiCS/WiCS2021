@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 
-import downArrow from "../img/downarrow.png";
 import Events from "../img/WicsEventBlob.png";
 import Logo from "../img/WiCSLogo.png";
 
@@ -55,7 +54,7 @@ export default function Home() {
           <h1 className="sm:text-4xl flex justify-center cursive text-gray-500 font-semibold">
             Women in Computer Science
           </h1>
-          <div className="flex flex-row items center justify-center sm:flex-col">
+          <div className="flex flex-row items center justify-center ">
               <SocialMedia
                 url="https://www.linkedin.com/company/ubcwics/"
                 width="35px"
