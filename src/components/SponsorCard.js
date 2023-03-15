@@ -45,7 +45,7 @@ export default function SponsorCard(props) {
           </span>
           </Link>
           <br />
-          {/* <Link to={"/sponsor-events/" + props.slug}>
+          <Link to={"/sponsor-events/" + props.slug}>
           <span className="block relative h-full flex justify-end items-end">
             <h3
               className={
@@ -55,7 +55,7 @@ export default function SponsorCard(props) {
               {"See previous " + props.name + " events ➜"}
             </h3>
           </span>
-          </Link> */}
+          </Link>
         </div>
 
     </article>
