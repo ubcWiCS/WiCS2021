@@ -40,22 +40,22 @@ export default function Home() {
 
   return (
     <main className="flex flex-col w-full">
-      <div className="flex flex-col justify-center items-center w-screen h-screen bg-gradient-to-br from-pink-200 via-indigo-200 to-indigo-400">
+      <div className="flex flex-col justify-center items-center w-screen  bg-gradient-to-br from-pink-200 via-indigo-200 to-indigo-400">
         <div className="justify-center items-center h-500 w-200 px-12 py-20">
-          <h1 className="text-4xl flex justify-center cursive text-gray-500 font-semibold">
+          <h1 className="sm:text-4xl flex justify-center cursive text-gray-500 font-semibold">
             University of British Columbia
           </h1>
           <br />
           <img
-            className="flex max-h-60 max-w-80 object-fill box-border"
+            className="p-10"
             src={Logo}
             alt="WiCS logo"
           />
           <br />
-          <h1 className="text-4xl flex justify-center cursive text-gray-500 font-semibold">
+          <h1 className="sm:text-4xl flex justify-center cursive text-gray-500 font-semibold">
             Women in Computer Science
           </h1>
-          <div className="flex flex-row items center justify-center">
+          <div className="flex flex-row items center justify-center sm:flex-col">
               <SocialMedia
                 url="https://www.linkedin.com/company/ubcwics/"
                 width="35px"
@@ -77,13 +77,6 @@ export default function Home() {
                 height="35px"
               ></SocialMedia>
             </div>
-        </div>
-        <div className="flex max-h-60 max-w-80 flex-col justify-end items-center">
-          <img
-            className="flex justify-end bg-color-white max-h-6 max-w-6 object-fill box-border"
-            src={downArrow}
-            alt="see below"
-          ></img>
         </div>
       </div>
       <TwoUpContent
