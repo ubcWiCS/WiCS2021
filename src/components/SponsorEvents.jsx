@@ -20,7 +20,6 @@ export default function SponsorEvents() {
             date,
             direction,
             body,
-            pageOrder,
             page,
             orderOnPage,
             eventSponsor,

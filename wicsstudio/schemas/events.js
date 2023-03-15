@@ -69,6 +69,7 @@ export default {
             { value: "teck", title: "teck" },
             { value: "orbis", title: "orbis" },
             { value: "google", title: "google" },
+            { value: "pwc", title: "pwc" },
             { value: "none", title: "No Sponsor" },
           ],
           hotspot: true,
