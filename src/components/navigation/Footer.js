@@ -36,7 +36,7 @@ export default function Footer() {
               {" "}
               @UBCWiCS {date} <Emoji symbol="❤️" label="heart" />
             </div>
-            <div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex object-right">
+            <div className="sm:flex-col md:flex-row-reverse mt-2 flex-row flex object-right">
               <SocialMedia
                 url="https://www.linkedin.com/company/ubcwics/mycompany/"
                 width="25px"
