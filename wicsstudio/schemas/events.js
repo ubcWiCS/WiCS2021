@@ -63,7 +63,7 @@ export default {
         type: "string",
         options: {
           list: [
-            { value: "center-for-digital-media", title: "center-for-digital-media" },
+            { value: "center-for-digital-media", title: "center for digital media" },
             { value: "stripe", title: "stripe" },
             { value: "sap", title: "sap" },
             { value: "teck", title: "teck" },
