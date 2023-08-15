@@ -53,8 +53,7 @@ export default function Footer() {
                 height="25px"
               ></SocialMedia>
               <SocialMedia
-              
-                url="https://discord.gg/jvqdhrCk3z"
+                url="https://discord.gg/UBURmZgF"
                 width="25px"
                 height="25px"
               ></SocialMedia>
