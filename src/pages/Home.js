@@ -71,7 +71,7 @@ export default function Home() {
                 height="35px"
               ></SocialMedia>
               <SocialMedia
-                url="https://discord.gg/UBURmZgF"
+                url="https://discord.gg/jvqdhrCk3z"
                 width="35px"
                 height="35px"
               ></SocialMedia>
