@@ -20,7 +20,6 @@ export default function SponsorEvents() {
             date,
             direction,
             body,
-            pageOrder,
             page,
             orderOnPage,
             eventSponsor,
@@ -52,8 +51,8 @@ export default function SponsorEvents() {
         <p className="text-2xl flex justify-center cursive text-gray-700 title">No events yet!</p> 
         : null}
           {postData &&
-          postData.map((event) => (
-            <section key={event.pageOrder}>
+          postData.map((event, index) => (
+            <section key={index}>
               <EventContent
                 title={event.title}
                 body={

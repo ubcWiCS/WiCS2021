@@ -10,10 +10,11 @@ export default function Sponsors() {
     <>
       <main className="bg-white p-12 md:p-20">
         <GridContainer
-          queryString={`*[_type == "sponsor" && sponsorLevel == "Platinum"] | order(pageOrder asc){
+          queryString={`*[_type == "sponsor" && sponsorLevel == "platinum"] | order(pageOrder asc){
       name,
       slug,
       sponsorLevel,
+      pageOrder,
       mainImage{
         asset->{
           _id,
@@ -26,10 +27,11 @@ export default function Sponsors() {
           type="sponsor"
         ></GridContainer>
         <GridContainer
-          queryString={`*[_type == "sponsor" && sponsorLevel == "Gold"] | order(pageOrder asc){
+          queryString={`*[_type == "sponsor" && sponsorLevel == "gold"] | order(pageOrder asc){
       name,
       slug,
       sponsorLevel,
+      pageOrder,
       mainImage{
         asset->{
           _id,
