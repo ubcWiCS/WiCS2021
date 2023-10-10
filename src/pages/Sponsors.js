@@ -43,7 +43,7 @@ export default function Sponsors() {
           title="Gold Sponsors"
           type="sponsor"
         ></GridContainer>
-        <GridContainer
+        {/* <GridContainer
               queryString={`*[_type == "sponsor" && sponsorLevel == "Silver"] | order(pageOrder asc){
                 name,
                 slug,
@@ -58,7 +58,7 @@ export default function Sponsors() {
               }`}
           title="Silver Sponsors"
           type="sponsor"
-        ></GridContainer>
+        ></GridContainer> */}
       </main>
       <Footer />
     </>
