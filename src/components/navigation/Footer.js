@@ -2,6 +2,7 @@ import React from "react";
 import SocialMedia from "../SocialMedia";
 import Emoji from "../Emoji";
 import VercelLogo from "../../img/powered-by-vercel.svg";
+import MailChimpForm from "../MailChimpForm";
 
 export default function Footer() {
   var date = new Date().getFullYear();
@@ -10,22 +11,30 @@ export default function Footer() {
       <div className="container mx-auto flex flex-col py-16 px-6 justify-center items-start">
         <div className="w-full">
           <div className="m-auto flex justify-start md:flex-row md:items-center flex-col">
-            <div className="flex flex-col p-5 mr-6 flex-grow">
-              <div className="text-sm subtitle uppercase font-medium pb-2">
+            <div className="flex flex-col p-3 mr-6 flex-grow">
+              <div className="text-sm subtitle uppercase font-medium pb-2 pl-15">
+                Subscribe to Our Newsletter
+              </div>
+              <MailChimpForm/>
+              <div className="text-sm subtitle uppercase font-medium pb-2 ">
                 Contact us
               </div>
-              <div className="text-sm body font-sm">
-                Interested in sponsorship or want to get in touch?
+              <div className="flex ">
+                <div className="text-sm body font-sm mt-2">
+                  Interested in sponsorship or want to get in touch?
+                </div>
+                <div className="p-0 ml-3">
+                  <SocialMedia
+                    email="true"
+                    url="ubcwics@gmail.com"
+                    width="35px"
+                    height="35px"
+                    className="p-0 "
+                  />
+                </div>
               </div>
-              <div className="pt-2 pl-0">
-                <SocialMedia
-                  email="true"
-                  url="ubcwics@gmail.com"
-                  width="35px"
-                  height="35px"
-                  className="pl-0"
-                />
-              </div>
+              
+              
             </div>
           </div>
         </div>

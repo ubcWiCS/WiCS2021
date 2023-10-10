@@ -41,6 +41,22 @@ export default function Sponsors() {
           title="Gold Sponsors"
           type="sponsor"
         ></GridContainer>
+        <GridContainer
+              queryString={`*[_type == "sponsor" && sponsorLevel == "Silver"] | order(pageOrder asc){
+                name,
+                slug,
+                sponsorLevel,
+                mainImage{
+                  asset->{
+                    _id,
+                    url
+                  },
+                  alt
+                }
+              }`}
+          title="Silver Sponsors"
+          type="sponsor"
+        ></GridContainer>
       </main>
       <Footer />
     </>
