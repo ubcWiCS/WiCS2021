@@ -12,9 +12,10 @@ import NavBar from "./components/navigation/NavBar";
 import SinglePostSponsor from "./components/SinglePostSponsor";
 import SinglePostNoAuthor from "./components/SinglePostNoAuthor";
 import SponsorEvents from "./components/SponsorEvents";
+
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter className="w-full">
       <NavBar />
       <Switch>
         <Route component={Home} path="/" exact />
