@@ -23,6 +23,15 @@ export default {
       },
     },
     {
+      name: "event_slug",
+      title: "Slug (unique sponsor key)",
+      type: "slug",
+      options: {
+        source: "title",
+        maxLength: 96,
+      },
+    },
+    {
       name: "mainImage",
       title: "Main image",
       type: "image",

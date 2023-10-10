@@ -3,7 +3,10 @@ import { SocialIcon } from "react-social-icons";
 
 export default function SocialMedia(props) {
   return (
+
     <div className="">
+
+
       <a href={props.url} target="_blank" rel="noopener noreferrer"></a>
       <SocialIcon
         url={props.email ? "mailto:" + props.url : props.url}

@@ -6,8 +6,8 @@ export default function CalendarComponent() {
           <iframe
             title="google-cal"
             src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FVancouver&showTz=0&showPrint=0&showCalendars=0&showNav=1&src=MThxYjhiMmR1NGgwYnJxYzlpN3R2NHY4b2tAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23cc89b6"
-            width="800"
-            height="600"
+            height="600px"
+            width="100%"
           ></iframe>
         </div>
       </div>
