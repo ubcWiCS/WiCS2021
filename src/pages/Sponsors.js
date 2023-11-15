@@ -8,7 +8,7 @@ export default function Sponsors() {
   //Render profile collection
   return (
     <>
-      <main className="bg-white p-12 md:p-20">
+      <main className="bg-white p-12 md:p-20 flex flex-col gap-24">
         <GridContainer
           queryString={`*[_type == "sponsor" && sponsorLevel == "platinum"] | order(pageOrder asc){
       name,
@@ -26,7 +26,7 @@ export default function Sponsors() {
           title="Platinum Sponsors"
           type="sponsor"
         ></GridContainer>
-        <GridContainer
+        <GridContainer 
           queryString={`*[_type == "sponsor" && sponsorLevel == "gold"] | order(pageOrder asc){
       name,
       slug,
@@ -43,7 +43,7 @@ export default function Sponsors() {
           title="Gold Sponsors"
           type="sponsor"
         ></GridContainer>
-         <GridContainer
+         <GridContainer 
               queryString={`*[_type == "sponsor" && sponsorLevel == "silver"] | order(pageOrder asc){
                 name,
                 slug,
@@ -59,6 +59,23 @@ export default function Sponsors() {
           title="Silver Sponsors"
           type="sponsor"
         ></GridContainer> 
+        <GridContainer 
+          queryString={`*[_type == "partner"] | order(pageOrder asc){
+            name,
+            slug,
+            sponsorLevel,
+            mainImage{
+              asset->{
+                _id,
+                url
+              },
+              alt
+            }
+          }`}
+          title="Partners"
+          type="partner"
+          >
+        </GridContainer>
       </main>
       <Footer />
     </>
