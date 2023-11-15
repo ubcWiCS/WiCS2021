@@ -33,20 +33,10 @@ export default function SponsorCard(props) {
               className="w-full h-full object-contain absolute"
             />
           </span>
-          <Link to={"/sponsor/" + props.slug} key={props.slug}>
-          <span className="block relative h-full flex justify-end items-end">
-            <h3
-              className={
-                "title px-3 py-1 bg-opacity-80 text-gray-600 rounded " + bgColor
-              }
-            >
-              {props.name + ": " + props.sponsorLevel + " ➜"}
-            </h3>
-          </span>
-          </Link>
+         
           <br />
           <Link to={"/sponsor-events/" + props.slug}>
-          <span className="block relative h-full flex justify-end items-end">
+          <span className="block relative h-full flex justify-center items-end">
             <h3
               className={
                 "title px-3 py-1 bg-opacity-80 text-gray-600 rounded " + bgColor

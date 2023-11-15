@@ -27,9 +27,9 @@ export default function GridContainer(props) {
 
   //Render profile collection
   return (
-    <main className="mb-12">
+    <main className="mb-12 ">
       <section className="container mx-auto">
-        <h1 className="text-5xl pb-4 flex justify-center cursive text-gray-700 title">
+        <h1 className="text-5xl  flex justify-center cursive text-gray-700 title">
           {props.title}
         </h1>
         <h2 className="text-lg body flex justify-center mb-12">

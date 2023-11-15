@@ -12,6 +12,7 @@ import profile from "./profile";
 import twoUp from "./twoUp";
 import sponsor from "./sponsor";
 import events from "./events";
+import partner from "./partner";
 
 import teamArchive from "./teamArchive";
 
@@ -28,6 +29,7 @@ export default createSchema({
     profile,
     twoUp,
     sponsor,
+    partner,
     events,
     teamArchive,
     contactUs,
