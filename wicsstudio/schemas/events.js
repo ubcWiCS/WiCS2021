@@ -70,6 +70,7 @@ export default {
             { value: "orbis", title: "orbis" },
             { value: "google", title: "google" },
             { value: "pwc", title: "pwc" },
+            { value: "rtc", title: "rtc" },
             { value: "none", title: "No Sponsor" },
           ],
           hotspot: true,
