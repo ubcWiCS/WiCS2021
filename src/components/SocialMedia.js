@@ -13,7 +13,7 @@ export default function SocialMedia(props) {
         className="p-2"
         target="_blank"
         fgColor="#fff"
-        style={{ height: props.height, width: props.width }}
+        style={{ height: props.height, width: props.width, marginRight: "12px", marginTop: "24px" }}
       />
     </div>
   );

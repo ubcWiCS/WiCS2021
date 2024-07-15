@@ -57,23 +57,23 @@ export default function Home() {
           <div className="flex flex-row items center justify-center ">
               <SocialMedia
                 url="https://www.linkedin.com/company/ubcwics/"
-                width="35px"
-                height="35px"
+                width="48px"
+                height="48px"
               ></SocialMedia>
               <SocialMedia
                 url="https://www.instagram.com/ubcwics/"
-                width="35px"
-                height="35px"
+                width="48px"
+                height="48px"
               ></SocialMedia>
               <SocialMedia
                 url="https://www.facebook.com/ubcwics/"
-                width="35px"
-                height="35px"
+                width="48px"
+                height="48px"
               ></SocialMedia>
               <SocialMedia
                 url="https://discord.gg/jvqdhrCk3z"
-                width="35px"
-                height="35px"
+                width="48px"
+                height="48px"
               ></SocialMedia>
             </div>
         </div>
