@@ -1,11 +1,11 @@
 {
   "root": true,
+  "api": {
+    "projectId": "lzxd2lx9",
+    "dataset": "production"
+  },
   "project": {
     "name": "wicsStudio"
-  },
-  "api": {
-    "projectId": "xvhe4elt",
-    "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
