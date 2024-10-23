@@ -6,7 +6,7 @@ export default function TwoUpContent(props) {
       {props.direction === "textLeft" ? (
         <div className="container py-16 px-6 mx-auto flex flex-wrap md:flex-row items-center bg-white">
           <div className="py-6 px-6 flex flex-col w-full md:w-1/2">
-            <h1 className="sm:text-5xl cursive text-gray-700 title">
+            <h1 className="sm:text-5xl cursive text-gray-700 title -mt-36 sm:mt-0">
               {props.title}
             </h1>
             <div className="py-6 text-lg text-gray-700 body">{props.body}</div>
@@ -29,7 +29,7 @@ export default function TwoUpContent(props) {
             />
           </div>
           <div className="py-6 px-6 flex flex-col w-full md:w-1/2">
-            <h1 className="sm:text-5xl cursive text-gray-700 title">
+            <h1 className="sm:text-5xl cursive text-gray-700 title -mt-36 sm:mt-0">
               {props.title}
             </h1>
             <div className="py-6 text-lg text-gray-700 body">{props.body}</div>

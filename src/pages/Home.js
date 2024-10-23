@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col w-full">
-      <div className="flex flex-col justify-center items-center w-screen  bg-gradient-to-br from-pink-200 via-indigo-200 to-indigo-400">
+      <div className="flex flex-col justify-center items-center w-screen  bg-gradient-to-br from-pink-200 via-indigo-200 to-indigo-400 mb-40 sm:mb-0">
         <div className="justify-center items-center h-500 w-200 px-12 py-20">
           <h1 className="sm:text-4xl flex justify-center cursive text-gray-500 font-semibold">
             University of British Columbia
