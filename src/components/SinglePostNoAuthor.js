@@ -57,15 +57,15 @@ export default function SinglePostNoAuthor() {
   );
 
   return (
-    <main className="bg-white flex flex-col justify-start items-center min-h-screen pt-20">
+    <main className="bg-white flex flex-col justify-start items-center min-h-screen md:pt-20">
       <section className="container rounded-lg mx-auto p-10 md:p-20 transform duration-500 min-h-screen">
-        <article className="flex rounded-lg flex-wrap md:flex-nowrap shadow-lg mx-auto">
+        <article className="flex flex-col md:flex-row rounded-lg shadow-lg mx-auto overflow-hidden">
           <img
-            className="w-full md:w-52 h-auto object-cover md:rounded-l-lg"
+            className="w-full md:w-7/12 h-auto object-cover"
             src={singlePost.mainImage.asset.url}
             alt={singlePost.name}
           />
-          <div className="p-10 my-auto">
+          <div className="p-10 flex flex-col justify-center w-full md:w-5/12">
             <div className="subtitle text-sm">{singlePost.name}</div>
             <div className="title text-sm pt-2">{singlePost.role}</div>
             <div className="mt-2 body">
@@ -75,7 +75,7 @@ export default function SinglePostNoAuthor() {
                 dataset="production"
               />
             </div>
-            <div className=" flex flex-row">
+            <div className="flex flex-row">
               <div>{linkedIn}</div>
               <div>{myEmail}</div>
             </div>
@@ -83,18 +83,18 @@ export default function SinglePostNoAuthor() {
         </article>
         <div className="m-10 flex justify-center items-center">
           {singlePost.profileType === "executive" ? (
-            <Button type="local" link="/committee" text="Back To Team"></Button>
+            <Button type="local" link="/committee" text="Back To Team" />
           ) : (
             <Button
               type="local"
               link="/committee"
               text="Back To Faculty Advisors"
-            ></Button>
+            />
           )}
         </div>
       </section>
 
-      <Footer></Footer>
+      <Footer />
     </main>
   );
 }
