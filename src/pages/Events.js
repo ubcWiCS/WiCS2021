@@ -5,28 +5,50 @@ import BlockContent from "@sanity/block-content-to-react";
 import Footer from "../components/navigation/Footer.js";
 import EventContent from "../components/EventContent";
 
+import { debounce } from "../utils/debounce.js";
+
 export default function Events() {
-  const [postData, setPost] = useState(null);
+  const [postData, setPost] = useState([]);
+  const [query, setQuery] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
+
   useEffect(() => {
     sanityClient
       .fetch(
         `*[_type == "events" ] | order(pageOrder desc){
-        title,
-        date,
-        direction,
-        body,
-        pageOrder,
-        page,
-        orderOnPage,
-        eventSponsor,
-        images[]{
-          asset->{url}
-        }
-      }`
+          title,
+          date,
+          direction,
+          body,
+          pageOrder,
+          page,
+          orderOnPage,
+          eventSponsor,
+          images[]{
+            asset->{url}
+          }
+        }`
       )
-      .then((data) => setPost(data))
+      .then((data) => {
+        setPost(data || []);
+        setFilteredData(data || []);
+      })
       .catch(console.error);
   }, []);
+
+
+  const debouncedSearch = debounce((searchQuery) => {
+    const filtered = postData.filter((event) =>
+      event.title.toLowerCase().includes(searchQuery)
+    );
+    setFilteredData(filtered);
+  }, 500);
+
+  const handleSearch = (e) => {
+    const searchQuery = e.target.value.toLowerCase();
+    setQuery(searchQuery);
+    debouncedSearch(searchQuery);
+  };
 
   return (
     <>
@@ -34,9 +56,20 @@ export default function Events() {
         <p className="text-5xl flex justify-center cursive text-gray-700 title">
           Past Events
         </p>
-        {postData &&
-          postData.map((event) => (
-            <section key={event.pageOrder}>
+
+        <div className="flex justify-center m-8">
+          <input
+            type="text"
+            placeholder="Search events..."
+            value={query}
+            onChange={handleSearch}
+            className="w-full md:w-1/2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-blue-500"
+          />
+        </div>
+
+        {filteredData.length > 0 ? (
+          filteredData.map((event) => (
+            <section key={event.pageOrder} className="mb-8">
               <EventContent
                 title={event.title}
                 body={
@@ -51,7 +84,10 @@ export default function Events() {
                 images={event.images}
               />
             </section>
-          ))}
+          ))
+        ) : (
+          <p className="text-center text-gray-600">No events found</p>
+        )}
       </main>
       <Footer />
     </>
