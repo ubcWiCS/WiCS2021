@@ -47,7 +47,7 @@ export default function Footer() {
             </div>
             <div className="sm:flex-col md:flex-row-reverse mt-2 flex-row flex object-right">
               <SocialMedia
-                url="https://www.linkedin.com/company/ubcwics/mycompany/"
+                url="https://www.linkedin.com/company/ubcwics/"
                 width="25px"
                 height="25px"
               ></SocialMedia>
