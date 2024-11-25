@@ -8,6 +8,7 @@ import Team from "./pages/Team";
 import Sponsors from "./pages/Sponsors";
 import Contact from "./pages/Contact";
 import TeamArchive from "./pages/TeamArchive";
+import Techforward from "./pages/Techforward";
 
 import NavBar from "./components/navigation/NavBar";
 import SinglePostSponsor from "./components/SinglePostSponsor";
@@ -40,6 +41,7 @@ function App() {
         <Route component={SinglePostSponsor} path="/sponsor/:slug" />
         <Route component={SponsorEvents} path="/sponsor-events/:slug" />
         <Route component={SinglePostNoAuthor} path="/profile/:slug" />
+        <Route component={Techforward} path="/techforward" />
       </Switch>
     </BrowserRouter>
   );
