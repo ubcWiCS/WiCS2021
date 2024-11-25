@@ -11,23 +11,17 @@ export default function Techforward() {
   };
 
   const schedule = [
-    { time: "9:00am", desc: "event", speaker_id: "0" },
-    { time: "10:00am", desc: "keynote", speaker_id: "1" },
-    { time: "11:00am", desc: "event", speaker_id: "2" },
-    { time: "11:00am", desc: "event", speaker_id: "3" },
-    { time: "11:00am", desc: "event", speaker_id: "4" },
-    { time: "11:00am", desc: "event", speaker_id: "5" },
-    { time: "11:00am", desc: "event", speaker_id: "6" },
+    { time: "8:40am - 9:15am", desc: "Participant check-in/registration", speaker_id: "-1" },
+    { time: "9:15am - 9:30am", desc: "Opening Ceremony", speaker_id: "0" },
+    { time: "9:30am - 9:45am", desc: "Keynote", speaker_id: "1" },
+    { time: "10:00am - 12:00pm", desc: "Boothing", speaker_id: "-1" },
+    { time: "12:00pm - 12:30pm", desc: "Lunch", speaker_id: "-1" },
+    { time: "12:30pm - 2:00pm", desc: "Boothing", speaker_id: "-1" },
   ];
   
   const speakers = [
     { id: "0", name: "First Last", company: "company 1", desc: "short description of speaker/talk", photo: "/path/to/image1" },
-    { id: "1", name: "fgdf aadfdsf", company: "company 2", desc: "short description of speaker/talk", photo: "/path/to/image2" },
-    { id: "2", name: "asdfadsf asddgd", company: "company 3", desc: "short description of speaker/talk", photo: "/path/to/image3" },
-    { id: "3", name: "aerfe add", company: "company 3", desc: "short description of speaker/talk", photo: "/path/to/image3" },
-    { id: "4", name: "jakfkj ajkrgek", company: "company 3", desc: "short description of speaker/talk", photo: "/path/to/image3" },
-    { id: "5", name: "ggsbg ndgnn", company: "company 3", desc: "short description of speaker/talk", photo: "/path/to/image3" },
-    { id: "6", name: "afafbfd rgtrhg", company: "company 3", desc: "short description of speaker/talk", photo: "/path/to/image3" },
+    { id: "1", name: "Another Name", company: "company 2", desc: "short description of speaker/talk", photo: "/path/to/image2" },
   ];
 
   const prices = [
