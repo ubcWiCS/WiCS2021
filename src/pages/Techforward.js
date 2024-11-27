@@ -37,9 +37,8 @@ export default function Techforward() {
   ];
 
   const faqs = [
-    { question: "Do I need to be an engineering/computer science student to attend?", answer: "No"},
-    { question: "Do I need to be an engineering/computer science student to attend?", answer: "No"},
-    { question: "Do I need to be an engineering/computer science student to attend?", answer: "No"},
+    { question: "Do I need to be an engineering or computer science student to attend?", answer: "No! TECHforward is open to all female-identifying UBC students."},
+    { question: "Can I attend if I’m not a UBC student?", answer: "TECHforward is catered to UBC students only."},
   ];
 
   return (
@@ -139,7 +138,7 @@ export default function Techforward() {
               }`}
             >
               <h3 className="md:text-4xl text-2xl font-pt-mono font-bold text-nowrap">{name}</h3>
-              <p className="mb-4 mt-1 font-pt-mono">Purchase by {deadline.toLocaleDateString()}</p>
+              <p className="mt-1 font-pt-mono">Purchase by {deadline.toLocaleDateString()}</p>
             </div>
           );
         })}
@@ -158,7 +157,7 @@ export default function Techforward() {
                 <div className="font-coiny text-left text-xl pb-2">
                   {question}
                 </div>
-                <div className="font-coiny text-left">
+                <div className="font-pt-mono text-left">
                   {answer}
                 </div>
               </div>
