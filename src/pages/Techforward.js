@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-
+import ReactCardFlip from 'react-card-flip'
 import Footer from "../components/navigation/Footer.js";
 
 export default function Techforward() {
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
+  const [isFlipped, setIsFlipped] = useState(false)
+
+  const handleClick = e => {
+    e.preventDefault()
+    setIsFlipped(prevState => !prevState)
+  }
 
   const handleSpeakerCardClick = (speakerId) => {
     const speaker = speakers.find((s) => s.id === speakerId);
@@ -25,9 +31,9 @@ export default function Techforward() {
   ];
 
   const prices = [
-    { name: "Early Bird", deadline: new Date("December 15, 2023"), price: 5},
-    { name: "Regular", deadline: new Date("December 31, 2024"), price: 10},
-    { name: "Day Of", deadline: new Date("January 18, 2025"), price: 15},
+    { name: "EARLY BIRD", deadline: new Date("December 1, 2024"), price: 5},
+    { name: "REGULAR", deadline: new Date("December 1, 2024"), price: 10},
+    { name: "DAY OF", deadline: new Date("December 1, 2024"), price: 15},
   ];
 
   const faqs = [
@@ -37,8 +43,8 @@ export default function Techforward() {
   ];
 
   return (
-    <div>
-      <main className="text-center bg-purple-200 md:px-40 px-10">
+    <div className="bg-hero bg-custom-up bg-cover">
+      <main className="text-center md:px-40 px-10">
         <nav className="fixed md:left-8 left-4 top-1/2 transform -translate-y-1/2 space-y-4 z-50">
           <a href="#hero" className="block w-4 h-4 bg-white rounded-full hover:bg-purple-700" title="Hero"></a>
           <a href="#about" className="block w-4 h-4 bg-white rounded-full hover:bg-purple-700" title="About"></a>
@@ -49,23 +55,23 @@ export default function Techforward() {
         </nav>
 
         <section id="hero" className="h-screen flex flex-col items-center justify-center text-center">
-          <h1 className="md:text-9xl text-5xl font-bold text-black">TECH<span className="text-purple-600">forward</span></h1>
-          <p className="text-lg mt-4">bridging the gap between engineering and computer science</p>
-          <button className="bg-black text-white font-bold py-2 px-6 rounded mt-6 hover:bg-gray-800">
+          <h1 className="md:text-8xl text-3xl font-press-start font-bold text-baby-blue">TECHforward</h1>
+          <p className="text-xl mt-4 font-pt-mono text-white">bridging the gap between engineering and computer science</p>
+          <button className="bg-baby-purple font-press-start font-bold py-3 px-8 rounded-full mt-6 hover:bg-gray-800">
             Register
           </button>
-          <div className="mt-6 space-y-1">
-            <p>📅 January 18th, 2025</p>
-            <p>📍 UBC Alumni Center</p>
-            <p>🕘 9:00 am - 2:00 pm</p>
+          <div className="mt-6">
+            <p className="font-pt-mono text-light-purple text-lg">📅 January 18th, 2025</p>
+            <p className="font-pt-mono text-light-purple text-lg">📍 UBC Alumni Center</p>
+            <p className="font-pt-mono text-light-purple text-lg">🕘 9:00 am - 2:00 pm</p>
           </div>
         </section>
 
         <section id="about" className="flex pb-20 md:pl-10 pl-3">
           <div className="md:w-1/2">
-            <h2 className="md:text-6xl text-3xl font-bold md:text-left text-center mb-8">ABOUT</h2>
+            <h2 className="md:text-6xl text-3xl font-coiny font-bold md:text-left text-white mb-6">ABOUT</h2>
             <div className="text-left">
-              <p className="text-lg">
+              <p className="text-lg font-pt-mono text-white">
                 TECHforward is an <span className="font-bold">in-person conference</span> aiming to bridge the gap between engineering and computer science. All <span className="font-bold">female-identifying UBC students</span> and allies interested in engineering and/or computer science are invited to attend, for the opportunity to <span className="font-bold">network</span> with professionals in various related fields!
               </p>
             </div>
@@ -73,32 +79,32 @@ export default function Techforward() {
         </section>
 
         <section id="sponsors" className="py-20">
-          <h2 className="md:text-6xl text-3xl font-bold text-center mb-8">SPONSORS</h2>
+          <h2 className="md:text-6xl text-3xl font-coiny font-bold text-center text-white mb-6">SPONSORS</h2>
           <p>insert sponsor logos</p>
         </section>
 
-        <section id="schedule_speakers" className="p-10 my-20 bg-purple-100 rounded-lg">
+        <section id="schedule_speakers" className="p-14 my-20 bg-purple-100 bg-opacity-50 rounded-lg">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="md:text-6xl text-3xl font-bold text-center mb-8">SCHEDULE</h2>
+              <h2 className="md:text-6xl text-3xl font-bold text-center text-white mb-8 font-coiny">SCHEDULE</h2>
               <div className="space-y-4">
                 {schedule.map(({time,desc,speaker_id}, idx) => {
                   return (
                     <div 
                       key={idx} 
-                      className="bg-white p-4 rounded shadow text-left"
+                      className="bg-white p-4 rounded shadow-custom-purple text-left"
                       onClick={() => handleSpeakerCardClick(speaker_id)}
                     >
-                      <p className="font-bold">{time}</p>
-                      <p>{desc}</p>
+                      <p className="font-pt-mono font-bold">{time}</p>
+                      <p className="font-pt-mono">{desc}</p>
                     </div>       
                   )
                 })}
               </div>
             </div>
             <div>
-              <h2 className="md:text-6xl text-3xl font-bold text-center mb-8">SPEAKERS</h2>
-                <div className="text-center bg-white p-10 shadow rounded">
+              <h2 className="md:text-6xl text-3xl font-bold text-center text-white mb-8 font-coiny">SPEAKERS</h2>
+                <div className="text-center bg-white p-10 shadow-custom-purple rounded">
                   {selectedSpeaker ? (
                     <div>
                       <img
@@ -119,42 +125,40 @@ export default function Techforward() {
         </section>
 
         <section id="pricing" className="py-20">
-        <h2 className="md:text-6xl text-3xl font-bold text-center mb-8">PRICING</h2>
+        <h2 className="md:text-6xl text-3xl font-coiny font-bold text-center text-white mb-8">PRICING</h2>
         <div className="flex flex-col md:flex-row justify-center gap-10 md:gap-10 align-middle">
         {prices.map(({ name, deadline, price, id }) => {
           const isPastDeadline = deadline < new Date();
           return (
             <div
               key={id}
-              className={`flex flex-col w-100 md:h-64 p-6 text-center justify-center rounded-md shadow-lg ${
+              className={`flex flex-col w-64 md:h-36 p-6 text-center justify-center items-center rounded-lg shadow-custom-purple ${
                 isPastDeadline
                   ? "bg-gray-300 text-gray-500 opacity-50 cursor-not-allowed"
                   : "bg-white"
               }`}
             >
-              <h3 className="md:text-4xl text-2xl font-bold">{name}</h3>
-              <p className="mb-4 mt-2">Purchase by {deadline.toDateString()}</p>
-              <h3 className="text-3xl font-bold">${price}</h3>
+              <h3 className="md:text-4xl text-2xl font-pt-mono font-bold text-nowrap">{name}</h3>
+              <p className="mb-4 mt-1 font-pt-mono">Purchase by {deadline.toLocaleDateString()}</p>
             </div>
           );
         })}
-        
         </div>
       </section>
       
 
       <section id="faq" className="md:flex py-20">
         <div className="md:w-1/3">
-          <h2 className="md:text-6xl text-3xl font-bold text-center mb-8">FAQ</h2>
+          <h2 className="md:text-6xl text-3xl font-coiny font-bold text-center text-white mb-8">FAQ</h2>
         </div>
         <div className="md:w-2/3">
           {faqs.map(({question,answer}, idx) => {
             return (
               <div key={idx} className="mb-10 bg-purple-100 rounded-lg p-4">
-                <div className="text-left text-xl pb-2">
+                <div className="font-coiny text-left text-xl pb-2">
                   {question}
                 </div>
-                <div className="text-left">
+                <div className="font-coiny text-left">
                   {answer}
                 </div>
               </div>
