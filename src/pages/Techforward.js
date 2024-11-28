@@ -56,7 +56,7 @@ export default function Techforward() {
         <section id="hero" className="h-screen flex flex-col items-center justify-center text-center">
           <h1 className="md:text-8xl text-3xl font-press-start font-bold text-baby-blue">TECHforward</h1>
           <p className="text-xl mt-4 font-pt-mono text-white">bridging the gap between engineering and computer science</p>
-          <button className="bg-baby-purple font-press-start font-bold py-3 px-8 rounded-full mt-6 hover:bg-gray-800">
+          <button className="bg-baby-purple font-press-start font-bold py-3 px-8 rounded-full mt-6 hover:bg-gray-800 hover:text-white">
             Register
           </button>
           <div className="mt-6">
@@ -79,7 +79,7 @@ export default function Techforward() {
 
         <section id="sponsors" className="py-20">
           <h2 className="md:text-6xl text-3xl font-coiny font-bold text-center text-white mb-6">SPONSORS</h2>
-          <p>insert sponsor logos</p>
+          <p className="text-white">coming soon...</p>
         </section>
 
         <section id="schedule_speakers" className="p-14 my-20 bg-purple-100 bg-opacity-50 rounded-lg">
