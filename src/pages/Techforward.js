@@ -1,19 +1,21 @@
 import React, { useState } from "react";
-import ReactCardFlip from 'react-card-flip'
+import ReactCardFlip from "react-card-flip";
 import Footer from "../components/navigation/Footer.js";
 
 export default function Techforward() {
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
-  const [isFlipped, setIsFlipped] = useState(false)
-
-  const handleClick = e => {
-    e.preventDefault()
-    setIsFlipped(prevState => !prevState)
-  }
+  const [flippedCards, setFlippedCards] = useState({});
 
   const handleSpeakerCardClick = (speakerId) => {
     const speaker = speakers.find((s) => s.id === speakerId);
     setSelectedSpeaker(speaker);
+  };
+
+  const handleFlip = (id) => {
+    setFlippedCards((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id],
+    }));
   };
 
   const schedule = [
@@ -31,14 +33,14 @@ export default function Techforward() {
   ];
 
   const prices = [
-    { name: "EARLY BIRD", deadline: new Date("December 1, 2024"), price: 5},
-    { name: "REGULAR", deadline: new Date("December 1, 2024"), price: 10},
-    { name: "DAY OF", deadline: new Date("December 1, 2024"), price: 15},
+    { id: "early-bird", name: "EARLY BIRD", deadline: new Date("December 1, 2024"), price: 5 },
+    { id: "regular", name: "REGULAR", deadline: new Date("December 1, 2024"), price: 10 },
+    { id: "day-of", name: "DAY OF", deadline: new Date("December 1, 2024"), price: 15 },
   ];
 
   const faqs = [
-    { question: "Do I need to be an engineering or computer science student to attend?", answer: "No! TECHforward is open to all female-identifying UBC students."},
-    { question: "Can I attend if I’m not a UBC student?", answer: "TECHforward is catered to UBC students only."},
+    { question: "Do I need to be an engineering or computer science student to attend?", answer: "No! TECHforward is open to all female-identifying UBC students." },
+    { question: "Can I attend if I’m not a UBC student?", answer: "TECHforward is catered to UBC students only." },
   ];
 
   return (
@@ -122,29 +124,54 @@ export default function Techforward() {
             </div>
           </div>
         </section>
-
         <section id="pricing" className="py-20">
-        <h2 className="md:text-6xl text-3xl font-coiny font-bold text-center text-white mb-8">PRICING</h2>
-        <div className="flex flex-col md:flex-row justify-center gap-10 md:gap-10 align-middle">
-        {prices.map(({ name, deadline, price, id }) => {
-          const isPastDeadline = deadline < new Date();
-          return (
-            <div
-              key={id}
-              className={`flex flex-col w-64 md:h-36 p-6 text-center justify-center items-center rounded-lg shadow-custom-purple ${
-                isPastDeadline
-                  ? "bg-gray-300 text-gray-500 opacity-50 cursor-not-allowed"
-                  : "bg-white"
-              }`}
-            >
-              <h3 className="md:text-4xl text-2xl font-pt-mono font-bold text-nowrap">{name}</h3>
-              <p className="mt-1 font-pt-mono">Purchase by {deadline.toLocaleDateString()}</p>
-            </div>
-          );
-        })}
-        </div>
-      </section>
-      
+          <h2 className="md:text-6xl text-3xl font-coiny font-bold text-center text-white mb-8">PRICING</h2>
+          <div className="flex flex-col md:flex-row justify-center gap-10 md:gap-10 align-middle">
+            {prices.map(({ id, name, deadline, price }) => {
+              const isPastDeadline = deadline < new Date();
+              const isFlipped = flippedCards[id] || false;
+
+              return (
+                <ReactCardFlip
+                  key={id}
+                  isFlipped={isFlipped}
+                  flipDirection="horizontal"
+                >
+                  {/* Front Side */}
+                  <div
+                    onClick={() => handleFlip(id)}
+                    className={`flex flex-col w-64 md:h-36 p-6 text-center justify-center items-center rounded-lg shadow-custom-purple cursor-pointer ${
+                      isPastDeadline
+                        ? "bg-gray-300 text-gray-500 opacity-50"
+                        : "bg-white"
+                    }`}
+                  >
+                    <h3 className="md:text-4xl text-2xl font-pt-mono font-bold text-nowrap">
+                      {name}
+                    </h3>
+                    <p className="mt-1 font-pt-mono">
+                      Purchase by {deadline.toLocaleDateString()}
+                    </p>
+                  </div>
+
+                  {/* Back Side */}
+                  <div
+                    onClick={() => handleFlip(id)}
+                    className={`flex flex-col w-64 md:h-36 p-6 text-center justify-center items-center rounded-lg shadow-custom-purple cursor-pointer ${
+                      isPastDeadline
+                        ? "bg-gray-300 text-gray-500 opacity-50"
+                        : "bg-white"
+                    }`}
+                  >
+                    <h3 className="md:text-4xl text-2xl font-pt-mono font-bold text-nowrap">
+                      ${price}
+                    </h3>
+                  </div>
+                </ReactCardFlip>
+              );
+            })}
+          </div>
+        </section>
 
       <section id="faq" className="md:flex py-20">
         <div className="md:w-1/3">
@@ -165,7 +192,6 @@ export default function Techforward() {
           })}
         </div>
       </section>
-
       </main>
       <Footer />
     </div>
