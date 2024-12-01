@@ -54,29 +54,29 @@ export default function Techforward() {
   };
 
   const schedule = [
-    { time: "8:40am - 9:15am", title: "Check-in", details: null},
+    { time: "8:40am - 9:15am", title: "Check-in", details: "Details coming soon!"},
     { time: "9:15am - 9:30am", title: "Opening Ceremony", details: "Details coming soon!"},
     { time: "9:30am - 9:45am", title: "Keynote", details: "Details coming soon!"},
     { time: "10:00am - 12:00pm", title: "Boothing", details: "Details coming soon!"},
-    { time: "12:00pm - 12:30pm", title: "Lunch", details: null},
+    { time: "12:00pm - 12:30pm", title: "Lunch", details: "Details coming soon!"},
     { time: "12:30pm - 2:00pm", title: "Boothing", details: "Details coming soon!"},
   ];
 
   const sessions = [
-    { 
-      name: "Christina Kwan", 
-      company: "Providence Health Care", 
-      details: "This 30 min talk will focus on providing a mix of personal stories, practical advice, and motivational insights, all while emphasizing how embracing discomfort is crucial for success in IT, particularly for a woman like myself who has faced additional barriers in the field over a career span of 25 years in IT.", 
-      location: "Jack Poole Hall (left)", 
-      time: "10:05am - 10:35am",
-    },
-    { name: "Coming Soon", company: "", details: "", location: "", time: "" },
-    { name: "Coming Soon", company: "", details: "", location: "", time: "" },
-    { name: "Coming Soon", company: "", details: "", location: "", time: "" },
-    { name: "Coming Soon", company: "", details: "", location: "", time: "" },
-    { name: "Coming Soon", company: "", details: "", location: "", time: "" },
-    { name: "Coming Soon", company: "", details: "", location: "", time: "" },
-    { name: "Coming Soon", company: "", details: "", location: "", time: "" },
+    // { 
+    //   name: "Christina Kwan", 
+    //   company: "Providence Health Care", 
+    //   details: "This 30 min talk will focus on providing a mix of personal stories, practical advice, and motivational insights, all while emphasizing how embracing discomfort is crucial for success in IT, particularly for a woman like myself who has faced additional barriers in the field over a career span of 25 years in IT.", 
+    //   location: "Jack Poole Hall (left)", 
+    //   time: "10:05am - 10:35am",
+    // },
+    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "" },
+    { name: "Workshop", company: "", details: "Details coming soon!", location: "", time: "" },
+    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "" },
+    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "" },
+    { name: "Panel", company: "", details: "Details coming soon!", location: "", time: "" },
+    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "" },
+    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "" },
   ];
 
   const prices = [
