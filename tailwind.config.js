@@ -23,6 +23,12 @@ module.exports = {
         'light-purple': '#D2D1F9'
       }
     },
+    screens: {
+      sm: '0px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+    },
   },
   variants: {
     extend: {},

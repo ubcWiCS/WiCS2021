@@ -1,14 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactCardFlip from "react-card-flip";
 import Footer from "../components/navigation/Footer.js";
 
 export default function Techforward() {
-  const [selectedSpeaker, setSelectedSpeaker] = useState(null);
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const navLink = document.querySelector(`#nav-${entry.target.id}`);
+          if (entry.isIntersecting) {
+            navLinks.forEach((link) => {
+              link.classList.remove("bg-purple-500");
+              link.classList.add("bg-white");
+            });
+            navLink.classList.remove("bg-white");
+            navLink.classList.add("bg-purple-500");
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
+  const [openSessionIndex, setOpenSessionIndex] = useState(null);
+  const [openScheduleIndex, setOpenScheduleIndex] = useState(null);
   const [flippedCards, setFlippedCards] = useState({});
 
-  const handleSpeakerCardClick = (speakerId) => {
-    const speaker = speakers.find((s) => s.id === speakerId);
-    setSelectedSpeaker(speaker);
+  const toggleAnswer = (idx) => {
+    setOpenFaqIndex(openFaqIndex === idx ? null : idx);
+  };
+
+  const toggleSession = (idx) => {
+    setOpenSessionIndex(openSessionIndex === idx ? null : idx);
+  };
+
+  const toggleSchedule = (idx) => {
+    setOpenScheduleIndex(openScheduleIndex === idx ? null : idx);
   };
 
   const handleFlip = (id) => {
@@ -19,48 +54,66 @@ export default function Techforward() {
   };
 
   const schedule = [
-    { time: "8:40am - 9:15am", desc: "Participant check-in/registration", speaker_id: "-1" },
-    { time: "9:15am - 9:30am", desc: "Opening Ceremony", speaker_id: "0" },
-    { time: "9:30am - 9:45am", desc: "Keynote", speaker_id: "1" },
-    { time: "10:00am - 12:00pm", desc: "Boothing", speaker_id: "-1" },
-    { time: "12:00pm - 12:30pm", desc: "Lunch", speaker_id: "-1" },
-    { time: "12:30pm - 2:00pm", desc: "Boothing", speaker_id: "-1" },
+    { time: "8:40am - 9:15am", title: "Check-in", details: null},
+    { time: "9:15am - 9:30am", title: "Opening Ceremony", details: "Details coming soon!"},
+    { time: "9:30am - 9:45am", title: "Keynote", details: "Details coming soon!"},
+    { time: "10:00am - 12:00pm", title: "Boothing", details: "Details coming soon!"},
+    { time: "12:00pm - 12:30pm", title: "Lunch", details: null},
+    { time: "12:30pm - 2:00pm", title: "Boothing", details: "Details coming soon!"},
   ];
-  
-  const speakers = [
-    { id: "0", name: "First Last", company: "company 1", desc: "short description of speaker/talk", photo: "/path/to/image1" },
-    { id: "1", name: "Another Name", company: "company 2", desc: "short description of speaker/talk", photo: "/path/to/image2" },
+
+  const sessions = [
+    { 
+      name: "Christina Kwan", 
+      company: "Providence Health Care", 
+      details: "This 30 min talk will focus on providing a mix of personal stories, practical advice, and motivational insights, all while emphasizing how embracing discomfort is crucial for success in IT, particularly for a woman like myself who has faced additional barriers in the field over a career span of 25 years in IT.", 
+      location: "Jack Poole Hall (left)", 
+      time: "10:05am - 10:35am",
+    },
+    { name: "Coming Soon", company: "", details: "", location: "", time: "" },
+    { name: "Coming Soon", company: "", details: "", location: "", time: "" },
+    { name: "Coming Soon", company: "", details: "", location: "", time: "" },
+    { name: "Coming Soon", company: "", details: "", location: "", time: "" },
+    { name: "Coming Soon", company: "", details: "", location: "", time: "" },
+    { name: "Coming Soon", company: "", details: "", location: "", time: "" },
+    { name: "Coming Soon", company: "", details: "", location: "", time: "" },
   ];
 
   const prices = [
-    { id: "early-bird", name: "EARLY BIRD", deadline: new Date("December 1, 2024"), price: 5 },
-    { id: "regular", name: "REGULAR", deadline: new Date("December 1, 2024"), price: 10 },
-    { id: "day-of", name: "DAY OF", deadline: new Date("December 1, 2024"), price: 15 },
+    { id: "early-bird", name: "EARLY BIRD", deadline: new Date("December 16, 2024"), price: 7 },
+    { id: "regular", name: "REGULAR", deadline: new Date("January 16, 2025"), price: 10 },
+    { id: "day-of", name: "LAST MINUTE", deadline: new Date("January 18, 2025"), price: 15 },
   ];
 
   const faqs = [
-    { question: "Do I need to be an engineering or computer science student to attend?", answer: "No! TECHforward is open to all female-identifying UBC students." },
-    { question: "Can I attend if I’m not a UBC student?", answer: "TECHforward is catered to UBC students only." },
-  ];
+    { question: "Do I need to be an engineering or computer science student to attend?", answer: "No! TECHforward is open to all female-identifying UBC students and allies." },
+    { question: "I'm not a UBC student, can I still attend?", answer: "Unfortunately at this time, TECHforward is only for UBC students. Student numbers will be collected." },
+   ];
 
   return (
-    <div className="bg-hero bg-custom-up bg-cover">
+    <div className=" bg-hero">
       <main className="text-center md:px-40 px-10">
         <nav className="fixed md:left-8 left-4 top-1/2 transform -translate-y-1/2 space-y-4 z-50">
-          <a href="#hero" className="block w-4 h-4 bg-white rounded-full hover:bg-purple-700" title="Hero"></a>
-          <a href="#about" className="block w-4 h-4 bg-white rounded-full hover:bg-purple-700" title="About"></a>
-          <a href="#sponsors" className="block w-4 h-4 bg-white rounded-full hover:bg-purple-700" title="Sponsors"></a>
-          <a href="#schedule_speakers" className="block w-4 h-4 bg-white rounded-full hover:bg-purple-700" title="Schedule and Speakers"></a>
-          <a href="#pricing" className="block w-4 h-4 bg-white rounded-full hover:bg-purple-700" title="Pricing"></a>
-          <a href="#faq" className="block w-4 h-4 bg-white rounded-full hover:bg-purple-700" title="FAQ"></a>
+          <a href="#hero" id="nav-hero" className="block w-4 h-4 bg-white rounded-full" title="Hero"></a>
+          <a href="#about" id="nav-about" className="block w-4 h-4 bg-white rounded-full" title="About"></a>
+          <a href="#sponsors" id="nav-sponsors" className="block w-4 h-4 bg-white rounded-full" title="Sponsors"></a>
+          <a href="#schedule_speakers" id="nav-schedule_speakers" className="block w-4 h-4 bg-white rounded-full" title="Schedule and Speakers"></a>
+          <a href="#pricing" id="nav-pricing" className="block w-4 h-4 bg-white rounded-full" title="Pricing"></a>
+          <a href="#faq" id="nav-faq" className="block w-4 h-4 bg-white rounded-full" title="FAQ"></a>
         </nav>
+    
 
         <section id="hero" className="h-screen flex flex-col items-center justify-center text-center">
-          <h1 className="md:text-8xl text-3xl font-press-start font-bold text-baby-blue">TECHforward</h1>
+          <h1 className="md:text-8xl text-4xl font-press-start font-bold text-baby-blue">TECH<span className="md:text-7xl text-3xl">forward</span></h1>
           <p className="text-xl mt-4 font-pt-mono text-white">bridging the gap between engineering and computer science</p>
-          <button className="bg-baby-purple font-press-start font-bold py-3 px-8 rounded-full mt-6 hover:bg-gray-800 hover:text-white">
+          <a 
+            href="https://wicstechforward.eventbrite.com/" 
+            className="bg-baby-purple font-press-start font-bold py-3 px-8 rounded-full mt-6 hover:bg-gray-800 hover:text-white"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             Register
-          </button>
+          </a>
           <div className="mt-6">
             <p className="font-pt-mono text-light-purple text-lg">📅 January 18th, 2025</p>
             <p className="font-pt-mono text-light-purple text-lg">📍 UBC Alumni Center</p>
@@ -68,7 +121,7 @@ export default function Techforward() {
           </div>
         </section>
 
-        <section id="about" className="flex pb-20 md:pl-10 pl-3">
+        <section id="about" className="flex pb-20 md:pl-10 pl-3 py-32">
           <div className="md:w-1/2">
             <h2 className="md:text-6xl text-3xl font-coiny font-bold md:text-left text-white mb-6">ABOUT</h2>
             <div className="text-left">
@@ -79,54 +132,82 @@ export default function Techforward() {
           </div>
         </section>
 
-        <section id="sponsors" className="py-20">
+        <section id="sponsors" className="py-32">
           <h2 className="md:text-6xl text-3xl font-coiny font-bold text-center text-white mb-6">SPONSORS</h2>
-          <p className="text-white">coming soon...</p>
+          <h3 className="text-white font-pt-mono">coming soon...</h3>
         </section>
 
-        <section id="schedule_speakers" className="p-14 my-20 bg-purple-100 bg-opacity-50 rounded-lg">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+        <section id="schedule_speakers" className="py-32">
+          <div className="md:max-w-6xl mx-auto grid grid-cols-2 md:gap-12 gap-3 bg-purple-100 bg-opacity-50 rounded-lg md:p-20 sm:p-5">
             <div>
               <h2 className="md:text-6xl text-3xl font-bold text-center text-white mb-8 font-coiny">SCHEDULE</h2>
               <div className="space-y-4">
-                {schedule.map(({time,desc,speaker_id}, idx) => {
+                {schedule.map(({time,title,details}, idx) => {
                   return (
                     <div 
                       key={idx} 
-                      className="bg-white p-4 rounded shadow-custom-purple text-left"
-                      onClick={() => handleSpeakerCardClick(speaker_id)}
+                      className="bg-white p-4 rounded-lg shadow-custom-purple text-left hover:text-purple-500"
                     >
-                      <p className="font-pt-mono font-bold">{time}</p>
-                      <p className="font-pt-mono">{desc}</p>
+                      <button 
+                        onClick={() => toggleSchedule(idx)}
+                      >
+                        <p className="font-pt-mono text-2xl text-left">{title}</p>
+                        <p className="font-pt-mono text-xl text-left">{time}</p>
+                      </button>
+                      {openScheduleIndex === idx && (
+                        <div
+                          className={`font-pt-mono text-left mt-2 transition-all duration-300 ease-in-out ${
+                            openScheduleIndex === idx
+                              ? "max-h-screen opacity-100"
+                              : "max-h-0 opacity-0 overflow-hidden"
+                          }`}
+                        >
+                          {details}
+                        </div>
+                      )}
                     </div>       
                   )
                 })}
               </div>
             </div>
             <div>
-              <h2 className="md:text-6xl text-3xl font-bold text-center text-white mb-8 font-coiny">SPEAKERS</h2>
-                <div className="text-center bg-white p-10 shadow-custom-purple rounded">
-                  {selectedSpeaker ? (
-                    <div>
-                      <img
-                        src={selectedSpeaker.photo}
-                        alt="speaker name"
-                        className="w-48 h-48 mx-auto rounded-full mb-4 border-4"
-                      />
-                      <h2 className="text-xl font-bold">{selectedSpeaker.name}</h2>
-                      <p className="">{selectedSpeaker.company}</p>
-                      <p className="">{selectedSpeaker.desc}</p>
-                    </div>
-                ) : (
-                  <p className="text-center">Click a schedule item to see speaker details</p>
-                )}
+              <h2 className="md:text-6xl text-3xl font-bold text-center text-white mb-8 font-coiny">SESSIONS</h2>
+              <div className="space-y-4">
+                {sessions.map(({name,company,details,location,time}, idx) => {
+                  return (
+                    <div 
+                      key={idx} 
+                      className="bg-white p-4 rounded-lg shadow-custom-purple text-left hover:text-purple-500"
+                    >
+                      <button 
+                        onClick={() => toggleSession(idx)}
+                      >
+                        <p className="font-pt-mono text-2xl text-left">{name}</p>
+                        <p className="font-pt-mono text-xl text-left">{company}</p>
+                        <p className="font-pt-mono text-lg text-left">{location} {time}</p>
+                      </button>
+                      {openSessionIndex === idx && (
+                        <div
+                          className={`font-pt-mono text-left mt-2 transition-all duration-300 ease-in-out ${
+                            openSessionIndex === idx
+                              ? "max-h-screen opacity-100"
+                              : "max-h-0 opacity-0 overflow-hidden"
+                          }`}
+                        >
+                          {details}
+                        </div>
+                      )}
+                    </div>       
+                  )
+                })}
               </div>
             </div>
           </div>
         </section>
-        <section id="pricing" className="py-20">
+        
+        <section id="pricing" className="py-32">
           <h2 className="md:text-6xl text-3xl font-coiny font-bold text-center text-white mb-8">PRICING</h2>
-          <div className="flex flex-col md:flex-row justify-center gap-10 md:gap-10 align-middle">
+          <div className="flex md:flex-row flex-col gap-10 justify-center align-middle items-center">
             {prices.map(({ id, name, deadline, price }) => {
               const isPastDeadline = deadline < new Date();
               const isFlipped = flippedCards[id] || false;
@@ -140,7 +221,7 @@ export default function Techforward() {
                   {/* Front Side */}
                   <div
                     onClick={() => handleFlip(id)}
-                    className={`flex flex-col w-64 md:h-36 p-6 text-center justify-center items-center rounded-lg shadow-custom-purple cursor-pointer ${
+                    className={`flex flex-col w-64 md:h-36 p-6 text-center justify-center items-center rounded-lg shadow-custom-purple cursor-pointer hover:text-purple-500 ${
                       isPastDeadline
                         ? "bg-gray-300 text-gray-500 opacity-50"
                         : "bg-white"
@@ -173,23 +254,37 @@ export default function Techforward() {
           </div>
         </section>
 
-      <section id="faq" className="md:flex py-20">
+        <section id="faq" className="md:flex py-32">
         <div className="md:w-1/3">
-          <h2 className="md:text-6xl text-3xl font-coiny font-bold text-center text-white mb-8">FAQ</h2>
+          <h2 className="md:text-6xl text-3xl font-coiny font-bold text-center text-white mb-8">
+            FAQ
+          </h2>
         </div>
         <div className="md:w-2/3">
-          {faqs.map(({question,answer}, idx) => {
-            return (
-              <div key={idx} className="mb-10 bg-purple-100 rounded-lg p-4">
-                <div className="font-coiny text-left text-xl pb-2">
-                  {question}
-                </div>
-                <div className="font-pt-mono text-left">
+          {faqs.map(({ question, answer }, idx) => (
+            <div key={idx} className="mb-10 bg-purple-100 rounded-lg p-4">
+              <button
+                className="flex justify-between items-center font-coiny text-right text-xl pb-2 w-full focus:outline-none"
+                onClick={() => toggleAnswer(idx)}
+              >
+                <span className="text-2xl pr-5">
+                  {openFaqIndex === idx ? "−" : "+"}
+                </span>
+                <span>{question}</span>
+              </button>
+              {openFaqIndex === idx && (
+                <div
+                  className={`font-pt-mono text-right mt-2 transition-all duration-300 ease-in-out ${
+                    openFaqIndex === idx
+                      ? "max-h-screen opacity-100"
+                      : "max-h-0 opacity-0 overflow-hidden"
+                  }`}
+                >
                   {answer}
                 </div>
-              </div>
-            )
-          })}
+              )}
+            </div>
+          ))}
         </div>
       </section>
       </main>
