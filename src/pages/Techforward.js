@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactCardFlip from "react-card-flip";
 import Footer from "../components/navigation/Footer.js";
+import rocket from "../img/rocket.png";
 
 export default function Techforward() {
   useEffect(() => {
@@ -70,13 +71,12 @@ export default function Techforward() {
     //   location: "Jack Poole Hall (left)", 
     //   time: "10:05am - 10:35am",
     // },
-    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "" },
-    { name: "Workshop", company: "", details: "Details coming soon!", location: "", time: "" },
-    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "" },
-    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "" },
-    { name: "Panel", company: "", details: "Details coming soon!", location: "", time: "" },
-    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "" },
-    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "" },
+    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "10:05am - 10:35am" },
+    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "10:45am - 11:15am" },
+    { name: "Workshop", company: "", details: "Details coming soon!", location: "", time: "10:45am - 11:45am" },
+    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "11:30am - 12:00pm" },
+    { name: "Panel", company: "", details: "Details coming soon!", location: "", time: "12:30pm - 1:00pm" },
+    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "1:10pm - 1:35pm" },
   ];
 
   const prices = [
@@ -91,7 +91,7 @@ export default function Techforward() {
    ];
 
   return (
-    <div className=" bg-hero">
+    <div className="bg-hero bg-cover">
       <main className="text-center md:px-40 px-10">
         <nav className="fixed md:left-8 left-4 top-1/2 transform -translate-y-1/2 space-y-4 z-50">
           <a href="#hero" id="nav-hero" className="block w-4 h-4 bg-white rounded-full" title="Hero"></a>
@@ -121,7 +121,7 @@ export default function Techforward() {
           </div>
         </section>
 
-        <section id="about" className="flex pb-20 md:pl-10 pl-3 py-32">
+        <section id="about" className="flex pb-20 md:pl-10 pl-3">
           <div className="md:w-1/2">
             <h2 className="md:text-6xl text-3xl font-coiny font-bold md:text-left text-white mb-6">ABOUT</h2>
             <div className="text-left">
@@ -130,6 +130,13 @@ export default function Techforward() {
               </p>
             </div>
           </div>
+          <div className="md:w-1/2 flex justify-center">
+          <img
+            src={rocket}
+            alt="rocket"
+            className="md:w-auto md:h-96 object-contain w-0"
+          />
+        </div>
         </section>
 
         <section id="sponsors" className="py-32">
@@ -244,7 +251,7 @@ export default function Techforward() {
                         : "bg-white"
                     }`}
                   >
-                    <h3 className="md:text-4xl text-2xl font-pt-mono font-bold text-nowrap">
+                    <h3 className="md:text-4xl text-3xl font-pt-mono font-bold text-nowrap">
                       ${price}
                     </h3>
                   </div>
