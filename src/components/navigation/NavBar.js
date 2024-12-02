@@ -32,6 +32,7 @@ export default function NavBar() {
                   <NavBarItem text="Events" path="/events" />
                   <NavBarItem text="Committee" path="/committee" />
                   <NavBarItem text="Sponsors" path="/sponsors" />
+                  <NavBarItem text="TECHforward" path="/techforward" />
                   <Link to={{ pathname: "https://ubccsss.org/tcf/" }} target="_blank">
                     <p className="bg-gradient-to-br nav hover:from-pink-200 hover:via-indigo-200 hover:to-indigo-400 text-gray-600 hover:text-white px-3 py-2 rounded-md text-sm">
                       TCF
@@ -111,6 +112,7 @@ export default function NavBar() {
                 <NavBarItemMobile text="Events" path="/events" />
                 <NavBarItemMobile text="Committee" path="/committee" />
                 <NavBarItemMobile text="Sponsors" path="/sponsors" />
+                <NavBarItemMobile text="TECHforward" path="/techforward" />
                 <Link to={{ pathname: "https://ubccsss.org/tcf/" }} target="_blank">
                     <p className="bg-gradient-to-br hover:from-pink-200 hover:via-indigo-200 hover:to-indigo-400 text-gray-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                       TCF
