@@ -252,7 +252,13 @@ export default function Techforward() {
                     }`}
                   >
                     <h3 className="md:text-4xl text-3xl font-pt-mono font-bold text-nowrap">
+                      <a 
+                        href="https://wicstechforward.eventbrite.com/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
                       ${price}
+                      </a>
                     </h3>
                   </div>
                 </ReactCardFlip>
