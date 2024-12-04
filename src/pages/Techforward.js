@@ -145,7 +145,7 @@ export default function Techforward() {
         </section>
 
         <section id="schedule_speakers" className="py-32">
-          <div className="md:max-w-6xl mx-auto grid grid-cols-2 md:gap-12 gap-3 bg-purple-100 bg-opacity-50 rounded-lg md:p-20 sm:p-5">
+          <div className="md:max-w-6xl mx-auto grid md:grid-cols-2 md:gap-12 gap-3 bg-purple-100 bg-opacity-50 rounded-lg md:p-20 sm:p-5">
             <div>
               <h2 className="md:text-6xl text-3xl font-bold text-center text-white mb-8 font-coiny">SCHEDULE</h2>
               <div className="space-y-4">
@@ -177,7 +177,7 @@ export default function Techforward() {
                 })}
               </div>
             </div>
-            <div>
+            <div className="sm:pt-5 md:pt-0">
               <h2 className="md:text-6xl text-3xl font-bold text-center text-white mb-8 font-coiny">SESSIONS</h2>
               <div className="space-y-4">
                 {sessions.map(({name,company,details,location,time}, idx) => {
