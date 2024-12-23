@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import ReactCardFlip from "react-card-flip";
 import Footer from "../components/navigation/Footer.js";
 import rocket from "../img/rocket.png";
+import planets from "../img/planets.png";
+ 
 
 export default function Techforward() {
   useEffect(() => {
@@ -139,9 +141,13 @@ export default function Techforward() {
         </div>
         </section>
 
-        <section id="sponsors" className="py-32">
+        <section id="sponsors" className="py-32 flex flex-col justify-center">
           <h2 className="md:text-6xl text-3xl font-coiny font-bold text-center text-white mb-6">SPONSORS</h2>
-          <h3 className="text-white font-pt-mono">coming soon...</h3>
+          <img
+            src={planets}
+            alt="sponsors"
+            className="object-contain mx-auto"
+          />
         </section>
 
         <section id="schedule_speakers" className="py-32">
