@@ -58,11 +58,11 @@ export default function Techforward() {
 
   const schedule = [
     { time: "8:40am - 9:15am", title: "Check-in", details: "Details coming soon!"},
-    { time: "9:15am - 9:30am", title: "Opening Ceremony", details: "Details coming soon!"},
-    { time: "9:30am - 9:45am", title: "Keynote", details: "Details coming soon!"},
+    { time: "9:15am - 10:00am", title: "Opening Ceremony", details: "Details coming soon!"},
     { time: "10:00am - 12:00pm", title: "Boothing", details: "Details coming soon!"},
-    { time: "12:00pm - 12:30pm", title: "Lunch", details: "Details coming soon!"},
-    { time: "12:30pm - 2:00pm", title: "Boothing", details: "Details coming soon!"},
+    { time: "12:00pm - 12:45pm", title: "Lunch", details: "Details coming soon!"},
+    { time: "12:45pm - 1:45pm", title: "Panel", details: "Details coming soon!"},
+    { time: "2:00pm", title: "Wrap-up", details: "Details coming soon!"},
   ];
 
   const sessions = [
@@ -73,12 +73,10 @@ export default function Techforward() {
     //   location: "Jack Poole Hall (left)", 
     //   time: "10:05am - 10:35am",
     // },
-    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "10:05am - 10:35am" },
-    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "10:45am - 11:15am" },
-    { name: "Workshop", company: "", details: "Details coming soon!", location: "", time: "10:45am - 11:45am" },
-    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "11:30am - 12:00pm" },
-    { name: "Panel", company: "", details: "Details coming soon!", location: "", time: "12:30pm - 1:00pm" },
-    { name: "Talk", company: "", details: "Details coming soon!", location: "", time: "1:10pm - 1:35pm" },
+    { name: "Providence Healthcare Talk", company: "", details: "Details coming soon!", location: "", time: "10:05am - 10:30am" },
+    { name: "Google Cloud Talk", company: "", details: "Details coming soon!", location: "", time: "10:45am - 11:15am" },
+    { name: "Google Cloud Workshop", company: "", details: "Details coming soon!", location: "", time: "10:45am - 11:45am" },
+    { name: "Metro Vancouver Talk", company: "", details: "Details coming soon!", location: "", time: "11:30am - 11:45pm" },
   ];
 
   const prices = [
