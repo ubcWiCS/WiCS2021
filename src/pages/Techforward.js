@@ -141,11 +141,13 @@ export default function Techforward() {
 
         <section id="sponsors" className="py-32 flex flex-col justify-center">
           <h2 className="md:text-6xl text-3xl font-coiny font-bold text-center text-white mb-6">SPONSORS</h2>
-          <img
-            src={planets}
-            alt="sponsors"
-            className="object-contain mx-auto"
-          />
+          <div className="md:mx-64">
+            <img
+              src={planets}
+              alt="sponsors"
+              className="object-contain mx-auto"
+            />
+          </div>
         </section>
 
         <section id="schedule_speakers" className="py-32">
