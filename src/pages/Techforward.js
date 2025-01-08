@@ -66,17 +66,16 @@ export default function Techforward() {
   ];
 
   const sessions = [
-    // { 
-    //   name: "Christina Kwan", 
-    //   company: "Providence Health Care", 
-    //   details: "This 30 min talk will focus on providing a mix of personal stories, practical advice, and motivational insights, all while emphasizing how embracing discomfort is crucial for success in IT, particularly for a woman like myself who has faced additional barriers in the field over a career span of 25 years in IT.", 
-    //   location: "Jack Poole Hall (left)", 
-    //   time: "10:05am - 10:35am",
-    // },
-    { name: "Providence Healthcare Talk", company: "", details: "Details coming soon!", location: "", time: "10:05am - 10:30am" },
-    { name: "Google Cloud Talk", company: "", details: "Details coming soon!", location: "", time: "10:45am - 11:15am" },
-    { name: "Google Cloud Workshop", company: "", details: "Details coming soon!", location: "", time: "10:45am - 11:45am" },
-    { name: "Metro Vancouver Talk", company: "", details: "Details coming soon!", location: "", time: "11:30am - 11:45pm" },
+    { 
+      name: "Christina Kwan", 
+      company: "Providence Health Care", 
+      details: "As a woman with 25 years in the field, Christina will reflect on the barriers and challenges she's overcome, highlighting how embracing discomfort is key to success in IT. ", 
+      location: "Jack Poole Hall (left)", 
+      time: "10:05am - 10:30am",
+    },
+    { name: "", company: "Google Cloud", details: "Details coming soon!", location: "", time: "10:45am - 11:15am" },
+    { name: "", company: "Google Cloud", details: "Details coming soon!", location: "", time: "10:45am - 11:45am" },
+    { name: "", company: "Metro Vancouver", details: "Details coming soon!", location: "", time: "11:30am - 11:45pm" },
   ];
 
   const prices = [
@@ -195,7 +194,8 @@ export default function Techforward() {
                       >
                         <p className="font-pt-mono text-2xl text-left">{name}</p>
                         <p className="font-pt-mono text-xl text-left">{company}</p>
-                        <p className="font-pt-mono text-lg text-left">{location} {time}</p>
+                        <p className="font-pt-mono text-md text-left">{location}</p>
+                        <p className="font-pt-mono text-md text-left">{time}</p>
                       </button>
                       {openSessionIndex === idx && (
                         <div
