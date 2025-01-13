@@ -57,13 +57,13 @@ export default function Techforward() {
   };
 
   const schedule = [
-    { time: "8:40am - 9:15am", title: "Check-in", details: "Details coming soon!"},
-    { time: "9:15am - 9:30am", title: "Opening Ceremony", details: "Details coming soon!"},
-    { time: "9:30am - 9:45am", title: "Keynote Speaker - Shezana Hassko", details: "Shezana is a proven transportation leader with over 15 years of industry experience who leads the Engineering Division at TransLink with 140 staff and overseeing a $3 billion annual capital portfolio. Shezana was responsible for the implementation of TransLink's multimodal mandate on cycling, walking, roads, bridges and goods movement initiatives and oversees the delivery teams of over 150 projects.  Her area of focus in the field of transportation includes transit facility design, infrastructure planning, design and program management. Shezana’s inclusive and positive approach has helped establish strong relationships with TransLink’s stakeholders and partners which supports her commitment to delivering transportation excellence to this region."},
-    { time: "10:00am - 12:00pm", title: "Boothing", details: "Details coming soon!"},
-    { time: "12:00pm - 12:45pm", title: "Lunch", details: "Details coming soon!"},
-    { time: "12:45pm - 1:45pm", title: "Panel", details: "Details coming soon!"},
-    { time: "2:00pm", title: "Wrap-up", details: "Details coming soon!"},
+    { time: "8:40am - 9:15am", title: "Check-in", details: "Check in with WiCS to get your name tag!"},
+    { time: "9:15am - 9:30am", title: "Opening Ceremony", details: ""},
+    { time: "9:30am - 9:45am", title: "Keynote Speaker", details: "Shezana Hassko, a transportation leader with over 15 years of experience, leads TransLink’s Engineering Division, managing 140 staff and a $3 billion annual capital portfolio. She oversees over 150 infrastructure projects and champions inclusive collaboration to drive transportation excellence in the region."},
+    { time: "10:00am - 12:00pm", title: "Boothing", details: "Visit sponsor booths to learn more about their work!"},
+    { time: "12:00pm - 12:45pm", title: "Lunch", details: ""},
+    { time: "12:45pm - 1:45pm", title: "Panel", details: "Join Pallavi Natekar (Senior Business Intelligence Analyst, Clarius Mobile Health), Ivelina Daiss (Technology R&D Specialist, Rogers Communications), and Nika Ptushkina (Technical Product Manager, PDF Solutions) in their panel discussion on 'Breaking Barriers: Women Leading the Way in Tech and Engineering'"},
+    { time: "2:00pm", title: "Wrap-up", details: ""},
   ];
 
   const sessions = [
