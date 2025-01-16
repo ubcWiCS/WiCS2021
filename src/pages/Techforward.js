@@ -71,12 +71,12 @@ export default function Techforward() {
       name: "Christina Kwan", 
       company: "Providence Health Care", 
       details: "As a woman with 25 years in the field, Christina will reflect on the barriers and challenges she's overcome, highlighting how embracing discomfort is key to success in IT. ", 
-      location: "Jack Poole Hall (left)", 
+      location: "", 
       time: "10:05am - 10:30am",
     },
     { name: "", company: "Google Cloud", details: "Details coming soon!", location: "", time: "10:45am - 11:15am" },
-    { name: "", company: "Google Cloud", details: "Details coming soon!", location: "", time: "10:45am - 11:45am" },
-    { name: "", company: "Metro Vancouver", details: "Details coming soon!", location: "", time: "11:30am - 11:45pm" },
+    { name: "Cornelius van Heerden", company: "Google Cloud", details: "Join Big Data expert Cornelius van Heerden for a deep dive into Google BigQuery and the world of Big Data!", location: "", time: "10:45am - 11:45am" },
+    { name: "Karanpreet Matharu & Zarin Mahmood", company: "Metro Vancouver", details: "Join Karanpreet and Zarin as they discuss their journeys in IT and engineering, and their visions to inspire and amplify awareness for women in male dominated fields!", location: "", time: "11:30am - 11:45pm" },
   ];
 
   const prices = [
