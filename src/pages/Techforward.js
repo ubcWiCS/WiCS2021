@@ -81,8 +81,8 @@ export default function Techforward() {
 
   const prices = [
     { id: "early-bird", name: "EARLY BIRD", deadline: new Date("December 16, 2024"), price: 7 },
-    { id: "regular", name: "REGULAR", deadline: new Date("January 16, 2025"), price: 10 },
-    { id: "day-of", name: "LAST MINUTE", deadline: new Date("January 18, 2025"), price: 15 },
+    { id: "regular", name: "REGULAR", deadline: new Date("January 17, 2025 23:59"), price: 10 },
+    { id: "day-of", name: "LAST MINUTE", deadline: new Date("January 18, 2025 23:59"), price: 15 },
   ];
 
   const faqs = [
