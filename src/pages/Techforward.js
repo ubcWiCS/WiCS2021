@@ -74,7 +74,6 @@ export default function Techforward() {
       location: "", 
       time: "10:05am - 10:30am",
     },
-    { name: "", company: "Google Cloud", details: "Details coming soon!", location: "", time: "10:45am - 11:15am" },
     { name: "Cornelius van Heerden", company: "Google Cloud", details: "Join Big Data expert Cornelius van Heerden for a deep dive into Google BigQuery and the world of Big Data!", location: "", time: "10:45am - 11:45am" },
     { name: "Karanpreet Matharu & Zarin Mahmood", company: "Metro Vancouver", details: "Join Karanpreet and Zarin as they discuss their journeys in IT and engineering, and their visions to inspire and amplify awareness for women in male dominated fields!", location: "", time: "11:30am - 11:45pm" },
   ];
