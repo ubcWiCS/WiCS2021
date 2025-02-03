@@ -58,6 +58,7 @@ export default {
           { value: "platinum", title: "Platinum" },
           { value: "gold", title: "Gold" },
           { value: "silver", title: "Silver" },
+          { value: "past", title: "Past" },
         ],
       },
     },

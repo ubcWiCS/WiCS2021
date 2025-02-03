@@ -76,6 +76,23 @@ export default function Sponsors() {
           type="partner"
           >
         </GridContainer>
+        <GridContainer
+          queryString={`*[_type == "sponsor" && sponsorLevel == "past"] | order(pageOrder asc){
+            name,
+            slug,
+            sponsorLevel,
+            pageOrder,
+            mainImage{
+              asset->{
+                _id,
+                url
+              },
+              alt
+            }
+          }`}
+        title="Past Sponsors"
+        type="sponsor"
+      ></GridContainer>
       </main>
       <Footer />
     </>
