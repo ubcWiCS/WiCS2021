@@ -24,14 +24,17 @@ export default function GridContainer(props) {
   }, []);
 
   if (!postData) return <LoadingSpinner />;
+  if (postData.length === 0) return null;
 
   //Render profile collection
   return (
     <main className="mb-12 ">
       <section className="container mx-auto">
-        <h1 className="text-5xl  flex justify-center cursive text-gray-700 title">
+      {props.title && (
+        <h1 className="text-5xl flex justify-center cursive text-gray-700 title">
           {props.title}
         </h1>
+      )}
         <h2 className="text-lg body flex justify-center mb-12">
           {props.subTitle}&nbsp;&nbsp;
           <Emoji symbol={props.symbol} label="hand waving" />
@@ -40,7 +43,7 @@ export default function GridContainer(props) {
           className={
             props.type === "profile"
               ? "grid md:grid-cols-3 lg:grid-cols-4 gap-8"
-              : "grid md:grid-cols-2 lg:grid-cols-3 gap-24"
+              : "grid md:grid-cols-2 lg:grid-cols-4 gap-16"
           }
         >
           {postData &&
