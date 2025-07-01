@@ -11,11 +11,13 @@ export default function Events() {
   const [postData, setPost] = useState([]);
   const [query, setQuery] = useState("");
   const [filteredData, setFilteredData] = useState([]);
+  const [showNoEvents, setShowNoEvents] = useState(false);
 
   useEffect(() => {
     sanityClient
       .fetch(
         `*[_type == "events" ] | order(pageOrder desc){
+          _id,  
           title,
           date,
           direction,
@@ -50,6 +52,20 @@ export default function Events() {
     debouncedSearch(searchQuery);
   };
 
+  useEffect(() => {
+    let timeoutId;
+
+    if (query && filteredData.length === 0) {
+      timeoutId = setTimeout(() => {
+        setShowNoEvents(true);
+      }, 100);
+    } else {
+      setShowNoEvents(false);
+      if (timeoutId) clearTimeout(timeoutId);
+    }
+    return () => clearTimeout(timeoutId);
+  }, [filteredData, query]);
+
   return (
     <>
       <main className="bg-white p-12 md:p-20">
@@ -69,7 +85,7 @@ export default function Events() {
 
         {filteredData.length > 0 ? (
           filteredData.map((event) => (
-            <section key={event.pageOrder} className="mb-8">
+            <section key={event._id} className="mb-8">
               <EventContent
                 title={event.title}
                 body={
@@ -86,7 +102,9 @@ export default function Events() {
             </section>
           ))
         ) : (
-          <p className="text-center text-gray-600">No events found</p>
+          showNoEvents && (
+            <p className="text-center text-gray-600">No events found</p>
+          )
         )}
       </main>
       <Footer />
