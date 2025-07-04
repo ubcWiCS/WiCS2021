@@ -24,7 +24,7 @@ export default function SponsorCard(props) {
 
   return (
     <article>
-      <div className="flex flex-col justify-between items-center h-full min-h-[420px] p-6 rounded shadow-md w-full max-w-[280px] mx-auto">
+      <div className="flex flex-col justify-between items-center h-full min-h-[420px] p-3 rounded shadow-md w-full max-w-[280px] mx-auto">
 
         <div className="flex flex-col rounded ">
           <span className="block h-64 relative leading-snug" key={props.index}>
