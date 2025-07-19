@@ -12,6 +12,8 @@ import Footer from "../components/navigation/Footer";
 import SocialMedia from "../components/SocialMedia";
 import TwoUpContent from "../components/TwoUpContent";
 
+import About from "./V2/About.jsx";
+
 export default function Home() {
   const [postData, setPost] = useState(null);
   useEffect(() => {
@@ -78,6 +80,7 @@ export default function Home() {
             </div>
         </div>
       </div>
+      <About />
       <TwoUpContent
         title="Events"
         body={
