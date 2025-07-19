@@ -24,6 +24,7 @@ module.exports = {
         'light-purple': '#D2D1F9',
         'wicsPink': '#FDE5F6',
         'wicsIndigo': '#B8C3FB',
+        'wicsPurple': '#B089DD'
       }
     },
     screens: {

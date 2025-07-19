@@ -43,9 +43,16 @@ export default function Home() {
       <div className="relative flex flex-col items-center justify-center">
       <img className="p-20" src={Logo} alt="WiCS logo" />
       <div className="absolute flex flex-col items-center">
-        <h1 className="font-poppins sm:text-4xl text-center">
-          UBC’s network for <br/> *women in computing
-        </h1>
+      <h1 className="!font-poppins sm:text-5xl text-center" style={{
+    textShadow: `
+      0 0 30px rgba(255,255,255,1),
+      0 0 50px rgba(255,255,255,0.9),
+      0 0 90px rgba(255,255,255,0.8)
+    `
+  }}>
+  <span className="font-extrabold">UBC’s</span> <span className="font-semibold">network for</span> <br /> <span className="font-extralight text-gray">*</span><span className="font-semibold">women in</span> <span className="text-wicsPurple font-bold">computing</span>
+</h1>
+
 
         <div className="flex flex-row justify-center mt-3">
           <SocialMedia url="https://www.linkedin.com/company/ubcwics/" width="48px" height="48px" />
