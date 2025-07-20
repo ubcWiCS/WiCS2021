@@ -13,6 +13,7 @@ import twoUp from "./twoUp";
 import sponsor from "./sponsor";
 import events from "./events";
 import partner from "./partner";
+import imageCarousel from "./imageCarousel";
 
 import teamArchive from "./teamArchive";
 
@@ -33,6 +34,7 @@ export default createSchema({
     events,
     teamArchive,
     contactUs,
+    imageCarousel,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,
