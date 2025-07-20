@@ -9,7 +9,7 @@ function About() {
       <img
         src={vector}
         alt="Vector"
-        style={{ height: "120px", marginBottom: "-60px" }}
+        style={{ width: "100%", marginBottom: "-60px" }}
       />
       <div
         className="w-screen relative flex flex-col items-center justify-center px-6 text-center bg-cover bg-top min-h-[800px] py-20 font-poppins"

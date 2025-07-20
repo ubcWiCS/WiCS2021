@@ -13,6 +13,7 @@ import SocialMedia from "../components/SocialMedia";
 import TwoUpContent from "../components/TwoUpContent";
 
 import About from "./V2/About.jsx";
+import JoinUs from "./V2/JoinUs.jsx";
 
 export default function Home() {
   const [postData, setPost] = useState(null);
@@ -81,6 +82,7 @@ export default function Home() {
         </div>
       </div>
       <About />
+      <JoinUs/>
       <TwoUpContent
         title="Events"
         body={
