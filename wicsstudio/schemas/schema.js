@@ -13,8 +13,10 @@ import twoUp from "./twoUp";
 import sponsor from "./sponsor";
 import events from "./events";
 import partner from "./partner";
+import landingPage from './landingPage'
 import imageCarousel from "./imageCarousel";
-
+import programCard from "./programCard";
+import values from "./values";
 import teamArchive from "./teamArchive";
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -34,7 +36,10 @@ export default createSchema({
     events,
     teamArchive,
     contactUs,
+    landingPage,
     imageCarousel,
+    programCard,
+    values,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

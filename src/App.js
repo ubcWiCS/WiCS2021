@@ -27,7 +27,7 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <BrowserRouter className="w-full">
+    <BrowserRouter className="w-screen">
       <ScrollToTop />
       <NavBar />
       <Switch>
