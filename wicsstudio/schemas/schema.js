@@ -13,6 +13,7 @@ import twoUp from "./twoUp";
 import sponsor from "./sponsor";
 import events from "./events";
 import partner from "./partner";
+import landingPage from './landingPage'
 import imageCarousel from "./imageCarousel";
 import programCard from "./programCard";
 import values from "./values";
@@ -35,6 +36,7 @@ export default createSchema({
     events,
     teamArchive,
     contactUs,
+    landingPage,
     imageCarousel,
     programCard,
     values,
