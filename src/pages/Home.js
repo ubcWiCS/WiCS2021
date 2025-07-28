@@ -43,7 +43,7 @@ export default function Home() {
       <div className="relative flex flex-col items-center justify-center">
       <img className="p-20" src={Logo} alt="WiCS logo" />
       <div className="absolute flex flex-col items-center">
-        <h1 className="sm:text-4xl text-center text-[#B089DD]">
+        <h1 className="font-poppins sm:text-4xl text-center">
           UBC’s network for <br/> *women in computing
         </h1>
 

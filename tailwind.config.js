@@ -15,7 +15,8 @@ module.exports = {
       fontFamily: {
         'press-start': ['"Press Start 2P"'], 
         'coiny': ['"Coiny"'],
-        'pt-mono': ['"PT Mono"']
+        'pt-mono': ['"PT Mono"'], 
+        'poppins': ['Poppins', 'sans-serif'],
       },
       colors: {
         'baby-blue': '#A4CFEB',
