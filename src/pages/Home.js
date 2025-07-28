@@ -61,8 +61,15 @@ export default function Home() {
         </div>
       </div>
     </div>
+
       </div>
+      <div className="flex flex-col items-center text-center bg-[#fdfdfb] py-10 my-10">
+      <h2 className="text-2xl font-bold mb-2">Don’t Miss Out!</h2>
+      <p className="text-gray-700 mb-6">
+        Sign up for our newsletter to get latest resources, tips and upcoming events
+      </p>
     <NewsletterSignup/>
+    </div>
       <TwoUpContent
         title="Events"
         body={

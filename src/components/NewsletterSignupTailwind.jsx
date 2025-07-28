@@ -2,11 +2,8 @@ import React from "react";
 
 const NewsletterSignupTailwind = () => {
   return (
-    <div className="flex flex-col items-center text-center bg-[#fdfdfb] py-10 my-10">
-      <h2 className="text-2xl font-bold mb-2">Don’t Miss Out!</h2>
-      <p className="text-gray-700 mb-6">
-        Sign up for our newsletter to get latest resources, tips and upcoming events
-      </p>
+    <div className="flex flex-col items-center text-center bg-[#fdfdfb] py-2 my-2">
+     
 
       <form
         action="https://ubcwics.us21.list-manage.com/subscribe/post?u=4d61e9a5664cb96d340a8ebf0&amp;id=e41b821ff3&amp;f_id=00afb7e1f0"
