@@ -3,7 +3,7 @@ import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 
 import Events from "../img/WicsEventBlob.png";
-import Logo from "../img/WiCSLogo.png";
+import Logo from "../img/WiCSBackGround.png";
 
 import Button from "../components/Button.js";
 import Calendar from "../components/CalendarComponent";
@@ -39,44 +39,23 @@ export default function Home() {
 
   return (
     <main className="flex flex-col w-full">
-      <div className="flex flex-col justify-center items-center w-screen  bg-gradient-to-br from-pink-200 via-indigo-200 to-indigo-400 mb-40 sm:mb-0">
-        <div className="justify-center items-center h-500 w-200 px-12 py-20">
-          <h1 className="sm:text-4xl flex justify-center cursive text-gray-500 font-semibold">
-            University of British Columbia
-          </h1>
-          <br />
-          <img
-            className="p-10"
-            src={Logo}
-            alt="WiCS logo"
-          />
-          <br />
-          <h1 className="sm:text-4xl flex justify-center cursive text-gray-500 font-semibold">
-            Women in Computer Science
-          </h1>
-          <div className="flex flex-row items center justify-center ">
-              <SocialMedia
-                url="https://www.linkedin.com/company/ubcwics/"
-                width="48px"
-                height="48px"
-              ></SocialMedia>
-              <SocialMedia
-                url="https://www.instagram.com/ubcwics/"
-                width="48px"
-                height="48px"
-              ></SocialMedia>
-              <SocialMedia
-                url="https://www.facebook.com/ubcwics/"
-                width="48px"
-                height="48px"
-              ></SocialMedia>
-              <SocialMedia
-                url="https://discord.gg/jvqdhrCk3z"
-                width="48px"
-                height="48px"
-              ></SocialMedia>
-            </div>
+      <div className="flex flex-col justify-center items-center w-screen  bg-gradient-to-b from-wicsPink  to-wicsIndigo mb-40 sm:mb-0">
+      <div className="relative flex flex-col items-center justify-center">
+      <img className="p-20" src={Logo} alt="WiCS logo" />
+      <div className="absolute flex flex-col items-center">
+        <h1 className="sm:text-4xl text-center text-[#B089DD]">
+          UBC’s network for <br/> *women in computing
+        </h1>
+
+        <div className="flex flex-row justify-center mt-3">
+          <SocialMedia url="https://www.linkedin.com/company/ubcwics/" width="48px" height="48px" />
+          <SocialMedia url="https://www.instagram.com/ubcwics/" width="48px" height="48px" />
+          <SocialMedia url="https://www.facebook.com/ubcwics/" width="48px" height="48px" />
+          <SocialMedia url="https://discord.gg/jvqdhrCk3z" width="48px" height="48px" />
         </div>
+      </div>
+    </div>
+
       </div>
       <TwoUpContent
         title="Events"

@@ -20,7 +20,9 @@ module.exports = {
       colors: {
         'baby-blue': '#A4CFEB',
         'baby-purple': '#CCBEE2',
-        'light-purple': '#D2D1F9'
+        'light-purple': '#D2D1F9',
+        'wicsPink': '#FDE5F6',
+        'wicsIndigo': '#B8C3FB',
       }
     },
     screens: {
