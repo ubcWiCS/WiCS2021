@@ -11,6 +11,7 @@ import Emoji from "../components/Emoji.js";
 import Footer from "../components/navigation/Footer";
 import SocialMedia from "../components/SocialMedia";
 import TwoUpContent from "../components/TwoUpContent";
+import NewsletterSignup from "../components/NewsletterSignupTailwind.jsx";
 
 export default function Home() {
   const [postData, setPost] = useState(null);
@@ -52,8 +53,6 @@ export default function Home() {
   }}>
   <span className="font-extrabold">UBC’s</span> <span className="font-semibold">network for</span> <br /> <span className="font-extralight text-gray-700">*</span><span className="font-semibold">women in</span> <span className="text-wicsPurple font-bold">computing</span>
 </h1>
-
-
         <div className="flex flex-row justify-center mt-3">
           <SocialMedia url="https://www.linkedin.com/company/ubcwics/" width="48px" height="48px" />
           <SocialMedia url="https://www.instagram.com/ubcwics/" width="48px" height="48px" />
@@ -62,8 +61,8 @@ export default function Home() {
         </div>
       </div>
     </div>
-
       </div>
+    <NewsletterSignup/>
       <TwoUpContent
         title="Events"
         body={
