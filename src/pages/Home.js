@@ -50,7 +50,7 @@ export default function Home() {
       0 0 90px rgba(255,255,255,0.8)
     `
   }}>
-  <span className="font-extrabold">UBC’s</span> <span className="font-semibold">network for</span> <br /> <span className="font-extralight text-gray">*</span><span className="font-semibold">women in</span> <span className="text-wicsPurple font-bold">computing</span>
+  <span className="font-extrabold">UBC’s</span> <span className="font-semibold">network for</span> <br /> <span className="font-extralight text-gray-700">*</span><span className="font-semibold">women in</span> <span className="text-wicsPurple font-bold">computing</span>
 </h1>
 
 
