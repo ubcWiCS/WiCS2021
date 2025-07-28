@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="w-screen bg-[#fdfdfb]">
       <div className="container mx-auto px-6 py-12">
 
-        
+
         <div className="flex flex-col items-start max-w-3xl mx-auto">
           <h2 className="text-2xl font-poppins font-semibold text-wicsPurple mb-3">
             Subscribe to Our Newsletter
@@ -30,27 +30,33 @@ export default function Footer() {
               url="https://www.linkedin.com/company/ubcwics/mycompany/"
               width="25px"
               height="25px"
+              color="#B089DD"
             />
             <SocialMedia
               url="https://www.instagram.com/ubcwics/"
               width="25px"
               height="25px"
+              color="#B089DD"
             />
             <SocialMedia
               url="https://www.facebook.com/ubcwics/"
               width="25px"
               height="25px"
+              color="#B089DD"
             />
             <SocialMedia
               url="https://discord.gg/jvqdhrCk3z"
               width="25px"
               height="25px"
+              color="#B089DD"
+              
             />
             <SocialMedia
               email="true"
               url="ubcwics@gmail.com"
               width="25px"
               height="25px"
+              color="#B089DD"
             />
           </div>
         </div>

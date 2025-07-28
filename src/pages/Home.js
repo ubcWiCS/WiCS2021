@@ -54,10 +54,10 @@ export default function Home() {
   <span className="font-extrabold">UBC’s</span> <span className="font-semibold">network for</span> <br /> <span className="font-extralight text-gray-700">*</span><span className="font-semibold">women in</span> <span className="text-wicsPurple font-bold">computing</span>
 </h1>
         <div className="flex flex-row justify-center mt-3">
-          <SocialMedia url="https://www.linkedin.com/company/ubcwics/" width="48px" height="48px" />
-          <SocialMedia url="https://www.instagram.com/ubcwics/" width="48px" height="48px" />
-          <SocialMedia url="https://www.facebook.com/ubcwics/" width="48px" height="48px" />
-          <SocialMedia url="https://discord.gg/jvqdhrCk3z" width="48px" height="48px" />
+          <SocialMedia url="https://www.linkedin.com/company/ubcwics/" width="48px" height="48px" color="#FAEAFF" />
+          <SocialMedia url="https://www.instagram.com/ubcwics/" width="48px" height="48px"color="#FAEAFF" />
+          <SocialMedia url="https://www.facebook.com/ubcwics/" width="48px" height="48px" color="#FAEAFF"/>
+          <SocialMedia url="https://discord.gg/jvqdhrCk3z" width="48px" height="48px" color="#FAEAFF" />
         </div>
       </div>
     </div>
