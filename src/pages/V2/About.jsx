@@ -33,34 +33,35 @@ function About() {
         style={{ marginBottom: "-60px" }}
       />
       <div
-        className="w-screen relative flex flex-col items-center justify-center px-4 md:px-8 lg:px-12 text-center bg-cover bg-top min-h-[800px] py-16 md:py-24 font-poppins"
-        style={{ backgroundImage: `url(${bg})` }}
+  className="w-screen relative flex flex-col items-center justify-center px-4 md:px-6 lg:px-8 text-center bg-cover bg-top min-h-[600px] py-10 md:py-16 font-poppins"
+  style={{ backgroundImage: `url(${bg})` }}
+>
+  <div className="max-w-3xl w-full text-left pt-6">
+    {section?.subheading && (
+      <h2 className="text-xs md:text-sm font-light mb-3">
+        {section.subheading}
+      </h2>
+    )}
+    {section?.heading && (
+      <h2
+        className="text-xl md:text-3xl font-bold mb-4"
+        style={{ color: "#B089DD" }}
       >
-        <div className="max-w-4xl w-full text-left pt-10">
-          {section?.subheading && (
-            <h2 className="text-sm md:text-base font-light mb-4">
-              {section.subheading}
-            </h2>
-          )}
-          {section?.heading && (
-            <h2
-              className="text-2xl md:text-4xl font-bold mb-6"
-              style={{ color: "#B089DD" }}
-            >
-              {section.heading}
-            </h2>
-          )}
-          {section?.description && (
-            <p className="text-sm md:text-base lg:text-lg font-light leading-relaxed mb-10">
-              {section.description}
-            </p>
-          )}
+        {section.heading}
+      </h2>
+    )}
+    {section?.description && (
+      <p className="text-xs md:text-sm lg:text-base font-light leading-relaxed mb-6">
+        {section.description}
+      </p>
+    )}
 
-          <div className="mx-auto">
-            <ImageCarousel type="aboutImages" height="450px" />
-          </div>
-        </div>
-      </div>
+    <div className="mx-auto">
+      <ImageCarousel type="aboutImages" height="350px" />
+    </div>
+  </div>
+</div>
+
     </div>
   );
 }
