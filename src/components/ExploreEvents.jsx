@@ -2,7 +2,7 @@ import React from "react";
 
 const ExploreEvents = ({ events = [] }) => {
   return (
-    <section className="px-6 py-12">
+    <section className="px-6 py-12 my-8">
       <div className="max-w-2xl mx-auto">
         {/* Section Heading */}
         <div className="mb-6 text-left">
