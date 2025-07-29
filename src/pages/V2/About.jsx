@@ -36,7 +36,7 @@ function About() {
         className="w-screen relative flex flex-col items-center justify-center px-4 md:px-8 lg:px-12 text-center bg-cover bg-top min-h-[800px] py-16 md:py-24 font-poppins"
         style={{ backgroundImage: `url(${bg})` }}
       >
-        <div className="max-w-6xl w-full text-left pt-10">
+        <div className="max-w-4xl w-full text-left pt-10">
           {section?.subheading && (
             <h2 className="text-lg md:text-xl font-light mb-4">
               {section.subheading}
@@ -55,8 +55,8 @@ function About() {
               {section.description}
             </p>
           )}
-          <div className="w-full">
-            <ImageCarousel type="aboutImages" />
+          <div className="mx-auto">
+            <ImageCarousel type="aboutImages" height="500px" />
           </div>
         </div>
       </div>

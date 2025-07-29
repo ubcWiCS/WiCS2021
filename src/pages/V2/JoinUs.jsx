@@ -3,8 +3,7 @@ import sanityClient from "../../client.js";
 import ProgramCard from "../../components/ProgramCard";
 import ImageCarousel from "../../components/ImageCarousel";
 import ValueList from "../../components/ValueList.js";
-import bgTop from "../../img/bgTop.svg";
-import bgBottom from "../../img/bgBottom.svg";
+import bg from "../../img/joinUsBg.svg";
 
 export default function JoinUs() {
   const [programs, setPrograms] = useState([]);
@@ -48,24 +47,16 @@ export default function JoinUs() {
   }, []);
 
   return (
-    <div className="JoinUs font-poppins w-screen">
-      {/* Top Background */}
-      <div
-        className="bg-no-repeat bg-top bg-contain w-full flex flex-col items-center justify-center px-6 text-center"
-        style={{
-          backgroundImage: `url(${bgTop})`,
-          backgroundSize: "100% auto",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "top",
-          paddingTop: "4rem",
-        }}
-      ></div>
-
-      {/* Purple Background */}
-      <div
-        className="px-6 py-20 text-center"
-        style={{ backgroundColor: "#F6F0FF" }}
-      >
+    <div
+      className="JoinUs font-poppins w-screen"
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        minHeight: "2000px",
+      }}
+    >
+      <div className="px-6 py-20 text-center">
         {whyJoinUsSection && (
           <>
             <div
@@ -73,7 +64,7 @@ export default function JoinUs() {
               style={{ position: "relative" }}
             >
               <div
-                className="w-5/12 rounded-lg p-10 shadow-lg"
+                className="w-5/12 rounded-lg p-10 shadow-lg mt-20 md:mt-35"
                 style={{
                   backgroundColor: "#E1E0FF",
                   color: "#805DC1",
@@ -90,14 +81,14 @@ export default function JoinUs() {
             <div className="max-w-5xl mx-auto py-15 px-6 md:px-12 flex flex-col">
               <h2
                 className="text-5xl font-bold mb-4 text-left"
-                style={{ color: "#B089DD" }}
+                style={{ color: "#B089DD", marginTop: "-40px" }}
               >
                 {whyJoinUsSection.heading}
               </h2>
 
               <div className="w-full flex justify-between pt-10">
                 <div style={{ width: "42%" }}>
-                  <ImageCarousel type="whyJoinUsImages" />
+                  <ImageCarousel type="whyJoinUsImages" height="90vh" />
                 </div>
                 <div className="w-2/5">
                   <ValueList />
@@ -107,7 +98,6 @@ export default function JoinUs() {
           </>
         )}
 
-        {/* Stories and Support Section */}
         {storiesSection && (
           <div className="max-w-5xl text-left py-20 mx-auto">
             <h2
@@ -147,17 +137,6 @@ export default function JoinUs() {
           </div>
         )}
       </div>
-
-      {/* Bottom Background */}
-      <div
-        className="w-full bg-no-repeat bg-bottom bg-contain"
-        style={{
-          backgroundImage: `url(${bgBottom})`,
-          backgroundSize: "100% auto",
-          backgroundRepeat: "no-repeat",
-          height: "50px",
-        }}
-      />
     </div>
   );
 }

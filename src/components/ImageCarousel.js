@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import sanityClient from "../client.js";
 import imageUrlBuilder from "@sanity/image-url";
-import { ReactComponent as PrevArrowIcon } from '../img/arrowPrev.svg';
-import { ReactComponent as NextArrowIcon } from '../img/arrowNext.svg';
+import { ReactComponent as PrevArrowIcon } from "../img/arrowPrev.svg";
+import { ReactComponent as NextArrowIcon } from "../img/arrowNext.svg";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -11,7 +11,8 @@ function urlFor(source) {
 }
 
 export default function ImageCarousel({
-  type = "aboutImages"
+  type = "aboutImages",
+  height = "550px",
 }) {
   const [images, setImages] = useState([]);
 
@@ -29,19 +30,19 @@ export default function ImageCarousel({
       style={{ ...style }}
       onClick={onClick}
     >
-      <PrevArrowIcon className="w-6 h-6" />
+      <PrevArrowIcon className="w-5 h-5" />
     </div>
   );
-  
+
   const NextArrow = ({ className, style, onClick }) => (
     <div
       className={`${className} flex items-center justify-center`}
       style={{ ...style }}
       onClick={onClick}
     >
-      <NextArrowIcon className="w-6 h-6" />
+      <NextArrowIcon className="w-5 h-5" />
     </div>
-  );  
+  );
 
   const settings = {
     dots: true,
@@ -64,6 +65,7 @@ export default function ImageCarousel({
             src={urlFor(img)}
             alt={img.title || `Slide ${idx + 1}`}
             className="w-full rounded-lg"
+            style={{ height: height, objectFit: "cover", width: "100%" }}
           />
         </div>
       ))}
