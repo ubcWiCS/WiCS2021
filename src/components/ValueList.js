@@ -25,18 +25,18 @@ export default function ValueList() {
   }, []);
 
   return (
-    <div className="value-list space-y-8">
+    <div className="value-list space-y-5">
       {values.map(({ _id, logo, title, description }) => (
         <div key={_id} className="flex flex-col items-center text-center">
           {logo && (
             <img
               src={urlFor(logo)}
               alt={title}
-              className="w-15 h-15 object-contain mb-4"
+              className="w-13 h-13 object-contain mb-2"
             />
           )}
-          <h3 className="text-xl font-semibold mb-2">{title}</h3>
-          <p className="text-base font-light max-w-xl">{description}</p>
+          <h3 className="text-xl font-semibold mb-1">{title}</h3>
+          <p className="text-base font-light max-w-l">{description}</p>
         </div>
       ))}
     </div>

@@ -53,14 +53,14 @@ export default function JoinUs() {
         backgroundImage: `url(${bg})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        minHeight: "2000px",
+        minHeight: "1550px", 
       }}
     >
-      <div className="px-6 py-20 text-center">
+      <div className="px-6 py-2 text-center">
         {whyJoinUsSection && (
           <>
             <div
-              className="w-screen max-w-none flex justify-end mb-20 px-6"
+              className="w-screen max-w-none flex justify-end mb-5 px-6"
               style={{ position: "relative" }}
             >
               <div
@@ -79,30 +79,38 @@ export default function JoinUs() {
             </div>
 
             <div className="max-w-5xl mx-auto py-15 px-6 md:px-12 flex flex-col">
-              <h2
-                className="text-4xl font-bold mb-4 text-left"
-                style={{ color: "#B089DD", marginTop: "-40px" }}
-              >
-                {whyJoinUsSection.heading}
-              </h2>
+            <div className="max-w-5xl mx-auto py-15 px-6 md:px-12 flex flex-col">
+            <div className="max-w-5xl mx-auto py-15 px-6 md:px-12 flex flex-col items-center">
+  
+  <div className="flex flex-col items-start" style={{ width: "95%" }}>
+    <h2
+      className="text-4xl font-bold"
+      style={{ color: "#B089DD", marginTop: "-70px" }}
+    >
+      {whyJoinUsSection.heading}
+    </h2>
 
-              <div className="w-full flex justify-between pt-10">
-                <div style={{ width: "42%" }}>
-                  <ImageCarousel type="whyJoinUsImages" height="90vh" />
-                </div>
-                <div className="w-2/5">
-                  <ValueList />
-                </div>
-              </div>
-            </div>
+    <div className="flex justify-start items-center gap-12 pt-10 w-full">
+      <div style={{ width: "40%" }}>
+        <ImageCarousel type="whyJoinUsImages" height="80vh" />
+      </div>
+      <div className="w-1/3">
+        <ValueList />
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
           </>
         )}
 
         {storiesSection && (
           <div className="max-w-5xl text-left py-20 mx-auto">
             <h2
-              className="text-4xl font-bold mb-4 px-6 md:px-12"
-              style={{ color: "#B089DD" }}
+              className="text-3xl font-bold mb-4 px-6 md:px-12"
+              style={{ color: "#B089DD", marginTop: "-25px" }}
             >
               {storiesSection.heading}
             </h2>
