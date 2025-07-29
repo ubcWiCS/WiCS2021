@@ -27,7 +27,8 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <BrowserRouter className="w-screen">
+    <BrowserRouter>
+      <div className="overflow-x-hidden">
       <ScrollToTop />
       <NavBar />
       <Switch>
@@ -43,6 +44,7 @@ function App() {
         <Route component={SinglePostNoAuthor} path="/profile/:slug" />
         <Route component={Techforward} path="/techforward" />
       </Switch>
+      </div>
     </BrowserRouter>
   );
 }
