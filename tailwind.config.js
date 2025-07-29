@@ -21,7 +21,12 @@ module.exports = {
       colors: {
         'baby-blue': '#A4CFEB',
         'baby-purple': '#CCBEE2',
-        'light-purple': '#D2D1F9'
+        'light-purple': '#D2D1F9',
+        'wicsPink': '#FDE5F6',
+        'wicsIndigo': '#B8C3FB',
+        'wicsPurple': '#B089DD',
+        'textboxColor': '#90868D94',
+        'placeholder-light': 'rgba(255,255,255,0.7)',
       }
     },
     screens: {

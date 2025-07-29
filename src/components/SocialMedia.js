@@ -12,7 +12,8 @@ export default function SocialMedia(props) {
         url={props.email ? "mailto:" + props.url : props.url}
         className="p-2"
         target="_blank"
-        fgColor="#fff"
+        fgColor="transparent"
+        bgColor= {props.color}
         style={{ height: props.height, width: props.width, marginRight: "12px", marginTop: "24px" }}
       />
     </div>
