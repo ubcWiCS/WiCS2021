@@ -53,7 +53,7 @@ export default function JoinUs() {
         backgroundImage: `url(${bg})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        minHeight: "1550px", 
+        minHeight: "1730px", 
       }}
     >
       <div className="px-6 py-2 text-center">
