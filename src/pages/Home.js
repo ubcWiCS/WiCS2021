@@ -12,6 +12,7 @@ import Footer from "../components/navigation/Footer";
 import SocialMedia from "../components/SocialMedia";
 import TwoUpContent from "../components/TwoUpContent";
 import NewsletterSignup from "../components/NewsletterSignupTailwind.jsx";
+import ExploreEvents from "../components/ExploreEvents.jsx";
 
 export default function Home() {
   const [postData, setPost] = useState(null);
@@ -37,6 +38,24 @@ export default function Home() {
       .then((data) => setPost(data))
       .catch(console.error);
   }, []);
+
+  // TODO: get rid of mock data and replace with real data later 
+  const mockEvents = [
+    {
+      title: "YouCode 2026 Hackathon",
+      date: "April 2 - April 3",
+      dueDate: "Application due March 21"
+    },
+    {
+      title: "Tri Mentorship Program 2025/26",
+      date: "September 7 - March 29"
+    },
+    {
+      title: "TechForward 2026",
+      date: "October 5"
+    }
+  ];
+  
 
   return (
     <main className="flex flex-col w-full">
@@ -70,6 +89,8 @@ export default function Home() {
       </p>
     <NewsletterSignup/>
     </div>
+    
+    <ExploreEvents events={mockEvents} />
       <TwoUpContent
         title="Events"
         body={
