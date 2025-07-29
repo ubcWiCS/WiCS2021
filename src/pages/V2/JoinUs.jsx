@@ -80,7 +80,7 @@ export default function JoinUs() {
 
             <div className="max-w-5xl mx-auto py-15 px-6 md:px-12 flex flex-col">
               <h2
-                className="text-5xl font-bold mb-4 text-left"
+                className="text-4xl font-bold mb-4 text-left"
                 style={{ color: "#B089DD", marginTop: "-40px" }}
               >
                 {whyJoinUsSection.heading}
@@ -101,12 +101,12 @@ export default function JoinUs() {
         {storiesSection && (
           <div className="max-w-5xl text-left py-20 mx-auto">
             <h2
-              className="text-5xl font-bold mb-4 px-6 md:px-12"
+              className="text-4xl font-bold mb-4 px-6 md:px-12"
               style={{ color: "#B089DD" }}
             >
               {storiesSection.heading}
             </h2>
-            <p className="mb-8 text-xl font-light leading-relaxed px-6 md:px-12">
+            <p className="mb-8 text-lg font-light leading-relaxed px-6 md:px-12">
               {storiesSection.description}
             </p>
 

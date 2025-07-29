@@ -38,25 +38,26 @@ function About() {
       >
         <div className="max-w-4xl w-full text-left pt-10">
           {section?.subheading && (
-            <h2 className="text-lg md:text-xl font-light mb-4">
+            <h2 className="text-sm md:text-base font-light mb-4">
               {section.subheading}
             </h2>
           )}
           {section?.heading && (
             <h2
-              className="text-3xl md:text-5xl font-bold mb-6"
+              className="text-2xl md:text-4xl font-bold mb-6"
               style={{ color: "#B089DD" }}
             >
               {section.heading}
             </h2>
           )}
           {section?.description && (
-            <p className="text-base md:text-lg lg:text-xl font-light leading-relaxed mb-10">
+            <p className="text-sm md:text-base lg:text-lg font-light leading-relaxed mb-10">
               {section.description}
             </p>
           )}
+
           <div className="mx-auto">
-            <ImageCarousel type="aboutImages" height="500px" />
+            <ImageCarousel type="aboutImages" height="450px" />
           </div>
         </div>
       </div>
