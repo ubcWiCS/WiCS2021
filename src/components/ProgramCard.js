@@ -8,7 +8,7 @@ export default function ProgramCard({
   logoSize = 48,
 }) {
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 max-w-md w-full space-y-4 flex flex-col justify-center items-center">
+    <div className="bg-white shadow-xl rounded-lg p-6 max-w-md w-full space-y-4 flex flex-col justify-center items-center">
       <div className="flex flex-row items-center gap-4">
         {title && (
           <h2

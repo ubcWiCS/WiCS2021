@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Ubuntu:wght@700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,14 +44,14 @@
   font-size: 50px;
 }
 
-.event-card{
+.event-card {
   max-width: 400px;
   outline: 1px solid black;
   margin: 15px;
   border-radius: 15px;
 }
 
-.carousel-image{
+.carousel-image {
   max-height: 300px !important;
   float: none !important;
   margin-right: auto !important;
@@ -60,7 +60,7 @@
 
 .slick-dots {
   @apply bg-black bg-opacity-50 rounded-full px-2 inline-block absolute left-1/2 transform -translate-x-1/2;
-  bottom: 2.5rem; 
+  bottom: 2.5rem;
   width: auto !important;
   z-index: 1;
   align-items: center;
@@ -68,19 +68,14 @@
 }
 
 .slick-dots li button:before {
-  font-size: 12px !important;
   color: #696969;
   opacity: 1;
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .slick-dots li.slick-active button:before {
-  color: #D9D9D9;
+  color: #d9d9d9;
   opacity: 1;
-}
-.slick-prev,
-.slick-next {
-  @apply absolute top-1/2 -translate-y-1/2 rounded-full w-8 h-8 flex items-center justify-center cursor-pointer;
 }
 
 .slick-prev {
@@ -100,8 +95,8 @@
 .slick-next {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex !important;
   align-items: center;
   justify-content: center;
@@ -109,47 +104,73 @@
 }
 
 .slick-slide > div {
-  height: 570px !important;
+  height: auto !important;
   overflow: hidden;
-}
-.slick-slide img {
-  height: 550px !important;
-  width: 100% !important;
-  object-fit: cover !important;
-}
-
-.whyJoinUsImages .slick-slide > div {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.whyJoinUsImages .slick-slide img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain;
-  border-radius: 8px;
 }
 
 #mc_embed_signup form {
- 
   font: 14px Arial, sans-serif;
   margin: 0 !important;
   padding: 0 !important;
-  
   flex-direction: row;
   width: 300px;
 }
 
-#mc_embed_shell{
+#mc_embed_shell {
   margin: 0 !important;
   padding: 0 !important;
 }
 
-#mc_embed_signup .mc-field-group input {display:block; width:100%; padding:10px 0; text-indent:2%; border: 0; }
+#mc_embed_signup .mc-field-group input {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  text-indent: 2%;
+  border: 0;
+}
 
-#mc-embedded-subscribe{
-  clear:both; background-color: #808080 !important; border: 0 none; border-radius:4px; transition: all 0.23s ease-in-out 0s; color: #FFFFFF; cursor: pointer; display: inline-block; font-size:15px; font-weight: normal; height: 32px; line-height: 32px; margin: 0 5px 10px 0; padding: 0 22px; text-align: center; text-decoration: none; vertical-align: top; white-space: nowrap; width: fit-content; width: -moz-fit-content;}
+#mc-embedded-subscribe {
+  clear: both;
+  background-color: #808080 !important;
+  border: 0 none;
+  border-radius: 4px;
+  transition: all 0.23s ease-in-out 0s;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: normal;
+  height: 32px;
+  line-height: 32px;
+  margin: 0 5px 10px 0;
+  padding: 0 22px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: fit-content;
+  width: -moz-fit-content;
+}
 
-#mc-embedded-subscribe:hover{
-  clear:both; background-color: #000000 !important; border: 0 none; border-radius:4px; transition: all 0.23s ease-in-out 0s; color: #FFFFFF; cursor: pointer; display: inline-block; font-size:15px; font-weight: normal; height: 32px; line-height: 32px; margin: 0 5px 10px 0; padding: 0 22px; text-align: center; text-decoration: none; vertical-align: top; white-space: nowrap; width: fit-content; width: -moz-fit-content;}
+#mc-embedded-subscribe:hover {
+  clear: both;
+  background-color: #000000 !important;
+  border: 0 none;
+  border-radius: 4px;
+  transition: all 0.23s ease-in-out 0s;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: normal;
+  height: 32px;
+  line-height: 32px;
+  margin: 0 5px 10px 0;
+  padding: 0 22px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: fit-content;
+  width: -moz-fit-content;
+}
