@@ -1,19 +1,10 @@
 import React, { useState, useEffect } from "react";
 import sanityClient from "../client.js";
-import BlockContent from "@sanity/block-content-to-react";
-
-import Events from "../img/WicsEventBlob.png";
 import Logo from "../img/WiCSBackGround.png";
-
-import Button from "../components/Button.js";
-import Calendar from "../components/CalendarComponent";
-import Emoji from "../components/Emoji.js";
 import Footer from "../components/navigation/Footer";
 import SocialMedia from "../components/SocialMedia";
-import TwoUpContent from "../components/TwoUpContent";
 import NewsletterSignup from "../components/NewsletterSignupTailwind.jsx";
 import ExploreEvents from "../components/ExploreEvents.jsx";
-
 import About from "./V2/About.jsx";
 import JoinUs from "./V2/JoinUs.jsx";
 
@@ -94,55 +85,9 @@ export default function Home() {
     <NewsletterSignup/>
     </div>
     
-    <ExploreEvents events={mockEvents} />
       <About />
+      <ExploreEvents events={mockEvents} />
       <JoinUs/>
-      <TwoUpContent
-        title="Events"
-        body={
-          <div className="flex flex-col">
-            <p className="pb-2 body">
-              Want to stay up to date? Follow us on socials above!&nbsp;&nbsp;
-              <Emoji symbol="🎉" label="search" />
-            </p>
-            
-            <p className="pb-4 pt-6 body">
-              Or sign up for one of our events here: &nbsp;&nbsp;
-            </p>
-            <div className="flex items-center">
-              <Button
-                link="https://linktr.ee/UBCWiCS"
-                text="Sign Up!"
-                type="external"
-                width="w-2/4"
-              ></Button>
-            </div>
-          </div>
-        }
-        imageSrc={Events}
-        imageAlt="Image of women chatting"
-        direction="textLeft"
-      ></TwoUpContent>
-      <Calendar />
-      {postData &&
-        postData.map((twoUp, index) => (
-          <section key={index}>
-            <TwoUpContent
-              key={index}
-              title={twoUp.title}
-              body={
-                <BlockContent
-                  blocks={twoUp.body}
-                  projectId="xvhe4elt"
-                  dataset="production"
-                />
-              }
-              imageSrc={twoUp.mainImage.asset.url}
-              imageAlt={twoUp.mainImage.alt}
-              direction={twoUp.direction}
-            ></TwoUpContent>
-          </section>
-        ))}
       <Footer />
     </main>
   );
