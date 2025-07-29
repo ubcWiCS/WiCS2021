@@ -12,34 +12,29 @@ export default function NavBar() {
     <div className="bg-white sticky top-0 z-10">
       <nav>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <NavLink to="/" exact>
-                  <img className="h-10 w-10" src={WicsLogo} alt="Workflow" />
-                </NavLink>
-              </div>
-              <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
-                  <NavLink
-                    to="/"
-                    exact
-                    className="bg-gradient-to-br hover:from-pink-200 hover:via-indigo-200 hover:to-indigo-400 text-gray-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    WiCS
-                  </NavLink>
-                  <NavBarItem text="About" path="/about" />
-                  <NavBarItem text="Events" path="/events" />
-                  <NavBarItem text="Committee" path="/committee" />
-                  <NavBarItem text="Sponsors" path="/sponsors" />
-                  <NavBarItem text="TECHforward" path="/techforward" />
-                  <Link to={{ pathname: "https://ubccsss.org/tcf/" }} target="_blank">
-                    <p className="bg-gradient-to-br nav hover:from-pink-200 hover:via-indigo-200 hover:to-indigo-400 text-gray-600 hover:text-white px-3 py-2 rounded-md text-sm">
-                      TCF
-                    </p>
-                  </Link>
-                  <NavBarItem text="Contact Us" path="/contact" />
-                </div>
+            <div className="flex items-center justify-between h-16">
+        <NavLink to="/" exact className="flex items-center gap-x-3 flex-shrink-0">
+          <img className="h-10 w-10" src={WicsLogo} alt="Workflow" />
+          <div
+            className="px-3 py-2 rounded-md text-sm font-medium bg-transparent"
+            style={{ color: "#B089DD"}}
+          >
+            UBC Women in Computer Science
+          </div>
+        </NavLink>
+
+  <div className="hidden md:block">
+    <div className="flex items-baseline space-x-4">
+      <NavBarItem text="Home" path="/" />
+      <NavBarItem text="Events" path="/events" />
+      <NavBarItem text="Committee" path="/committee" />
+      <NavBarItem text="Sponsors" path="/sponsors" />
+      <Link to={{ pathname: "https://ubccsss.org/tcf/" }} target="_blank" rel="noopener noreferrer">
+        <span className="bg-gradient-to-br nav hover:from-pink-200 hover:via-indigo-200 hover:to-indigo-400 text-gray-600 hover:text-white px-3 py-2 rounded-md text-sm">
+          TCF
+        </span>
+      </Link>
+      <NavBarItem text="Contact Us" path="/contact" />
               </div>
             </div>
             <div className="-mr-2 flex md:hidden">
