@@ -14,6 +14,9 @@ import TwoUpContent from "../components/TwoUpContent";
 import NewsletterSignup from "../components/NewsletterSignupTailwind.jsx";
 import ExploreEvents from "../components/ExploreEvents.jsx";
 
+import About from "./V2/About.jsx";
+import JoinUs from "./V2/JoinUs.jsx";
+
 export default function Home() {
   const [postData, setPost] = useState(null);
   useEffect(() => {
@@ -79,6 +82,7 @@ export default function Home() {
           <SocialMedia url="https://discord.gg/jvqdhrCk3z" width="48px" height="48px" color="#FAEAFF" />
         </div>
       </div>
+
     </div>
 
       </div>
@@ -91,6 +95,8 @@ export default function Home() {
     </div>
     
     <ExploreEvents events={mockEvents} />
+      <About />
+      <JoinUs/>
       <TwoUpContent
         title="Events"
         body={
