@@ -70,8 +70,11 @@ export default function Events() {
 
   
   useEffect(() => {
-    debouncedSearch(query);
-  }, [selectedYear]); 
+    if (postData.length > 0) {
+      debouncedSearch(query);
+    }
+  }, [selectedYear, postData]);
+  
 
   const handleSearch = (e) => {
     const searchQuery = e.target.value.toLowerCase();
