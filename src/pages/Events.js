@@ -15,7 +15,7 @@ export default function Events() {
   const [selectedYear, setSelectedYear] = useState("All");
   const [years, setYears] = useState([]);
 
-
+ 
 
   useEffect(() => {
     sanityClient
@@ -80,6 +80,10 @@ export default function Events() {
     const searchQuery = e.target.value.toLowerCase();
     setQuery(searchQuery);
     debouncedSearch(searchQuery);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -184,6 +188,14 @@ export default function Events() {
 )}
 
       </main>
+      <div className="flex justify-center my-2">
+  <button
+    onClick={scrollToTop}
+    className="bg-wicsPurple text-white px-6 py-3 rounded-full text-lg font-medium shadow-md hover:bg-wics-lightPurple transition duration-300"
+  >
+    BACK TO TOP <span className="text-xl">↑</span>
+  </button>
+</div>
       <Footer />
     </div>
   );
