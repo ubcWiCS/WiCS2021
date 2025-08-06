@@ -12,6 +12,10 @@ export default function Events() {
   const [query, setQuery] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [showNoEvents, setShowNoEvents] = useState(false);
+  const [selectedYear, setSelectedYear] = useState("All");
+  const [years, setYears] = useState([]);
+
+
 
   useEffect(() => {
     sanityClient
@@ -34,17 +38,40 @@ export default function Events() {
       .then((data) => {
         setPost(data || []);
         setFilteredData(data || []);
+        const extractedYears = Array.from(
+          new Set(
+            data
+              .map((event) => {
+                const match = event.date?.match(/\b\d{4}\b/); // grabs "2023"
+                return match ? match[0] : null;
+              })
+              .filter((year) => year !== null)
+          )
+        ).sort((a, b) => b - a);
+        
+        setYears(["All", ...extractedYears]);
+
+        
       })
       .catch(console.error);
   }, []);
 
 
   const debouncedSearch = debounce((searchQuery) => {
-    const filtered = postData.filter((event) =>
-      event.title.toLowerCase().includes(searchQuery)
-    );
+    const filtered = postData.filter((event) => {
+      const matchQuery = event.title.toLowerCase().includes(searchQuery);
+      const matchYear =
+        selectedYear === "All" ||
+        event.date?.includes(selectedYear)
+      return matchQuery && matchYear;
+    });
     setFilteredData(filtered);
   }, 500);
+
+  
+  useEffect(() => {
+    debouncedSearch(query);
+  }, [selectedYear]); 
 
   const handleSearch = (e) => {
     const searchQuery = e.target.value.toLowerCase();
@@ -77,19 +104,47 @@ export default function Events() {
             Explore what’s coming up at WiCS. Our calendar includes technical
             workshops, networking nights, community socials, and more!
           </p>
-          <div className="flex justify-center mt-4">
+          </div>
+          <div className="flex justify-between items-center mt-4 w-full">
           <input
             type="text"
             placeholder="Search events..."
             value={query}
             onChange={handleSearch}
-            className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-blue-500"
+            className="w-1/2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-blue-500"
           />
-        </div>
+
+           {years.length > 0 && (
+  <div className="flex items-center justify-between  gap-4 mt-4 mb-4">
+    <button
+      onClick={() => {
+        const currentIndex = years.indexOf(selectedYear);
+        if (currentIndex < years.length - 1) {
+          setSelectedYear(years[currentIndex + 1]);
+        }
+      }}
+      className="bg-wics-lightPurple text-black rounded-md px-2 py-1 text-lg"
+    >
+     {"<"}
+    </button>
+
+    <span className="text-2xl font-poppins">{selectedYear}</span>
+
+    <button
+      onClick={() => {
+        const currentIndex = years.indexOf(selectedYear);
+        if (currentIndex > 0) {
+          setSelectedYear(years[currentIndex - 1]);
+        }
+      }}
+      className="bg-wics-lightPurple text-black rounded-md px-2 py-1 text-lg"
+    >
+     {">"}
+    </button>
+  </div>
+)}
 </div>
-
-       
-
+      
         {filteredData.length > 0 ? (
           filteredData.map((event) => (
             <section key={event._id} className="mb-8">

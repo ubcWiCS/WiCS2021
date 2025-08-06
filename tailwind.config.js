@@ -25,6 +25,7 @@ module.exports = {
         'wicsPink': '#FDE5F6',
         'wicsIndigo': '#B8C3FB',
         'wicsPurple': '#B089DD',
+        'wics-lightPurple': '#DCD2FD', 
         'textboxColor': '#90868D94',
         'placeholder-light': 'rgba(255,255,255,0.7)',
       }
