@@ -1,12 +1,11 @@
 import BgImage from "../img/bg.png";
-
 import Footer from "../components/navigation/Footer.js";
 import CalendarComponent from "../components/CalendarComponent.js";
 
 export default function Upcoming() {
   return (
     <div className="font-poppins w-screen">
-      <main className="px-6 md:px-12 pt-12">
+      <main className="bg-white p-12 md:p-20">
         <div className="max-w-xl">
           <h1 className="text-4xl font-bold text-wicsPurple">
             Upcoming Events

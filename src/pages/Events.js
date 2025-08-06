@@ -67,21 +67,28 @@ export default function Events() {
   }, [filteredData, query]);
 
   return (
-    <>
+    <div className="font-poppins w-screen">
       <main className="bg-white p-12 md:p-20">
-        <p className="text-5xl flex justify-center cursive text-gray-700 title">
-          Past Events
-        </p>
-
-        <div className="flex justify-center m-8">
+      <div className="max-w-xl">
+      <h1 className="text-4xl font-bold text-wicsPurple">
+            Past Events
+          </h1>
+          <p className="text-base font-poppins mt-4">
+            Explore what’s coming up at WiCS. Our calendar includes technical
+            workshops, networking nights, community socials, and more!
+          </p>
+          <div className="flex justify-center mt-4">
           <input
             type="text"
             placeholder="Search events..."
             value={query}
             onChange={handleSearch}
-            className="w-full md:w-1/2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-blue-500"
           />
         </div>
+</div>
+
+       
 
         {filteredData.length > 0 ? (
           filteredData.map((event) => (
@@ -108,6 +115,6 @@ export default function Events() {
         )}
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
