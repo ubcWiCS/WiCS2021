@@ -196,3 +196,21 @@
 .navbar-dropdown:hover .navbar-dropdown-content {
   display: block;
 }
+.event-bg-1 {
+  background-image: url("../img/event_bg1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center; 
+  min-height: 14rem;
+  padding-top: 10rem;
+}
+
+.event-bg-2 {
+  background-image: url("../img/event_bg2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center; 
+  min-height: 10rem;
+  padding-top: 2rem;
+}
+

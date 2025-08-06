@@ -144,30 +144,42 @@ export default function Events() {
   </div>
 )}
 </div>
-      
-        {filteredData.length > 0 ? (
-          filteredData.map((event) => (
-            <section key={event._id} className="mb-8">
-              <EventContent
-                title={event.title}
-                body={
-                  <BlockContent
-                    blocks={event.body}
-                    projectId="xvhe4elt"
-                    dataset="production"
-                  />
-                }
-                date={event.date}
-                direction={event.direction}
-                images={event.images}
-              />
-            </section>
-          ))
-        ) : (
-          showNoEvents && (
-            <p className="text-center text-gray-600">No events found</p>
-          )
-        )}
+
+
+{filteredData.length > 0 ? (
+  filteredData.map((event, index) => (
+    <section
+      key={event._id}
+      className={`mb-8 p-6 max-w-5xl mx-auto ${
+        index % 4 === 0
+          ? "event-bg-1"
+          : index % 4 === 2
+          ? "event-bg-2"
+          : ""
+      }`}
+    >
+      <EventContent
+        title={event.title}
+        body={
+          <BlockContent
+            blocks={event.body}
+            projectId="xvhe4elt"
+            dataset="production"
+          />
+        }
+        index = {index % 4}
+        date={event.date}
+        direction={event.direction}
+        images={event.images}
+      />
+    </section>
+  ))
+) : (
+  showNoEvents && (
+    <p className="text-center text-gray-600">No events found</p>
+  )
+)}
+
       </main>
       <Footer />
     </div>
