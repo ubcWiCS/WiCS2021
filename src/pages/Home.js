@@ -7,9 +7,22 @@ import NewsletterSignup from "../components/NewsletterSignupTailwind.jsx";
 import ExploreEvents from "../components/ExploreEvents.jsx";
 import About from "./V2/About.jsx";
 import JoinUs from "./V2/JoinUs.jsx";
+import useGoogleCalendarEvents from "../hooks/useGoogleCalendarEvents";
+
+
 
 export default function Home() {
+  const CALENDAR_ID = "18qb8b2du4h0brqc9i7tv4v8ok@group.calendar.google.com";
+  const GCAL_API_KEY = process.env.REACT_APP_GCAL_API_KEY;
+
   const [postData, setPost] = useState(null);
+
+  const { events, loading, error } = useGoogleCalendarEvents({
+    apiKey: GCAL_API_KEY,
+    calendarId: CALENDAR_ID,
+    maxResults: 4, // For future devs: you can change this if you want!
+    monthsAhead: 12
+  });
   useEffect(() => {
     sanityClient
       .fetch(
@@ -33,22 +46,8 @@ export default function Home() {
       .catch(console.error);
   }, []);
 
-  // TODO: get rid of mock data and replace with real data later 
-  const mockEvents = [
-    {
-      title: "YouCode 2026 Hackathon",
-      date: "April 2 - April 3",
-      dueDate: "Application due March 21"
-    },
-    {
-      title: "Tri Mentorship Program 2025/26",
-      date: "September 7 - March 29"
-    },
-    {
-      title: "TechForward 2026",
-      date: "October 5"
-    }
-  ];
+
+
   
 
   return (
@@ -86,7 +85,8 @@ export default function Home() {
     </div>
     
       <About />
-      <ExploreEvents events={mockEvents} />
+     {error && <p className="text-red-600">Failed to load events: {error}</p>}
+     <ExploreEvents events={loading ? [] : events} />
       <JoinUs/>
       <Footer />
     </main>
