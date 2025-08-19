@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ExploreEvents = ({ events = [] }) => {
   return (
@@ -12,42 +13,58 @@ const ExploreEvents = ({ events = [] }) => {
           </h2>
         </div>
 
-        {/* Event List (I did not define the schema in wicsstudio for now)*/}
+        {/* Event List */}
         <div className="space-y-4">
           {events.map((event, index) => (
-           <div
-           key={index}
-           className="border-b border-wicsPurple pb-3 flex justify-between items-center cursor-pointer"
-         >
-           <div>
-             <h3 className="font-semibold text-base">{event.title}</h3>
-             <p className="text-sm text-wicsPurple">
-               {event.date}
-               {event.dueDate && (
-                 <>
-                   {" "} | <span className="font-semibold">{event.dueDate}</span>
-                 </>
-               )}
-             </p>
-           </div>
-           <span className="text-lg text-gray-700">&raquo;</span>
+            <div
+              key={index}
+              className="border-b border-wicsPurple pb-3 flex justify-between items-center"
+            >
+              <div>
+                <h3 className="font-semibold text-base">{event.title}</h3>
+                <p className="text-sm text-wicsPurple">
+                  {event.date}
+                  {event.dueDate && (
+                    <>
+                      {" "} | <span className="font-semibold">{event.dueDate}</span>
+                    </>
+                  )}
+                </p>
+              </div>
 
-
-         </div>
-         
+              {/* clickable chevron that opens Google Calendar event in new tab */}
+              {event.link ? (
+                <a
+                  href={event.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg text-gray-700 hover:text-wicsPurple"
+                >
+                  &raquo;
+                </a>
+              ) : (
+                <span className="text-lg text-gray-700">&raquo;</span>
+              )}
+            </div>
           ))}
         </div>
 
         {/* Buttons */}
         <div className="flex gap-4 mt-8 justify-start">
-          <button className="px-5 py-2 bg-wicsPurple text-white rounded-full shadow-md hover:opacity-90">
-            View Upcoming Events
-          </button>
-          <button className="px-5 py-2 border-2 border-wicsPurple text-wicsPurple rounded-full hover:bg-wicsPurple/10">
-                View Past Events
-                </button>
+  <Link
+    to="/events/upcoming"
+    className="px-5 py-2 bg-wicsPurple text-white rounded-full shadow-md hover:opacity-90"
+  >
+    View Upcoming Events
+  </Link>
 
-        </div>
+  <Link
+    to="/events/past"
+    className="px-5 py-2 border-2 border-wicsPurple text-wicsPurple rounded-full hover:bg-wicsPurple/10"
+  >
+    View Past Events
+  </Link>
+</div>
       </div>
     </section>
   );

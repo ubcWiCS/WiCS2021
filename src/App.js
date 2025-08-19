@@ -9,6 +9,8 @@ import Sponsors from "./pages/Sponsors";
 import Contact from "./pages/Contact";
 import TeamArchive from "./pages/TeamArchive";
 import Techforward from "./pages/Techforward";
+import Upcoming from "./pages/Upcoming"; 
+
 
 import NavBar from "./components/navigation/NavBar";
 import SinglePostSponsor from "./components/SinglePostSponsor";
@@ -34,7 +36,8 @@ function App() {
       <Switch>
         <Route component={Home} path="/" exact />
         <Route component={About} path="/about" />
-        <Route component={Events} path="/events" />
+        <Route component={Events} path="/events/past" />
+        <Route component={Upcoming} path="/events/upcoming" />
         <Route component={Team} path="/committee" />
         <Route component={TeamArchive} path="/team-archive" />
         <Route component={Sponsors} path="/sponsors" />
@@ -43,6 +46,7 @@ function App() {
         <Route component={SponsorEvents} path="/sponsor-events/:slug" />
         <Route component={SinglePostNoAuthor} path="/profile/:slug" />
         <Route component={Techforward} path="/techforward" />
+
       </Switch>
       </div>
     </BrowserRouter>
