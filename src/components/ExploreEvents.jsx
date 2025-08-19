@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ExploreEvents = ({ events = [] }) => {
   return (
@@ -50,13 +51,20 @@ const ExploreEvents = ({ events = [] }) => {
 
         {/* Buttons */}
         <div className="flex gap-4 mt-8 justify-start">
-          <button className="px-5 py-2 bg-wicsPurple text-white rounded-full shadow-md hover:opacity-90">
-            View Upcoming Events
-          </button>
-          <button className="px-5 py-2 border-2 border-wicsPurple text-wicsPurple rounded-full hover:bg-wicsPurple/10">
-            View Past Events
-          </button>
-        </div>
+  <Link
+    to="/events/upcoming"
+    className="px-5 py-2 bg-wicsPurple text-white rounded-full shadow-md hover:opacity-90"
+  >
+    View Upcoming Events
+  </Link>
+
+  <Link
+    to="/events/past"
+    className="px-5 py-2 border-2 border-wicsPurple text-wicsPurple rounded-full hover:bg-wicsPurple/10"
+  >
+    View Past Events
+  </Link>
+</div>
       </div>
     </section>
   );
