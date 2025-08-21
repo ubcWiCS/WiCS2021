@@ -28,14 +28,14 @@ export default function GridContainer(props) {
 
   //Render profile collection
   return (
-    <main className="mb-12 ">
+    <main className="mb-20">
       <section className="container mx-auto">
       {props.title && (
-        <h1 className="text-5xl flex justify-center cursive text-gray-700 title">
+        <h1 className="text-5xl flex justify-center text-wicsPurple font-poppins font-semibold">
           {props.title}
         </h1>
       )}
-        <h2 className="text-lg body flex justify-center mb-12">
+        <h2 className="text-lg font-poppins justify-center flex mb-12 mt-2">
           {props.subTitle}&nbsp;&nbsp;
           <Emoji symbol={props.symbol} label="hand waving" />
         </h2>

@@ -24,8 +24,11 @@ export default function Team() {
     }`}
           path="profile"
           title="Executive Team"
+          subTitle="Meet our team of creators, coders, and change-makers."
           type="profile"
         ></GridContainer>
+
+<div className="align-center">
         <GridContainer
           queryString={`*[_type == "profile" && profileType == "faculty"]{
       name,
@@ -44,8 +47,9 @@ export default function Team() {
           subTitle="Meet our Faculty Advisors!"
           path="profile"
           type="profile"
-          symbol="🎓"
         ></GridContainer>
+</div>
+
         <div className="m-10 flex justify-center items-center">
           <Button
             type="local"
