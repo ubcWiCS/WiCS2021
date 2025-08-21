@@ -23,6 +23,7 @@ module.exports = {
         'baby-purple': '#CCBEE2',
         'light-purple': '#D2D1F9',
         'wicsPink': '#FDE5F6',
+        'wicsbg-pink': '#EFDCE8',
         'wicsIndigo': '#B8C3FB',
         'wicsPurple': '#B089DD',
         'wics-lightPurple': '#DCD2FD', 
