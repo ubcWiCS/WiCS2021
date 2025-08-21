@@ -43,11 +43,12 @@ export default function Team() {
         alt
       }
     }`}
-          title="Faculty Advisors"
-          subTitle="Meet our Faculty Advisors!"
-          path="profile"
-          type="profile"
-        ></GridContainer>
+    title="Faculty Advisors"
+    subTitle="Meet our Faculty Advisors!"
+    path="profile"
+    type="profile"
+    center  
+  />
 </div>
 
         <div className="m-10 flex justify-center items-center">
