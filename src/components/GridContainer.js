@@ -25,25 +25,36 @@ export default function GridContainer(props) {
 
   if (!postData) return <LoadingSpinner />;
   if (postData.length === 0) return null;
+  const gridDefault = "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10";
+const gridCentered = "flex flex-wrap justify-center gap-10";
 
   //Render profile collection
   return (
-    <main className="mb-12 ">
+    <main className="mb-2 pb-20">
       <section className="container mx-auto">
       {props.title && (
-        <h1 className="text-5xl flex justify-center cursive text-gray-700 title">
+        <h1 className="text-5xl flex justify-center text-wicsPurple font-poppins font-semibold">
           {props.title}
         </h1>
       )}
-        <h2 className="text-lg body flex justify-center mb-12">
+        <h2 className="text-lg font-poppins justify-center flex mb-12 mt-2">
           {props.subTitle}&nbsp;&nbsp;
           <Emoji symbol={props.symbol} label="hand waving" />
         </h2>
         <div
+          // className={
+          //   props.type === "profile"
+          //     ? "grid md:grid-cols-3 lg:grid-cols-4 gap-8"
+          //     : "grid md:grid-cols-2 lg:grid-cols-4 gap-16"
+          // }
           className={
             props.type === "profile"
-              ? "grid md:grid-cols-3 lg:grid-cols-4 gap-8"
-              : "grid md:grid-cols-2 lg:grid-cols-4 gap-16"
+              ? (props.title === "Faculty Advisors"
+                  // faculty: 1 → 2 → 3 cols, centered
+                  ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
+                  // others: 2 → 3 → 4 cols
+                  : "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8")
+              : "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16"
           }
         >
           {postData &&
