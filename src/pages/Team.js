@@ -3,6 +3,7 @@ import React from "react";
 import Button from "../components/Button";
 import GridContainer from "../components/GridContainer";
 import Footer from "../components/navigation/Footer";
+import { Link } from "react-router-dom";
 
 export default function Team() {
   return (
@@ -52,11 +53,18 @@ export default function Team() {
 </div>
 
         <div className="m-10 flex justify-center items-center">
-          <Button
-            type="local"
-            link="/team-archive"
-            text="See our past executive teams"
-          ></Button>
+          
+        <Link
+  to="/team-archive"
+  className="inline-flex items-center justify-center rounded-full
+             bg-wicsPurple text-white px-10 py-3 font-poppins shadow-md
+             hover:opacity-90 hover:shadow-lg focus:outline-none
+             focus:ring-2 focus:ring-wicsPurple/40 transition w-full sm:w-auto"
+>
+SEE OUR PAST EXECUTIVE TEAM
+</Link>
+
+
         </div>
       </main>
       <Footer />
