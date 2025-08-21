@@ -6,7 +6,7 @@ export default function ProfileCard(props) {
     <article>
       <Link to={"/" + props.path + "/" + props.slug} key={props.slug}>
         <span
-          className="block h-80 relative rounded leading-snug hover:bg-purple-50"
+          className="block h-80 relative rounded leading-snug shadow hover:bg-purple-50"
           key={props.index}
         >
           <div className="h-3/4 w-full overflow-hidden">
