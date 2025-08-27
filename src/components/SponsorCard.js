@@ -2,68 +2,60 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function SponsorCard(props) {
-  function getColor(role) {
-    let color = "";
-    switch (role) {
-      case "Gold":
-        color = "bg-yellow-200 hover:bg-yellow-300";
-        break;
-      case "Platinum":
-        color = "bg-gray-300 hover:bg-gray-400";
-        break;
-      case "Silver":
-        color = "bg-slate-200 hover:bg-slate-300";
-        break;
-      default:
-        color = "bg-indigo-200 hover:bg-indigo-300";
-    }
-    return color;
-  }
-
-  let bgColor = getColor(props.sponsorLevel);
-
   return (
-    <article>
-      <div className="flex flex-col justify-between items-center h-full min-h-[420px] p-3 rounded shadow-md w-full max-w-[280px] mx-auto">
-
-        <div className="flex flex-col rounded ">
-          <span className="block h-64 relative leading-snug" key={props.index}>
+    <article className="w-[260px] mx-auto">
+      {/* Main sponsor card */}
+      <Link to={"/sponsor/" + props.slug}>
+        <div
+          className="relative flex items-center h-full rounded w-full border-4 p-4"
+          style={{ borderColor: props.color, aspectRatio: "5 / 6" }}
+        >
+          {/* Image container */}
+          <div className="relative w-full h-full">
             <img
               src={props.imageUrl}
               alt={props.imageAlt}
-              className="w-full h-full object-contain absolute"
+              className="w-full h-full object-contain"
             />
-          </span>
-
-          <div className="w-full mt-4 space-y-2">
-
-          <Link to={"/sponsor/" + props.slug} key={props.slug}>
-          <div className="w-full">
-           <h3 
-             className={
-                "w-full title px-3 py-1 bg-opacity-80 text-gray-600 rounded " + bgColor
-              }
-            >
-              {props.name + ": " + props.sponsorLevel + " ➜"}
+            {/* Company name overlay */}
+            <h3 className="absolute bottom-2 w-full text-center px-2 py-1 bg-white bg-opacity-80 text-gray-600 rounded title">
+              {props.name}
             </h3>
           </div>
-          </Link>
-          <br />
+        </div>
+      </Link>
+
+      {/* Previous events button */}
+      {props.hasEvent && (
+        <div className="w-full mt-3">
           <Link to={"/sponsor-events/" + props.slug}>
-          <div className="w-full">
-            <h3
-              className={
-                "w-full title px-3 py-1 bg-opacity-80 text-gray-600 rounded " + bgColor
-              }
-            >
-              {"See previous " + props.name + " events ➜"}
-            </h3>
-          </div>
+            <div className="flex justify-between items-center px-3 py-2 rounded">
+              {/* Text in center */}
+              <div
+                className="flex-1 text-center text-gray-600"
+                style={{
+                  fontFamily: "Poppins",
+                  fontWeight: 400,
+                  fontSize: "16px",
+                  lineHeight: "120%",
+                  letterSpacing: "0%",
+                }}
+              >
+                <span className="block">See previous</span>
+                <span className="block">{props.name} events</span>
+              </div>
+
+              {/* Arrow on the right */}
+              <div
+                className="ml-2"
+                style={{ fontSize: "30px", lineHeight: "1" }}
+              >
+                {">"}
+              </div>
+            </div>
           </Link>
         </div>
-        </div>
-        </div>
-        
+      )}
     </article>
   );
 }
