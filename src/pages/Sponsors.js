@@ -18,7 +18,7 @@ export default function Sponsors() {
 
   return (
     <>
-      <main className="bg-white p-12 md:p-20 flex flex-col gap-24 items-center">
+      <main className="bg-white p-12 md:p-20 flex flex-col gap-5 items-center">
         <div className="text-center space-y-4 font-poppins">
           <h1 className="text-6xl text-wicsPurple font-poppins font-semibold">
             Sponsors
