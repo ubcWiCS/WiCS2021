@@ -29,7 +29,7 @@ export default function SponsorCard(props) {
       {props.hasEvent && (
         <div className="w-full mt-3">
           <Link to={"/sponsor-events/" + props.slug}>
-            <div className="flex justify-between items-center px-3 py-2 rounded">
+            <div className="flex justify-between items-center px-3 py-2 rounded hover:text-black">
               <div
                 className="flex-1 text-center text-gray-600"
                 style={{
