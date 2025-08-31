@@ -62,5 +62,10 @@ export default {
         ],
       },
     },
+    {
+      name: "hasEvent",
+      title: "Has Previous Events",
+      type: "boolean",
+    },
   ],
 };

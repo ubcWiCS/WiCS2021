@@ -12,6 +12,10 @@ export default function Events() {
   const [query, setQuery] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [showNoEvents, setShowNoEvents] = useState(false);
+  const [selectedYear, setSelectedYear] = useState("All");
+  const [years, setYears] = useState([]);
+
+ 
 
   useEffect(() => {
     sanityClient
@@ -34,22 +38,52 @@ export default function Events() {
       .then((data) => {
         setPost(data || []);
         setFilteredData(data || []);
+        const extractedYears = Array.from(
+          new Set(
+            data
+              .map((event) => {
+                const match = event.date?.match(/\b\d{4}\b/); // grabs "2023"
+                return match ? match[0] : null;
+              })
+              .filter((year) => year !== null)
+          )
+        ).sort((a, b) => b - a);
+        
+        setYears(["All", ...extractedYears]);
+
+        
       })
       .catch(console.error);
   }, []);
 
 
   const debouncedSearch = debounce((searchQuery) => {
-    const filtered = postData.filter((event) =>
-      event.title.toLowerCase().includes(searchQuery)
-    );
+    const filtered = postData.filter((event) => {
+      const matchQuery = event.title.toLowerCase().includes(searchQuery);
+      const matchYear =
+        selectedYear === "All" ||
+        event.date?.includes(selectedYear)
+      return matchQuery && matchYear;
+    });
     setFilteredData(filtered);
   }, 500);
+
+  
+  useEffect(() => {
+    if (postData.length > 0) {
+      debouncedSearch(query);
+    }
+  }, [selectedYear, postData]);
+  
 
   const handleSearch = (e) => {
     const searchQuery = e.target.value.toLowerCase();
     setQuery(searchQuery);
     debouncedSearch(searchQuery);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -67,47 +101,102 @@ export default function Events() {
   }, [filteredData, query]);
 
   return (
-    <>
+    <div className="font-poppins w-screen">
       <main className="bg-white p-12 md:p-20">
-        <p className="text-5xl flex justify-center cursive text-gray-700 title">
-          Past Events
-        </p>
-
-        <div className="flex justify-center m-8">
+      <div className="max-w-xl">
+      <h1 className="text-4xl font-bold text-wicsPurple">
+            Past Events
+          </h1>
+          <p className="text-base font-poppins mt-4">
+            Explore what’s coming up at WiCS. Our calendar includes technical
+            workshops, networking nights, community socials, and more!
+          </p>
+          </div>
+          <div className="flex justify-between items-center mt-4 w-full">
           <input
             type="text"
             placeholder="Search events..."
             value={query}
             onChange={handleSearch}
-            className="w-full md:w-1/2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-blue-500"
+            className="w-1/2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-blue-500"
           />
-        </div>
 
-        {filteredData.length > 0 ? (
-          filteredData.map((event) => (
-            <section key={event._id} className="mb-8">
-              <EventContent
-                title={event.title}
-                body={
-                  <BlockContent
-                    blocks={event.body}
-                    projectId="xvhe4elt"
-                    dataset="production"
-                  />
-                }
-                date={event.date}
-                direction={event.direction}
-                images={event.images}
-              />
-            </section>
-          ))
-        ) : (
-          showNoEvents && (
-            <p className="text-center text-gray-600">No events found</p>
-          )
-        )}
+           {years.length > 0 && (
+  <div className="flex items-center justify-between  gap-4 mt-4 mb-4">
+    <button
+      onClick={() => {
+        const currentIndex = years.indexOf(selectedYear);
+        if (currentIndex < years.length - 1) {
+          setSelectedYear(years[currentIndex + 1]);
+        }
+      }}
+      className="bg-wics-lightPurple text-black rounded-md px-2 py-1 text-lg"
+    >
+     {"<"}
+    </button>
+
+    <span className="text-2xl font-poppins">{selectedYear}</span>
+
+    <button
+      onClick={() => {
+        const currentIndex = years.indexOf(selectedYear);
+        if (currentIndex > 0) {
+          setSelectedYear(years[currentIndex - 1]);
+        }
+      }}
+      className="bg-wics-lightPurple text-black rounded-md px-2 py-1 text-lg"
+    >
+     {">"}
+    </button>
+  </div>
+)}
+</div>
+
+
+{filteredData.length > 0 ? (
+  filteredData.map((event, index) => (
+    <section
+      key={event._id}
+      className={`mb-8 p-6 max-w-5xl mx-auto ${
+        index % 4 === 0
+          ? "event-bg-1"
+          : index % 4 === 2
+          ? "event-bg-2"
+          : ""
+      }`}
+    >
+      <EventContent
+        title={event.title}
+        body={
+          <BlockContent
+            blocks={event.body}
+            projectId="xvhe4elt"
+            dataset="production"
+          />
+        }
+        index = {index % 4}
+        date={event.date}
+        direction={event.direction}
+        images={event.images}
+      />
+    </section>
+  ))
+) : (
+  showNoEvents && (
+    <p className="text-center text-gray-600">No events found</p>
+  )
+)}
+
       </main>
+      <div className="flex justify-center my-2">
+  <button
+    onClick={scrollToTop}
+    className="bg-wicsPurple text-white px-6 py-3 rounded-full text-lg font-medium shadow-md hover:bg-wics-lightPurple transition duration-300"
+  >
+    BACK TO TOP <span className="text-xl">↑</span>
+  </button>
+</div>
       <Footer />
-    </>
+    </div>
   );
 }

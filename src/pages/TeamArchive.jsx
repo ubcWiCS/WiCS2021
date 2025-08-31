@@ -13,6 +13,16 @@ export default function TeamArchive() {
         </p>
         <br />
         <p className="text-3xl flex justify-center cursive text-gray-700 title">
+            2024 - 2025
+        </p>
+        <TableContainer
+          queryString={`*[_type == "teamArchive" && year == "2024" ] | order(pageOrder asc){
+      name,
+      role,
+      year
+    }`}
+      ></TableContainer>
+        <p className="text-3xl flex justify-center cursive text-gray-700 title">
             2023 - 2024
         </p>
         <TableContainer

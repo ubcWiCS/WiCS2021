@@ -23,7 +23,7 @@ export default function Advisors() {
         subTitle="Meet our Faculty Advisors!"
         path="profile"
         type="profile"
-        symbol="🎓"
+        // symbol="🎓"
       ></GridContainer>
       <Footer></Footer>
     </main>

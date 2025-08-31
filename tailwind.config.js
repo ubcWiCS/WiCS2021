@@ -15,12 +15,20 @@ module.exports = {
       fontFamily: {
         'press-start': ['"Press Start 2P"'], 
         'coiny': ['"Coiny"'],
-        'pt-mono': ['"PT Mono"']
+        'pt-mono': ['"PT Mono"'],
+        'poppins': ['Poppins', 'sans-serif'],
       },
       colors: {
         'baby-blue': '#A4CFEB',
         'baby-purple': '#CCBEE2',
-        'light-purple': '#D2D1F9'
+        'light-purple': '#D2D1F9',
+        'wicsPink': '#FDE5F6',
+        'wicsbg-pink': '#EFDCE8',
+        'wicsIndigo': '#B8C3FB',
+        'wicsPurple': '#B089DD',
+        'wics-lightPurple': '#DCD2FD', 
+        'textboxColor': '#90868D94',
+        'placeholder-light': 'rgba(255,255,255,0.7)',
       }
     },
     screens: {

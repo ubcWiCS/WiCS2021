@@ -1,45 +1,74 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import WicsLogo from "../../img/roundLogo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
+
+
 
 import NavBarItem from "./NavBarItem";
 import NavBarItemMobile from "./NavBarItemMobile";
 
+
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const isEventsActive = location.pathname.startsWith("/events");
+
+  
   return (
     <div className="bg-white sticky top-0 z-10">
       <nav>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <NavLink to="/" exact>
-                  <img className="h-10 w-10" src={WicsLogo} alt="Workflow" />
-                </NavLink>
-              </div>
-              <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
-                  <NavLink
-                    to="/"
-                    exact
-                    className="bg-gradient-to-br hover:from-pink-200 hover:via-indigo-200 hover:to-indigo-400 text-gray-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    WiCS
-                  </NavLink>
-                  <NavBarItem text="About" path="/about" />
-                  <NavBarItem text="Events" path="/events" />
-                  <NavBarItem text="Committee" path="/committee" />
-                  <NavBarItem text="Sponsors" path="/sponsors" />
-                  <NavBarItem text="TECHforward" path="/techforward" />
-                  <Link to={{ pathname: "https://ubccsss.org/tcf/" }} target="_blank">
-                    <p className="bg-gradient-to-br nav hover:from-pink-200 hover:via-indigo-200 hover:to-indigo-400 text-gray-600 hover:text-white px-3 py-2 rounded-md text-sm">
-                      TCF
-                    </p>
-                  </Link>
-                  <NavBarItem text="Contact Us" path="/contact" />
-                </div>
+            <div className="flex items-center justify-between h-16">
+        <NavLink to="/" exact className="flex items-center gap-x-3 flex-shrink-0">
+          <img className="h-10 w-10" src={WicsLogo} alt="Workflow" />
+          <div
+            className="px-3 py-2 rounded-md text-sm font-medium bg-transparent"
+            style={{ color: "#B089DD"}}
+          >
+            UBC Women in Computer Science
+          </div>
+        </NavLink>
+
+  <div className="hidden md:block">
+    <div className="flex items-baseline space-x-4">
+      <NavBarItem text="Home" path="/" />
+
+      <div className="navbar-dropdown">
+      <button
+    className={`px-3 py-2 rounded-md text-sm font-medium ${
+          isEventsActive
+            ? "font-bold"
+            : "text-gray-600 hover:text-black"
+        }`}
+      >
+        Events
+      </button>
+
+        <div className="navbar-dropdown-content">
+          <NavLink
+            to="/events/upcoming"
+            className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100"
+          >
+            Upcoming Events
+          </NavLink>
+          <NavLink
+            to="/events/past"
+            className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100"
+          >
+      Past Events
+    </NavLink>
+  </div>
+</div>
+
+      <NavBarItem text="Committee" path="/committee" />
+      <NavBarItem text="Sponsors" path="/sponsors" />
+      <Link to={{ pathname: "https://ubccsss.org/tcf/" }} target="_blank" rel="noopener noreferrer">
+        <span className="bg-gradient-to-br nav hover:text-black px-3 py-2 rounded-md text-sm">
+          TCF
+        </span>
+      </Link>
+      <NavBarItem text="Contact Us" path="/contact" />
               </div>
             </div>
             <div className="-mr-2 flex md:hidden">
@@ -114,7 +143,7 @@ export default function NavBar() {
                 <NavBarItemMobile text="Sponsors" path="/sponsors" />
                 <NavBarItemMobile text="TECHforward" path="/techforward" />
                 <Link to={{ pathname: "https://ubccsss.org/tcf/" }} target="_blank">
-                    <p className="bg-gradient-to-br hover:from-pink-200 hover:via-indigo-200 hover:to-indigo-400 text-gray-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    <p className="bg-gradient-to-br hover:text-black block px-3 py-2 rounded-md text-base font-medium">
                       TCF
                     </p>
                   </Link>
