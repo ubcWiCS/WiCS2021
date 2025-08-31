@@ -45,12 +45,9 @@ export default function SponsorCard(props) {
               </div>
 
               {/* Arrow on the right */}
-              <div
-                className="ml-2"
-                style={{ fontSize: "30px", lineHeight: "1" }}
-              >
-                {">"}
-              </div>
+              <div className="ml-2" style={{ fontSize: "30px", lineHeight: "1" }}>
+              ›
+</div>
             </div>
           </Link>
         </div>
