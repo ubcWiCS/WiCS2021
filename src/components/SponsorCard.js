@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function SponsorCard(props) {
   return (
-    <article className="w-[260px] mx-auto">
+    <article className="w-[200px] mx-auto">
       {/* Main sponsor card */}
       <Link to={"/sponsor/" + props.slug}>
         <div
