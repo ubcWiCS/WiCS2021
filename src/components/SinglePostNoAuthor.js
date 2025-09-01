@@ -4,7 +4,7 @@ import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 import SocialMedia from "./SocialMedia.js";
 import LoadingSpinner from "./LoadingSpinner.js";
-import Button from "./Button.js";
+import ActionButton from "./ActionButton.js";
 import Footer from "./navigation/Footer";
 
 export default function SinglePostNoAuthor() {
@@ -83,13 +83,9 @@ export default function SinglePostNoAuthor() {
         </article>
         <div className="m-10 flex justify-center items-center">
           {singlePost.profileType === "executive" ? (
-            <Button type="local" link="/committee" text="Back To Team" />
+            <ActionButton to="/committee" text="BACK TO TEAM" />
           ) : (
-            <Button
-              type="local"
-              link="/committee"
-              text="Back To Faculty Advisors"
-            />
+            <ActionButton to="/committee" text="BACK TO FACULTY ADVISORS" />
           )}
         </div>
       </section>

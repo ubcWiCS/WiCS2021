@@ -1,8 +1,7 @@
 import React from "react";
-
-import Button from "../components/Button";
 import TableContainer from "../components/TableContainer";
 import Footer from "../components/navigation/Footer";
+import ActionButton from "../components/ActionButton";
 
 export default function TeamArchive() {
   return (
@@ -75,11 +74,7 @@ export default function TeamArchive() {
           path="teamArchive"
         ></TableContainer>
         <div className="m-10 flex justify-center items-center">
-          <Button
-            type="local"
-            link="/committee"
-            text="Back to the current team"
-          ></Button>
+          <ActionButton to="/committee" text="BACK TO THE CURRENT TEAM" />
         </div>
       </main>
       <Footer></Footer>
