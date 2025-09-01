@@ -1,6 +1,6 @@
 import React from "react";
 import GridContainer from "../components/GridContainer.js";
-import Footer from "../components/navigation/Footer";
+import ColorBgFooter from "../components/navigation/ColorBgFooter";
 
 export default function Sponsors() {
   function getColor(tier) {
@@ -27,7 +27,10 @@ export default function Sponsors() {
             Supported by brands who share our vision for an inclusive future in
             computing
           </p>
-          <a href="/contact" className="hover:underline font-medium text-black ">
+          <a
+            href="/contact"
+            className="hover:underline font-medium text-black "
+          >
             <span className="font-bold text-lg">Contact us</span> for
             sponsorship inquiries &gt;
           </a>
@@ -57,7 +60,7 @@ export default function Sponsors() {
                 width: "465px",
                 height: "75px",
                 borderRadius: "11px",
-                marginTop: "60px"
+                marginTop: "60px",
               }}
             >
               Platinum Sponsors
@@ -91,7 +94,7 @@ export default function Sponsors() {
                 width: "465px",
                 height: "75px",
                 borderRadius: "11px",
-                marginTop: "20px"
+                marginTop: "20px",
               }}
             >
               Gold Sponsors
@@ -124,7 +127,7 @@ export default function Sponsors() {
                 width: "465px",
                 height: "75px",
                 borderRadius: "11px",
-                marginTop: "20px"
+                marginTop: "20px",
               }}
             >
               Silver Sponsors
@@ -134,7 +137,7 @@ export default function Sponsors() {
           type="sponsor"
         />
       </main>
-      <Footer />
+      <ColorBgFooter />
     </>
   );
 }

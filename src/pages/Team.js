@@ -1,6 +1,6 @@
 import React from "react";
 import GridContainer from "../components/GridContainer";
-import Footer from "../components/navigation/Footer";
+import ColorBgFooter from "../components/navigation/ColorBgFooter";
 import ActionButton from "../components/ActionButton";
 
 export default function Team() {
@@ -54,7 +54,7 @@ export default function Team() {
           <ActionButton to="/team-archive" text="SEE OUR PAST EXECUTIVE TEAM" />
         </div>
       </main>
-      <Footer />
+      <ColorBgFooter />
     </>
   );
 }
