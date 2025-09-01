@@ -45,7 +45,15 @@ export default function GridContainer(props) {
               ? props.title === "Faculty Advisors"
                 ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center" // faculty: 1 → 2 → 3 cols, centered
                 : "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" // others: 2 → 3 → 4 cols
-              : "flex flex-wrap justify-center gap-10" // sponsors: flexbox, centered
+              : props.type === "sponsor"
+                ? postData.length === 1
+                  ? "grid grid-flow-col auto-cols-max justify-center gap-8" // 1 sponsor then middle!
+                  : postData.length === 2
+                  ? "grid grid-flow-col auto-cols-max justify-center gap-8" // 2 sponsors then middle!
+                  : postData.length === 3
+                  ? "grid grid-flow-col auto-cols-max justify-center gap-8" // 3 sponsors still middle
+                  : "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center" // 4+ 
+                : "flex flex-wrap justify-center gap-10"
           }
         >
           {postData &&

@@ -27,7 +27,7 @@ export default function Sponsors() {
             Supported by brands who share our vision for an inclusive future in
             computing
           </p>
-          <a href="/contact" className="hover:underline font-medium text-black">
+          <a href="/contact" className="hover:underline font-medium text-black ">
             <span className="font-bold text-lg">Contact us</span> for
             sponsorship inquiries &gt;
           </a>
@@ -54,9 +54,10 @@ export default function Sponsors() {
               className="inline-block text-black text-2xl flex items-center justify-center"
               style={{
                 backgroundColor: getColor("Platinum"),
-                width: "486px",
-                height: "80px",
+                width: "465px",
+                height: "75px",
                 borderRadius: "11px",
+                marginTop: "60px"
               }}
             >
               Platinum Sponsors
@@ -87,9 +88,10 @@ export default function Sponsors() {
               className="inline-block text-black text-2xl flex items-center justify-center"
               style={{
                 backgroundColor: getColor("Gold"),
-                width: "486px",
-                height: "80px",
+                width: "465px",
+                height: "75px",
                 borderRadius: "11px",
+                marginTop: "20px"
               }}
             >
               Gold Sponsors
@@ -119,9 +121,10 @@ export default function Sponsors() {
               className="inline-block text-black text-2xl flex items-center justify-center"
               style={{
                 backgroundColor: getColor("Silver"),
-                width: "486px",
-                height: "80px",
+                width: "465px",
+                height: "75px",
                 borderRadius: "11px",
+                marginTop: "20px"
               }}
             >
               Silver Sponsors
