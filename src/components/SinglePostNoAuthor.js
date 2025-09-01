@@ -4,9 +4,8 @@ import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 import SocialMedia from "./SocialMedia.js";
 import LoadingSpinner from "./LoadingSpinner.js";
-import Button from "./Button.js";
+import ActionButton from "./ActionButton.js";
 import Footer from "./navigation/Footer";
-import { Link } from "react-router-dom";
 
 export default function SinglePostNoAuthor() {
   const [singlePost, setSinglePost] = useState(null);
@@ -36,11 +35,22 @@ export default function SinglePostNoAuthor() {
   if (!singlePost) return <LoadingSpinner />;
 
   const linkedIn = singlePost.linkedin ? (
-    <SocialMedia color = "#060508D4" url={singlePost.linkedin} width="40px" height="40px" />
+    <SocialMedia
+      color="#060508D4"
+      url={singlePost.linkedin}
+      width="40px"
+      height="40px"
+    />
   ) : null;
 
   const myEmail = singlePost.email ? (
-    <SocialMedia color = "#060508D4" email="true" url={singlePost.email} width="40px" height="40px" />
+    <SocialMedia
+      color="#060508D4"
+      email="true"
+      url={singlePost.email}
+      width="40px"
+      height="40px"
+    />
   ) : null;
 
   return (
@@ -57,8 +67,12 @@ export default function SinglePostNoAuthor() {
             </div>
 
             <div className="flex flex-col">
-              <h1 className="text-2xl md:text-3xl font-poppins font-bold">{singlePost.name}</h1>
-              <p className="mt-1 text-sm md:text-base font-semibold font-poppins">{singlePost.role}</p>
+              <h1 className="text-2xl md:text-3xl font-poppins font-bold">
+                {singlePost.name}
+              </h1>
+              <p className="mt-1 text-sm md:text-base font-semibold font-poppins">
+                {singlePost.role}
+              </p>
 
               <div className="mt-4 md:prose-base font-poppins leading-relaxed max-w-none">
                 <BlockContent
@@ -72,33 +86,14 @@ export default function SinglePostNoAuthor() {
                 {linkedIn}
                 {myEmail}
               </div>
-
-             
             </div>
             <div className="md:col-span-2 flex justify-center mt-8">
-  {singlePost.profileType === "executive" ? (
-    <Link
-      to="/committee"
-      className="inline-flex items-center justify-center rounded-full
-      bg-wicsPurple text-white px-10 py-3 font-poppins shadow-md
-      hover:opacity-90 hover:shadow-lg focus:outline-none
-      focus:ring-2 focus:ring-wicsPurple/40 transition w-full sm:w-auto"
-    >
-      Back To Team
-    </Link>
-  ) : (
-    <Link
-      to="/committee"
-      className="inline-flex items-center justify-center rounded-full
-      bg-wicsPurple text-white px-10 py-3 font-poppins shadow-md
-      hover:opacity-90 hover:shadow-lg focus:outline-none
-      focus:ring-2 focus:ring-wicsPurple/40 transition w-full sm:w-auto"
-    >
-      Back To Faculty Advisors
-    </Link>
-  )}
-</div>
-
+              {singlePost.profileType === "executive" ? (
+                <ActionButton to="/committee" text="BACK TO TEAM" />
+              ) : (
+                <ActionButton to="/committee" text="BACK TO FACULTY ADVISORS" />
+              )}
+            </div>
           </div>
         </article>
       </section>

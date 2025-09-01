@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 import LoadingSpinner from "./LoadingSpinner.js";
-import Button from "./Button.js";
 import Footer from "./navigation/Footer";
+import ActionButton from "./ActionButton.js";
 
 import EventContent from "../components/EventContent";
 
@@ -69,11 +69,7 @@ export default function SponsorEvents() {
             </section>
           ))}
         <div className="m-10 flex justify-center items-center">
-          <Button
-            type="local"
-            link="/sponsors"
-            text="Back to Sponsors"
-          ></Button>
+          <ActionButton to="/sponsors" text="BACK TO SPONSORS" />
         </div>
         </main>
       <Footer></Footer>

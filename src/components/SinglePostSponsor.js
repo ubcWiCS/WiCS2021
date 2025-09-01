@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 import LoadingSpinner from "./LoadingSpinner.js";
+import ActionButton from "./ActionButton.js";
 
 export default function SinglePostSponsor() {
   const [singlePost, setSinglePost] = useState(null);
@@ -34,10 +35,10 @@ export default function SinglePostSponsor() {
   if (!singlePost) return <LoadingSpinner />;
 
   return (
-    <main className="flex flex-col min-h-screen font-poppins">
+    <main className="flex flex-col font-poppins">
       {/* Gradient section */}
       <section
-        className="flex flex-col justify-start flex-grow"
+        className="flex flex-col justify-start min-h-screen"
         style={{
           background:
             "linear-gradient(103.03deg, #FFEBF7 9.32%, #D8DCFF 101.95%)",
@@ -67,15 +68,7 @@ export default function SinglePostSponsor() {
           </div>
 
           <div className="mt-10 flex justify-center">
-            <Link
-              to="/sponsors"
-              className="inline-flex items-center justify-center rounded-full
-            bg-wicsPurple text-white px-10 py-3 font-poppins shadow-md
-            hover:opacity-90 hover:shadow-lg focus:outline-none
-            focus:ring-2 focus:ring-wicsPurple/40 transition"
-            >
-              BACK TO SPONSORS
-            </Link>
+            <ActionButton to="/sponsors" text="BACK TO SPONSORS" />
           </div>
         </div>
       </section>
