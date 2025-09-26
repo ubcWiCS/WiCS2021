@@ -137,11 +137,11 @@ export default function NavBar() {
                 >
                   WiCS
                 </NavLink>
-                <NavBarItemMobile text="About" path="/about" />
-                <NavBarItemMobile text="Events" path="/events" />
+                <NavBarItemMobile text="Upcoming Events" path="/events/upcoming" />
+                <NavBarItemMobile text="Past Events" path="/events/past" />
                 <NavBarItemMobile text="Committee" path="/committee" />
                 <NavBarItemMobile text="Sponsors" path="/sponsors" />
-                <NavBarItemMobile text="TECHforward" path="/techforward" />
+                {/* <NavBarItemMobile text="TECHforward" path="/techforward" /> */}
                 <Link to={{ pathname: "https://ubccsss.org/tcf/" }} target="_blank">
                     <p className="bg-gradient-to-br hover:text-black block px-3 py-2 rounded-md text-base font-medium">
                       TCF
