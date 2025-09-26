@@ -10,6 +10,7 @@ export default function SinglePostSponsor() {
   const { slug } = useParams();
 
   useEffect(() => {
+    // NOTE: This keeps the query, but you can parametrize it if desired
     sanityClient
       .fetch(
         `*[slug.current == "${slug}"]{
@@ -28,54 +29,72 @@ export default function SinglePostSponsor() {
           body,
         }`
       )
-      .then((data) => setSinglePost(data[0]))
+      .then((data) => setSinglePost(data?.[0] ?? null))
       .catch(console.error);
   }, [slug]);
 
   if (!singlePost) return <LoadingSpinner />;
 
+  const sponsorName = singlePost?.name ?? singlePost?.title ?? "Sponsor";
+  const sponsorImg = singlePost?.mainImage?.asset?.url;
+
   return (
-    <main className="flex flex-col font-poppins">
-      {/* Gradient section */}
+    <main className="flex min-h-screen flex-col font-poppins text-gray-800">
+      {/* Gradient header/hero section */}
       <section
-        className="flex flex-col justify-start min-h-screen"
+        className="w-full"
         style={{
           background:
             "linear-gradient(103.03deg, #FFEBF7 9.32%, #D8DCFF 101.95%)",
         }}
       >
-        <div className="container rounded-lg mx-auto p-10 transform duration-500 flex flex-col">
-          <img
-            className="w-48 md:w-64 p-4 h-auto object-contain rounded-lg"
-            src={singlePost.mainImage.asset.url}
-            alt={singlePost.name}
-          />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+          {/* Layout changes from the mobile version (stacked layout) to two-column (when md+) */}
+          <div className="grid grid-cols-1 md:grid-cols-12 md:items-start gap-6 sm:gap-8 lg:gap-12">
+            {/* Image */}
+            <div className="md:col-span-5 flex md:block justify-center">
+              {sponsorImg && (
+                <img
+                  className="w-40 xs:w-48 sm:w-56 md:w-64 lg:w-72 h-auto object-contain rounded-lg bg-white/40 p-3"
+                  src={sponsorImg}
+                  alt={`${sponsorName} logo`}
+                  loading="lazy"
+                />
+              )}
+            </div>
 
-          <div className="px-4 mt-4">
-            <div className="text-3xl md:text-4xl font-bold text-gray-800">
-              {singlePost.name}
-            </div>
-            <div className="text-gray-700 text-2xl pt-2">
-              {"Sponsorship level: " + singlePost.sponsorLevel}
-            </div>
-            <div className="mt-4 text-gray-600 text-base">
-              <BlockContent
-                blocks={singlePost.body}
-                projectId="xvhe4elt"
-                dataset="production"
-              />
-            </div>
-          </div>
+            {/* Text content */}
+            <div className="md:col-span-7">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+                {sponsorName}
+              </h1>
 
-          <div className="mt-10 flex justify-center">
-            <ActionButton to="/sponsors" text="BACK TO SPONSORS" />
+              {singlePost?.sponsorLevel && (
+                <p className="mt-2 text-base sm:text-lg text-gray-700">
+                  <span className="font-medium">Sponsorship level:</span>{" "}
+                  {singlePost.sponsorLevel}
+                </p>
+              )}
+
+              <div className="mt-4 sm:mt-6 text-sm sm:text-base leading-relaxed text-gray-700">
+                <BlockContent
+                  blocks={singlePost.body}
+                  projectId="xvhe4elt"
+                  dataset="production"
+                />
+              </div>
+
+              <div className="mt-6 sm:mt-8">
+                <ActionButton to="/sponsors" text="BACK TO SPONSORS" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* White footer */}
+      {/* Footer */}
       <section className="w-full bg-white py-6">
-        <div className="text-center text-sm md:text-base">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center text-xs sm:text-sm md:text-base text-gray-600">
           UBC Women in Computer Science 2025
         </div>
       </section>
