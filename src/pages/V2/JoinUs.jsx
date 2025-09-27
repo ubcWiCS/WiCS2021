@@ -47,30 +47,24 @@ export default function JoinUs() {
   }, []);
 
   return (
-    <div
-      className="JoinUs font-poppins w-screen"
-      style={{
-        backgroundImage: `url(${bg})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        minHeight: "1730px", 
-      }}
-    >
-      <div className="px-6 py-2 text-center">
+    <div className="JoinUs w-full font-poppins relative">
+      <div
+        className="hidden md:block absolute top-0 left-0 w-full h-full"
+        style={{
+          backgroundImage: `url(${bg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "top",
+          zIndex: -1,
+        }}
+      />
+
+      <div className="px-4 sm:px-6 py-8 relative">
         {whyJoinUsSection && (
           <>
-            <div
-              className="w-screen max-w-none flex justify-end mb-5 px-6"
-              style={{ position: "relative" }}
-            >
+            <div className="flex justify-center md:justify-end mb-5">
               <div
-                className="w-5/12 rounded-lg p-10 shadow-lg mt-20 md:mt-35"
-                style={{
-                  backgroundColor: "#E1E0FF",
-                  color: "#805DC1",
-                  position: "relative",
-                  right: 0,
-                }}
+                className="w-full md:w-5/12 rounded-lg p-6 md:p-10 shadow-lg mt-40 md:mt-20"
+                style={{ backgroundColor: "#E1E0FF", color: "#805DC1" }}
               >
                 <p className="text-sm font-light leading-relaxed text-center">
                   {whyJoinUsSection.description}
@@ -78,47 +72,41 @@ export default function JoinUs() {
               </div>
             </div>
 
-            <div className="max-w-5xl mx-auto py-15 px-6 md:px-12 flex flex-col">
-            <div className="max-w-5xl mx-auto py-15 px-6 md:px-12 flex flex-col">
-            <div className="max-w-5xl mx-auto py-15 px-6 md:px-12 flex flex-col items-center">
-  
-  <div className="flex flex-col items-start" style={{ width: "95%" }}>
-    <h2
-      className="text-4xl font-bold"
-      style={{ color: "#B089DD", marginTop: "-70px" }}
-    >
-      {whyJoinUsSection.heading}
-    </h2>
+            <div className="max-w-5xl mx-auto py-12 px-4 sm:px-6 md:px-12 flex flex-col items-center">
+              <div className="w-full text-left">
+                <h2
+                  style={{ color: "#B089DD" }}
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#B089DD] mt-6 md:mt-0"
+                >
+                  {whyJoinUsSection.heading}
+                </h2>
 
-    <div className="flex justify-start items-center gap-12 pt-10 w-full">
-      <div style={{ width: "40%" }}>
-        <ImageCarousel type="whyJoinUsImages" height="80vh" />
-      </div>
-      <div className="w-1/3">
-        <ValueList />
-      </div>
-    </div>
-  </div>
-
-</div>
-</div>
-</div>
+                <div className="flex flex-col md:flex-row justify-center items-start gap-12 pt-10 w-full">
+                  <div className="w-full md:w-2/5">
+                    <ImageCarousel type="whyJoinUsImages" height="90vh" />
+                  </div>
+                  <div className="w-full md:w-1/3">
+                    <ValueList />
+                  </div>
+                </div>
+              </div>
+            </div>
           </>
         )}
 
         {storiesSection && (
-          <div className="max-w-5xl text-left py-20 mx-auto">
+          <div className="max-w-5xl text-left py-12 mx-auto">
             <h2
-              className="text-3xl font-bold mb-4 px-6 md:px-12"
-              style={{ color: "#B089DD", marginTop: "-25px" }}
+              style={{ color: "#B089DD" }}
+              className="text-2xl sm:text-3xl font-bold mb-4 px-4 sm:px-6 md:px-12 text-[#B089DD]"
             >
               {storiesSection.heading}
             </h2>
-            <p className="mb-8 text-lg font-light leading-relaxed px-6 md:px-12">
+            <p className="mb-8 text-base sm:text-lg font-light leading-relaxed px-4 sm:px-6 md:px-12">
               {storiesSection.description}
             </p>
 
-            <div className="flex flex-wrap gap-8 justify-center">
+            <div className="flex flex-wrap gap-6 justify-center">
               {programs.map(
                 ({
                   _id,

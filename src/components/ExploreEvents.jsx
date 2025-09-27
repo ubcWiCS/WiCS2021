@@ -51,17 +51,17 @@ const ExploreEvents = ({ events = [] }) => {
         </div>
 
         {/* Buttons */}
-        <div className="flex gap-4 mt-8 justify-start">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8 justify-start">
           <Link
             to="/events/upcoming"
-            className="px-5 py-2 bg-wicsPurple text-white rounded-full shadow-md hover:opacity-90"
+            className="px-3 py-1.5 sm:px-5 sm:py-2 bg-wicsPurple text-white rounded-full shadow-md hover:opacity-90 text-sm sm:text-base text-center"
           >
             View Upcoming Events
           </Link>
 
           <Link
             to="/events/past"
-            className="px-5 py-2 border-2 border-wicsPurple text-wicsPurple rounded-full hover:bg-wicsPurple/10 hover:text-wicsPurple"
+            className="px-3 py-1.5 sm:px-5 sm:py-2 border-2 border-wicsPurple text-wicsPurple rounded-full hover:bg-wicsPurple/10 hover:text-wicsPurple text-sm sm:text-base text-center"
           >
             View Past Events
           </Link>
