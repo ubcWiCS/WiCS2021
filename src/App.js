@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Switch, useLocation} from "react-router-dom";
 import { useEffect } from "react";
 
 import Home from "./pages/Home";
-import About from "./pages/About";
 import Events from "./pages/Events";
 import Team from "./pages/Team";
 import Sponsors from "./pages/Sponsors";
@@ -35,7 +34,6 @@ function App() {
       <NavBar />
       <Switch>
         <Route component={Home} path="/" exact />
-        <Route component={About} path="/about" />
         <Route component={Events} path="/events/past" />
         <Route component={Upcoming} path="/events/upcoming" />
         <Route component={Team} path="/committee" />
