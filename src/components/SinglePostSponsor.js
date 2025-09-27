@@ -10,10 +10,9 @@ export default function SinglePostSponsor() {
   const { slug } = useParams();
 
   useEffect(() => {
-    // NOTE: This keeps the query, but you can parametrize it if desired
     sanityClient
       .fetch(
-        `*[slug.current == "${slug}"]{
+        `*[slug.current == $slug][0]{
           title,
           name,
           role,
@@ -21,15 +20,13 @@ export default function SinglePostSponsor() {
           sponsorLevel,
           slug,
           mainImage{
-            asset->{
-              _id,
-              url
-            }
+            asset->{_id, url}
           },
-          body,
-        }`
+          body
+        }`,
+        { slug }
       )
-      .then((data) => setSinglePost(data?.[0] ?? null))
+      .then((data) => setSinglePost(data))
       .catch(console.error);
   }, [slug]);
 
@@ -39,18 +36,15 @@ export default function SinglePostSponsor() {
   const sponsorImg = singlePost?.mainImage?.asset?.url;
 
   return (
-    <main className="flex min-h-screen flex-col font-poppins text-gray-800">
-      {/* Gradient header/hero section */}
+    <main className="flex flex-col min-h-screen font-poppins text-gray-800">
       <section
-        className="w-full"
+        className="flex-grow w-full flex items-center"
         style={{
-          background:
-            "linear-gradient(103.03deg, #FFEBF7 9.32%, #D8DCFF 101.95%)",
+          background: "linear-gradient(103.03deg, #FFEBF7 9.32%, #D8DCFF 101.95%)",
         }}
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-          {/* Layout changes from the mobile version (stacked layout) to two-column (when md+) */}
-          <div className="grid grid-cols-1 md:grid-cols-12 md:items-start gap-6 sm:gap-8 lg:gap-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 lg:gap-12">
             {/* Image */}
             <div className="md:col-span-5 flex md:block justify-center">
               {sponsorImg && (
@@ -64,7 +58,7 @@ export default function SinglePostSponsor() {
             </div>
 
             {/* Text content */}
-            <div className="md:col-span-7">
+            <div className="md:col-span-7 flex flex-col justify-center">
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
                 {sponsorName}
               </h1>
@@ -93,11 +87,11 @@ export default function SinglePostSponsor() {
       </section>
 
       {/* Footer */}
-      <section className="w-full bg-white py-6">
+      <footer className="w-full bg-white py-6">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center text-xs sm:text-sm md:text-base text-gray-600">
           UBC Women in Computer Science 2025
         </div>
-      </section>
+      </footer>
     </main>
   );
 }
