@@ -81,9 +81,12 @@ export default function JoinUs() {
                   {whyJoinUsSection.heading}
                 </h2>
 
-                <div className="flex flex-col md:flex-row justify-center items-start gap-12 pt-10 w-full">
+                <div className="flex flex-col md:flex-row justify-start items-start gap-40 pt-10 w-full">
                   <div className="w-full md:w-2/5">
-                    <ImageCarousel type="whyJoinUsImages" height="90vh" />
+                    <ImageCarousel
+                      type="whyJoinUsImages"
+                      className="w-full min-h-[300px] sm:min-h-[400px] md:min-h-[90vh]"
+                    />
                   </div>
                   <div className="w-full md:w-1/3">
                     <ValueList />

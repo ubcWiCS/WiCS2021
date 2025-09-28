@@ -54,18 +54,22 @@ export default function SinglePostNoAuthor() {
   ) : null;
 
   return (
-    <main className="bg-white flex flex-col items-center min-h-screen md:pt-20">
-      <section className="container mx-auto px-6 md:px-10 py-10 md:py-16 w-full">
-        <article className="mx-auto max-w-5xl shadow-lg overflow-hidden bg-gradient-to-r from-pink-100 via-purple-100 to-indigo-100">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-10 p-8 md:p-12">
-            <div className="flex items-start justify-center">
-              <img
-                className="w-full max-w-md h-auto object-cover rounded-lg"
-                src={singlePost.mainImage?.asset?.url}
-                alt={singlePost.name || "Profile photo"}
-              />
-            </div>
+    <main className="bg-white flex flex-col min-h-screen">
+      <section className="w-full px-6 py-10 md:px-10 md:py-16">
+        <article className="mx-auto w-full max-w-5xl shadow-lg overflow-hidden bg-gradient-to-r from-pink-100 via-purple-100 to-indigo-100 rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 p-6 md:p-12">
+            {/* Image */}
+            {singlePost.mainImage?.asset?.url && (
+              <div className="flex justify-center md:justify-start">
+                <img
+                  className="w-full max-w-xs md:max-w-md h-auto object-cover rounded-lg"
+                  src={singlePost.mainImage.asset.url}
+                  alt={singlePost.name || "Profile photo"}
+                />
+              </div>
+            )}
 
+            {/* Content */}
             <div className="flex flex-col">
               <h1 className="text-2xl md:text-3xl font-poppins font-bold">
                 {singlePost.name}
@@ -74,30 +78,37 @@ export default function SinglePostNoAuthor() {
                 {singlePost.role}
               </p>
 
-              <div className="mt-4 md:prose-base font-poppins leading-relaxed max-w-none">
-                <BlockContent
-                  blocks={singlePost.body}
-                  projectId="xvhe4elt"
-                  dataset="production"
-                />
-              </div>
+              {singlePost.body && (
+                <div className="mt-4 md:prose-base font-poppins leading-relaxed max-w-none">
+                  <BlockContent
+                    blocks={singlePost.body}
+                    projectId="xvhe4elt"
+                    dataset="production"
+                  />
+                </div>
+              )}
 
-              <div className="mt-4 flex items-center">
+              {/* Social Media */}
+              <div className="mt-4 flex space-x-4">
                 {linkedIn}
                 {myEmail}
               </div>
-            </div>
-            <div className="md:col-span-2 flex justify-center mt-8">
-              {singlePost.profileType === "executive" ? (
-                <ActionButton to="/committee" text="BACK TO TEAM" />
-              ) : (
-                <ActionButton to="/committee" text="BACK TO FACULTY ADVISORS" />
-              )}
+
+              {/* Action Button */}
+              <div className="mt-4">
+                {singlePost.profileType === "executive" ? (
+                  <ActionButton to="/committee" text="BACK TO TEAM" />
+                ) : (
+                  <ActionButton
+                    to="/committee"
+                    text="BACK TO FACULTY ADVISORS"
+                  />
+                )}
+              </div>
             </div>
           </div>
         </article>
       </section>
-
       <Footer />
     </main>
   );
