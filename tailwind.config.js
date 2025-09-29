@@ -3,6 +3,18 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      keyframes: {
+        bounceY: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-15%)" },
+        },
+      },
+      animation: {
+        bounceY: "bounceY 0.6s ease-in-out both",
+        "bounceY-120": "bounceY 0.6s ease-in-out 120ms both",
+        "bounceY-240": "bounceY 0.6s ease-in-out 240ms both",
+        "bounceY-360": "bounceY 0.6s ease-in-out 360ms both",
+      },
       boxShadow: {
         'custom-purple': '8px 8px 15px rgba(73, 50, 107, 0.8)',
       },
