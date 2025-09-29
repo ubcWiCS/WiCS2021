@@ -19,9 +19,15 @@ export function ProfileCard(props) {
             />
           </div>
           <div className="h-1/4 px-3 py-2 flex flex-col justify-center">
-            <h3 className="text-base sm:text-lg title font-semibold break-words whitespace-normal text-center">
-              {props.name}
-            </h3>
+          <h3
+            className={`title font-semibold text-center break-words whitespace-normal w-full max-w-[92%] mx-auto ${
+              props.name.length > 20 ? "text-sm sm:text-base" : "text-base sm:text-lg"
+            }`}
+          >
+            {props.name}
+          </h3>
+
+
             {props.role && (
               <h4 className="text-sm body break-words whitespace-normal text-center opacity-80">
                 {props.role}
