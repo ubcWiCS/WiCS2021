@@ -9,6 +9,8 @@ import About from "./V2/About.jsx";
 import JoinUs from "./V2/JoinUs.jsx";
 import useGoogleCalendarEvents from "../hooks/useGoogleCalendarEvents";
 
+
+
 export default function Home() {
   const CALENDAR_ID = "18qb8b2du4h0brqc9i7tv4v8ok@group.calendar.google.com";
   const GCAL_API_KEY = process.env.REACT_APP_GCAL_API_KEY;
@@ -21,6 +23,17 @@ export default function Home() {
     maxResults: 4, // For future devs: you can change this if you want!
     monthsAhead: 12,
   });
+  const [wave, setWave] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setWave(true);
+      setTimeout(() => setWave(false), 800); 
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     sanityClient
@@ -78,32 +91,25 @@ export default function Home() {
                 <span className="font-semibold">women in</span>{" "}
                 <span className="text-wicsPurple font-bold">computing</span>
               </h1>
-              <div className="flex flex-row justify-center lg:mt-3 mb:mt-3 sb:mt-1">
-                <SocialMedia
-                  url="https://www.linkedin.com/company/ubcwics/"
-                  width="48px"
-                  height="48px"
-                  color="#FAEAFF"
-                />
-                <SocialMedia
-                  url="https://www.instagram.com/ubcwics/"
-                  width="48px"
-                  height="48px"
-                  color="#FAEAFF"
-                />
-                <SocialMedia
-                  url="https://www.facebook.com/ubcwics/"
-                  width="48px"
-                  height="48px"
-                  color="#FAEAFF"
-                />
-                <SocialMedia
-                  url="https://discord.gg/jvqdhrCk3z"
-                  width="48px"
-                  height="48px"
-                  color="#FAEAFF"
-                />
-              </div>
+              <div className="flex justify-center gap-3">
+  <div className={wave ? "animate-bounceY" : ""}>
+    <SocialMedia url="https://www.linkedin.com/company/ubcwics/" width="48px" height="48px" color="#FAEAFF" />
+  </div>
+  <div className={wave ? "animate-bounceY-120" : ""}>
+    <SocialMedia url="https://www.instagram.com/ubcwics/" width="48px" height="48px" color="#FAEAFF" />
+  </div>
+  <div className={wave ? "animate-bounceY-240" : ""}>
+    <SocialMedia url="https://www.facebook.com/ubcwics/" width="48px" height="48px" color="#FAEAFF" />
+  </div>
+  <div className={wave ? "animate-bounceY-360" : ""} >
+    <SocialMedia url="https://discord.gg/jvqdhrCk3z" width="48px" height="48px" color="#FAEAFF" />
+  </div>
+</div>
+
+
+
+
+
             </div>
           </div>
         </div>

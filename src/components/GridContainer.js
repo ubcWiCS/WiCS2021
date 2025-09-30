@@ -33,10 +33,10 @@ export default function GridContainer(props) {
     const isCommittee = /committee/i.test(props?.title || "") || props?.type === "committee";
 
     if (props.type === "profile" || isCommittee) {
-      // if (props.title === "Faculty Advisors") {
+      if (props.title === "Faculty Advisors") {
       //   // 1 → 2 → 3 cols, centered
-      //   return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-items-center";
-      // }
+        return "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-items-center";
+      }
       // default profiles (including Committees): 1 → 2 → 3 → 4 cols
       return "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8";
     }
