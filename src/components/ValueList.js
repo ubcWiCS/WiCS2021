@@ -35,8 +35,12 @@ export default function ValueList() {
               className="w-13 h-13 object-contain mb-2"
             />
           )}
-          <h3 className="text-xl font-semibold mb-1">{title}</h3>
-          <p className="text-base font-light max-w-l">{description}</p>
+          <h3 className="text-[clamp(1rem,3vw,1.5rem)] sm:text-[clamp(1.125rem,2.5vw,1.75rem)] md:text-[clamp(1.25rem,2vw,2rem)] font-semibold mb-1">
+            {title}
+          </h3>
+          <p className="text-[clamp(0.875rem,2.5vw,1rem)] sm:text-[clamp(0.9rem,2vw,1.125rem)] md:text-[clamp(1rem,1.5vw,1.25rem)] font-light max-w-lg">
+            {description}
+          </p>
         </div>
       ))}
     </div>
