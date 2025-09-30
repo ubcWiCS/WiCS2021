@@ -73,25 +73,26 @@ export default function JoinUs() {
               </div>
             </div>
 
-            <div className="max-w-5xl mx-auto py-12 px-4 sm:px-6 md:px-12 flex flex-col items-center">
-              <div className="w-full text-left">
-                <h2
-                  style={{ color: "#B089DD" }}
-                  className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#B089DD] mt-6 md:mt-0"
-                >
-                  {whyJoinUsSection.heading}
-                </h2>
+            <div className="max-w-5xl mx-auto py-12 px-4 sm:px-6 md:px-12">
+              <h2
+                style={{ color: "#B089DD" }}
+                className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10"
+              >
+                {whyJoinUsSection.heading}
+              </h2>
 
-                <div className="flex flex-col md:flex-row justify-start items-start gap-40 pt-10 w-full">
-                  <div className="w-full md:w-2/5">
+              <div className="flex flex-col md:flex-row md:items-start md:gap-40">
+                <div className="w-full md:w-2/5">
+                  <div className="aspect-w-3 aspect-h-2 w-full">
                     <ImageCarousel
                       type="whyJoinUsImages"
-                      className="w-full min-h-[300px] sm:min-h-[400px] md:min-h-[90vh]"
+                      className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="w-full md:w-1/3">
-                    <ValueList />
-                  </div>
+                </div>
+
+                <div className="w-full md:w-1/3 mt-10 md:mt-0 flex flex-col justify-start">
+                  <ValueList />
                 </div>
               </div>
             </div>
