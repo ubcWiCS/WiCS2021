@@ -12,7 +12,7 @@ function urlFor(source) {
 
 export default function ImageCarousel({
   type = "aboutImages",
-  height = "550px",
+  height = "40%",
 }) {
   const [images, setImages] = useState([]);
 
@@ -51,7 +51,7 @@ export default function ImageCarousel({
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 2000,
     arrows: true,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
