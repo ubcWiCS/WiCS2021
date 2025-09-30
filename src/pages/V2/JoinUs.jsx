@@ -73,7 +73,7 @@ export default function JoinUs() {
               </div>
             </div>
 
-            <div className="max-w-5xl mx-auto py-12 px-4 sm:px-6 md:px-12">
+            <div className="max-w-5xl mx-auto py-12 px-15 sm:px-6 md:px-12">
               <h2
                 style={{ color: "#B089DD" }}
                 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10"
@@ -91,7 +91,7 @@ export default function JoinUs() {
                   </div>
                 </div>
 
-                <div className="w-full md:w-1/3 mt-10 md:mt-0 flex flex-col justify-start">
+                <div className="w-full md:w-2/5 mt-10 md:mt-0 flex flex-col justify-start">
                   <ValueList />
                 </div>
               </div>

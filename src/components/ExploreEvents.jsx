@@ -39,7 +39,7 @@ const ExploreEvents = ({ events = [] }) => {
                   href={event.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-lg text-gray-700 hover:text-wicsPurple"
+                  className="text-lg text-gray-700 hover:text-wicsPurple transition-colors duration-200 transform hover:scale-110"
                 >
                   &raquo;
                 </a>
@@ -51,17 +51,17 @@ const ExploreEvents = ({ events = [] }) => {
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8 justify-start">
+        <div className="flex flex-col md:flex-row gap-3 md:gap-4 mt-8 justify-start">
           <Link
             to="/events/upcoming"
-            className="px-3 py-1.5 sm:px-5 sm:py-2 bg-wicsPurple text-white rounded-full shadow-md hover:opacity-90 text-sm sm:text-base text-center"
+            className="px-3 py-1.5 md:px-5 md:py-2 bg-wicsPurple text-white rounded-full shadow-md hover:shadow-lg transform hover:scale-110 transition-all duration-200 text-sm md:text-base text-center font-medium"
           >
             View Upcoming Events
           </Link>
 
           <Link
             to="/events/past"
-            className="px-3 py-1.5 sm:px-5 sm:py-2 border-2 border-wicsPurple text-wicsPurple rounded-full hover:bg-wicsPurple/10 hover:text-wicsPurple text-sm sm:text-base text-center"
+            className="px-3 py-1.5 md:px-5 md:py-2 border-2 border-wicsPurple text-wicsPurple rounded-full hover:text-wicsPurple hover:shadow-lg transform hover:scale-110 transition-all duration-200 text-sm md:text-base text-center font-medium"
           >
             View Past Events
           </Link>

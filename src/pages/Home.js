@@ -57,7 +57,7 @@ export default function Home() {
     <main className="flex flex-col w-full">
       {/* Banner */}
       <section
-        style={{ height: "calc(100vh - 0px)" }}
+        style={{ height: "90vh" }}
         className="relative w-full bg-gradient-to-b from-wicsPink to-wicsIndigo h-screen"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
