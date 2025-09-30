@@ -49,7 +49,7 @@ export default function JoinUs() {
   return (
     <div className="JoinUs w-full font-poppins relative">
       <div
-        className="hidden md:block absolute top-0 left-0 w-full h-full"
+        className="absolute top-0 left-0 w-full h-full"
         style={{
           backgroundImage: `url(${bg})`,
           backgroundSize: "cover",
@@ -58,12 +58,13 @@ export default function JoinUs() {
         }}
       />
 
+      {/* WHY JOIN US section */}
       <div className="px-4 sm:px-6 py-8 relative">
         {whyJoinUsSection && (
           <>
             <div className="flex justify-center md:justify-end mb-5">
               <div
-                className="w-full md:w-5/12 rounded-lg p-6 md:p-10 shadow-lg mt-40 md:mt-20"
+                className="w-full md:w-5/12 rounded-lg p-6 md:p-10 shadow-lg mt-56 md:mt-20"
                 style={{ backgroundColor: "#E1E0FF", color: "#805DC1" }}
               >
                 <p className="text-sm font-light leading-relaxed text-center">
@@ -96,16 +97,24 @@ export default function JoinUs() {
             </div>
           </>
         )}
+      </div>
 
-        {storiesSection && (
-          <div className="max-w-5xl text-left py-12 mx-auto">
+      {/* STORIES AND SUPPORT section */}
+      {storiesSection && (
+        <div className="relative w-screen py-12">
+          {/* Add purple background as a workaround */}
+          <div
+            className="absolute inset-0"
+            style={{ backgroundColor: "#F6F0FF", zIndex: -1 }}
+          />
+          <div className="max-w-5xl mx-auto text-left relative px-4 sm:px-6 md:px-12">
             <h2
               style={{ color: "#B089DD" }}
-              className="text-2xl sm:text-3xl font-bold mb-4 px-4 sm:px-6 md:px-12 text-[#B089DD]"
+              className="text-2xl sm:text-3xl font-bold mb-4 text-[#B089DD]"
             >
               {storiesSection.heading}
             </h2>
-            <p className="mb-8 text-base sm:text-lg font-light leading-relaxed px-4 sm:px-6 md:px-12">
+            <p className="mb-8 text-base sm:text-lg font-light leading-relaxed">
               {storiesSection.description}
             </p>
 
@@ -134,8 +143,8 @@ export default function JoinUs() {
               )}
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
