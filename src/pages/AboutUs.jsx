@@ -38,7 +38,7 @@ export default function AboutUs() {
           </h1>
         </div>
 
-        <div className="max-w-5xl mx-auto px-6 font-poppins">
+        <div className="max-w-7xl mx-auto px-6 font-poppins">
           {postData.map((post) => (
             <article key={post._id} className="mb-16">
               <h2 className="text-3xl font-bold text-wicsPurple mb-4">
