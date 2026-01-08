@@ -1,4 +1,3 @@
-import React from "react";
 import GridContainer from "../components/GridContainer.js";
 import ColorBgFooter from "../components/navigation/ColorBgFooter";
 
