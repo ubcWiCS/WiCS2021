@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import TeamArchive from "./pages/TeamArchive";
 import Techforward from "./pages/Techforward";
 import Upcoming from "./pages/Upcoming"; 
+import AboutUs from "./pages/AboutUs"
 
 
 import NavBar from "./components/navigation/NavBar";
@@ -37,6 +38,7 @@ function App() {
         <Route component={Events} path="/events/past" />
         <Route component={Upcoming} path="/events/upcoming" />
         <Route component={Team} path="/committee" />
+        <Route component={AboutUs} path="/about" />
         <Route component={TeamArchive} path="/team-archive" />
         <Route component={Sponsors} path="/sponsors" />
         <Route component={Contact} path="/contact" />

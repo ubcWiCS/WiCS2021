@@ -3,74 +3,107 @@ import { Transition } from "@headlessui/react";
 import WicsLogo from "../../img/roundLogo.png";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
-
-
 import NavBarItem from "./NavBarItem";
 import NavBarItemMobile from "./NavBarItemMobile";
-
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const isEventsActive = location.pathname.startsWith("/events");
 
-  
+  const isEventsActive = location.pathname.startsWith("/events");
+  const isAboutActive =
+    location.pathname.startsWith("/about") ||
+    location.pathname.startsWith("/committee");
+
   return (
     <div className="bg-white sticky top-0 z-10">
       <nav>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
-        <NavLink to="/" exact className="flex items-center gap-x-3 flex-shrink-0">
-          <img className="h-10 w-10" src={WicsLogo} alt="Workflow" />
-          <div
-            className="px-3 py-2 rounded-md text-sm font-medium bg-transparent"
-            style={{ color: "#B089DD"}}
-          >
-            UBC Women in Computer Science
-          </div>
-        </NavLink>
+          <div className="flex items-center justify-between h-16">
+            <NavLink to="/" end className="flex items-center gap-x-3 flex-shrink-0">
+              <img className="h-10 w-10" src={WicsLogo} alt="Workflow" />
+              <div
+                className="px-3 py-2 rounded-md text-sm font-medium bg-transparent"
+                style={{ color: "#B089DD" }}
+              >
+                UBC Women in Computer Science
+              </div>
+            </NavLink>
 
-  <div className="hidden md:block">
-    <div className="flex items-baseline space-x-4">
-      <NavBarItem text="Home" path="/" />
+            {/* Desktop Nav */}
+            <div className="hidden md:block">
+              <div className="flex items-baseline space-x-4">
+                <NavBarItem text="Home" path="/" />
 
-      <div className="navbar-dropdown">
-      <button
-    className={`px-3 py-2 rounded-md text-sm font-medium ${
-          isEventsActive
-            ? "font-bold"
-            : "text-gray-600 hover:text-black"
-        }`}
-      >
-        Events
-      </button>
+                {/* About Dropdown (About Us + Committee) */}
+                <div className="navbar-dropdown">
+                  <button
+                    className={`px-3 py-2 rounded-md text-sm font-medium ${
+                      isAboutActive ? "font-bold" : "text-gray-600 hover:text-black"
+                    }`}
+                  >
+                    About
+                  </button>
 
-        <div className="navbar-dropdown-content">
-          <NavLink
-            to="/events/upcoming"
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100"
-          >
-            Upcoming Events
-          </NavLink>
-          <NavLink
-            to="/events/past"
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100"
-          >
-      Past Events
-    </NavLink>
-  </div>
-</div>
+                  <div className="navbar-dropdown-content">
+                    <NavLink
+                      to="/about"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100"
+                    >
+                      About Us
+                    </NavLink>
+                    <NavLink
+                      to="/committee"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100"
+                    >
+                      Committee
+                    </NavLink>
+                  </div>
+                </div>
 
-      <NavBarItem text="Committee" path="/committee" />
-      <NavBarItem text="Sponsors" path="/sponsors" />
-      <Link to={{ pathname: "https://ubccsss.org/tcf/" }} target="_blank" rel="noopener noreferrer">
-        <span className="bg-gradient-to-br nav hover:text-black px-3 py-2 rounded-md text-sm">
-          TCF
-        </span>
-      </Link>
-      <NavBarItem text="Contact Us" path="/contact" />
+                {/* Events Dropdown */}
+                <div className="navbar-dropdown">
+                  <button
+                    className={`px-3 py-2 rounded-md text-sm font-medium ${
+                      isEventsActive ? "font-bold" : "text-gray-600 hover:text-black"
+                    }`}
+                  >
+                    Events
+                  </button>
+
+                  <div className="navbar-dropdown-content">
+                    <NavLink
+                      to="/events/upcoming"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100"
+                    >
+                      Upcoming Events
+                    </NavLink>
+                    <NavLink
+                      to="/events/past"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100"
+                    >
+                      Past Events
+                    </NavLink>
+                  </div>
+                </div>
+
+                <NavBarItem text="Sponsors" path="/sponsors" />
+
+                <Link
+                  to={{ pathname: "https://ubccsss.org/tcf/" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="bg-gradient-to-br nav hover:text-black px-3 py-2 rounded-md text-sm">
+                    TCF
+                  </span>
+                </Link>
+
+                <NavBarItem text="Contact Us" path="/contact" />
               </div>
             </div>
+
+            {/* Mobile Hamburger */}
             <div className="-mr-2 flex md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -118,6 +151,7 @@ export default function NavBar() {
           </div>
         </div>
 
+        {/* Mobile Menu */}
         <Transition
           show={isOpen}
           enter="transition ease-out duration-100 transform"
@@ -132,21 +166,28 @@ export default function NavBar() {
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <NavLink
                   to="/"
-                  exact
+                  end
                   className="bg-gradient-to-br hover:from-pink-200 hover:via-indigo-200 hover:to-indigo-400 text-gray-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   WiCS
                 </NavLink>
+
+                {/* About (mobile: just list both links) */}
+                <NavBarItemMobile text="About Us" path="/about" />
+                <NavBarItemMobile text="Committee" path="/committee" />
+
+                {/* Events */}
                 <NavBarItemMobile text="Upcoming Events" path="/events/upcoming" />
                 <NavBarItemMobile text="Past Events" path="/events/past" />
-                <NavBarItemMobile text="Committee" path="/committee" />
+
                 <NavBarItemMobile text="Sponsors" path="/sponsors" />
-                {/* <NavBarItemMobile text="TECHforward" path="/techforward" /> */}
+
                 <Link to={{ pathname: "https://ubccsss.org/tcf/" }} target="_blank">
-                    <p className="bg-gradient-to-br hover:text-black block px-3 py-2 rounded-md text-base font-medium">
-                      TCF
-                    </p>
-                  </Link>
+                  <p className="bg-gradient-to-br hover:text-black block px-3 py-2 rounded-md text-base font-medium">
+                    TCF
+                  </p>
+                </Link>
+
                 <NavBarItemMobile text="Contact Us" path="/contact" />
               </div>
             </div>
