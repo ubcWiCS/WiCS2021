@@ -10,6 +10,7 @@ import TeamArchive from "./pages/TeamArchive";
 import Techforward from "./pages/Techforward";
 import Upcoming from "./pages/Upcoming"; 
 import AboutUs from "./pages/AboutUs"
+import Resources from "./pages/Resources";
 
 
 import NavBar from "./components/navigation/NavBar";
@@ -30,7 +31,9 @@ function ScrollToTop() {
 function App() {
   return (
     <BrowserRouter>
-      <div className="overflow-x-hidden">
+      {/* clip, not hidden: overflow-x:hidden makes this a scroll container and
+          breaks position:sticky. The class stays as a fallback for old browsers. */}
+      <div className="overflow-x-hidden" style={{ overflowX: "clip" }}>
       <ScrollToTop />
       <NavBar />
       <Switch>
@@ -40,6 +43,7 @@ function App() {
         <Route component={Team} path="/committee" />
         <Route component={AboutUs} path="/about" />
         <Route component={TeamArchive} path="/team-archive" />
+        <Route component={Resources} path="/resources" />
         <Route component={Sponsors} path="/sponsors" />
         <Route component={Contact} path="/contact" />
         <Route component={SinglePostSponsor} path="/sponsor/:slug" />
