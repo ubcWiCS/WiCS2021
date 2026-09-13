@@ -73,6 +73,10 @@ export default function Events() {
     if (postData.length > 0) {
       debouncedSearch(query);
     }
+    // debouncedSearch is rebuilt every render, so listing it here would re-run
+    // this effect (and restart the debounce) on every render. Re-filter only
+    // when the year filter or the fetched posts change.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedYear, postData]);
   
 
