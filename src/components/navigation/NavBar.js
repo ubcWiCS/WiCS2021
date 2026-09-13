@@ -14,9 +14,10 @@ export default function NavBar() {
   const isAboutActive =
     location.pathname.startsWith("/about") ||
     location.pathname.startsWith("/committee");
+  const isResourcesActive = location.pathname.startsWith("/resources");
 
   return (
-    <div className="bg-white sticky top-0 z-10">
+    <div className="bg-white sticky top-0 z-20">
       <nav>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -86,6 +87,18 @@ export default function NavBar() {
                     </NavLink>
                   </div>
                 </div>
+
+                {/* Resources */}
+                <NavLink
+                  to="/resources"
+                  className={`px-3 py-2 rounded-md text-sm font-medium ${
+                    isResourcesActive
+                      ? "font-bold"
+                      : "text-gray-600 hover:text-black"
+                  }`}
+                >
+                  Resources
+                </NavLink>
 
                 <NavBarItem text="Sponsors" path="/sponsors" />
 
@@ -179,6 +192,9 @@ export default function NavBar() {
                 {/* Events */}
                 <NavBarItemMobile text="Upcoming Events" path="/events/upcoming" />
                 <NavBarItemMobile text="Past Events" path="/events/past" />
+
+                {/* Resources */}
+                <NavBarItemMobile text="Resources" path="/resources" />
 
                 <NavBarItemMobile text="Sponsors" path="/sponsors" />
 
