@@ -7,7 +7,6 @@ export default function SocialMedia(props) {
     <div className="">
 
 
-      <a href={props.url} target="_blank" rel="noopener noreferrer"></a>
       <SocialIcon
         url={props.email ? "mailto:" + props.url : props.url}
         className="p-2"

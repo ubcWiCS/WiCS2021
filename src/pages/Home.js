@@ -13,7 +13,7 @@ export default function Home() {
   const CALENDAR_ID = "18qb8b2du4h0brqc9i7tv4v8ok@group.calendar.google.com";
   const GCAL_API_KEY = process.env.REACT_APP_GCAL_API_KEY;
 
-  const [postData, setPost] = useState(null);
+  const [, setPost] = useState(null);
 
   const { events, loading, error } = useGoogleCalendarEvents({
     apiKey: GCAL_API_KEY,
